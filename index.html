@@ -1,343 +1,199 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Prince Ardiabah — Automation Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prince Ardiabah — Automation Strategist</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest"></script>
+
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#fff;color:#111;line-height:1.6}
-a{color:inherit;text-decoration:none}
-.wrap{max-width:860px;margin:0 auto;padding:0 1.5rem}
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+  font-family:'Inter',sans-serif;
+  background: radial-gradient(circle at top, #0f172a, #020617);
+  color:#e5e7eb;
+  line-height:1.6;
+}
+
+.wrap{max-width:1000px;margin:auto;padding:0 20px}
 
 /* NAV */
-nav{border-bottom:0.5px solid #e5e5e5;padding:1rem 0;position:sticky;top:0;background:#fff;z-index:50}
-.nav-inner{display:flex;justify-content:space-between;align-items:center}
-.nav-logo{font-size:14px;font-weight:500;color:#111}
-.nav-links{display:flex;gap:1.5rem}
-.nav-links a{font-size:13px;color:#666;transition:color 0.15s}
-.nav-links a:hover{color:#111}
+nav{
+  display:flex;
+  justify-content:space-between;
+  padding:20px 0;
+  border-bottom:1px solid rgba(255,255,255,0.05);
+}
+
+nav a{color:#9ca3af;text-decoration:none;font-size:14px}
+nav a:hover{color:#fff}
 
 /* HERO */
-.hero{padding:4rem 0 3rem;border-bottom:0.5px solid #e5e5e5}
-.hero-eyebrow{font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#999;margin-bottom:0.75rem}
-.hero-name{font-size:2.6rem;font-weight:500;color:#111;line-height:1.15;margin-bottom:0.75rem}
-.hero-tagline{font-size:1rem;color:#555;max-width:560px;line-height:1.75;margin-bottom:2rem}
-.stats{display:flex;gap:2.5rem;flex-wrap:wrap;padding-top:1.5rem;border-top:0.5px solid #e5e5e5}
-.stat-n{font-size:1.6rem;font-weight:500;color:#111;display:block}
-.stat-l{font-size:11px;color:#999;display:block;margin-top:2px}
+.hero{
+  padding:80px 0;
+  animation:fadeUp 0.8s ease;
+}
 
-/* STORY */
-.story{padding:3rem 0;border-bottom:0.5px solid #e5e5e5}
-.section-eyebrow{font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#999;margin-bottom:1.5rem}
-.story-teaser{font-size:1rem;color:#333;line-height:1.8;max-width:680px}
-.story-teaser strong{color:#111;font-weight:500}
-.story-more{display:none;margin-top:1.25rem}
-.story-more p{font-size:1rem;color:#333;line-height:1.8;max-width:680px;margin-bottom:1rem}
-.story-more p:last-child{margin-bottom:0}
-.read-more-btn{margin-top:1.25rem;background:none;border:0.5px solid #ccc;padding:7px 16px;border-radius:20px;font-size:13px;color:#555;cursor:pointer;transition:all 0.15s}
-.read-more-btn:hover{border-color:#111;color:#111}
+.hero h1{
+  font-size:42px;
+  margin-bottom:10px;
+}
 
-/* JOURNEY */
-.journey{margin-top:2rem;display:none}
-.j-items{display:flex;flex-direction:column;gap:0}
-.j-item{display:flex;gap:1.25rem;padding:1rem 0;border-bottom:0.5px solid #f0f0f0}
-.j-item:last-child{border-bottom:none}
-.j-dot-col{display:flex;flex-direction:column;align-items:center;padding-top:4px}
-.j-dot{width:8px;height:8px;border-radius:50%;background:#111;flex-shrink:0}
-.j-line{width:1px;background:#e5e5e5;flex:1;margin-top:6px}
-.j-year{font-size:11px;color:#999;min-width:48px;padding-top:2px}
-.j-content{}
-.j-role{font-size:14px;font-weight:500;color:#111;margin-bottom:2px}
-.j-desc{font-size:13px;color:#666;line-height:1.6}
+.hero p{
+  color:#9ca3af;
+  max-width:600px;
+  margin-bottom:25px;
+}
 
-/* STACK */
-.stack-section{padding:2.5rem 0;border-bottom:0.5px solid #e5e5e5}
-.pill-row{display:flex;gap:6px;flex-wrap:wrap;margin-top:0.75rem}
-.pill{font-size:12px;padding:4px 12px;border-radius:20px;border:0.5px solid #ddd;color:#555}
+.btns{display:flex;gap:10px}
 
-/* PROJECTS */
-.projects{padding:3rem 0;border-bottom:0.5px solid #e5e5e5}
-.filter-row{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:1.5rem}
-.fb{font-size:12px;padding:5px 13px;border-radius:20px;border:0.5px solid #ddd;background:transparent;color:#666;cursor:pointer;transition:all 0.15s}
-.fb:hover{border-color:#111;color:#111}
-.fb.on{background:#111;color:#fff;border-color:#111}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
-.card{background:#fff;border:0.5px solid #e5e5e5;border-radius:12px;padding:1.25rem;cursor:pointer;transition:border-color 0.15s;display:flex;flex-direction:column;gap:0.6rem}
-.card:hover{border-color:#aaa;box-shadow:0 2px 12px rgba(0,0,0,0.06)}
-.card.live{border-left:2.5px solid #16a34a}
-.card.standout{border:1.5px solid #2563eb}
-.card-tag{font-size:11px;color:#1d4ed8;background:#eff6ff;padding:2px 8px;border-radius:4px;display:inline-block}
-.live-dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:#16a34a;margin-right:4px;vertical-align:middle}
-.card-title{font-size:14px;font-weight:500;color:#111;line-height:1.4}
-.card-client{font-size:11px;color:#999}
-.card-desc{font-size:13px;color:#555;line-height:1.6;flex:1}
-.card-badges{display:flex;gap:5px;flex-wrap:wrap;padding-top:0.6rem;border-top:0.5px solid #f0f0f0}
-.badge{font-size:11px;padding:2px 7px;border-radius:4px;background:#f5f5f5;color:#666}
+button{
+  padding:10px 18px;
+  border-radius:8px;
+  border:none;
+  cursor:pointer;
+  font-weight:500;
+}
 
-/* MODAL */
-.modal-bg{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:200;align-items:center;justify-content:center;padding:1rem}
-.modal-bg.open{display:flex}
-.modal{background:#fff;border-radius:12px;border:0.5px solid #ddd;max-width:560px;width:100%;padding:1.75rem;max-height:85vh;overflow-y:auto}
-.modal-head{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;margin-bottom:1.25rem}
-.modal-close{background:none;border:none;font-size:24px;cursor:pointer;color:#999;line-height:1;padding:0}
-.modal-close:hover{color:#111}
-.modal-title{font-size:17px;font-weight:500;color:#111;margin-bottom:4px}
-.modal-client{font-size:12px;color:#999}
-.ms{margin-top:1.1rem}
-.ms-label{font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:#999;margin-bottom:6px}
-.ms-body{font-size:13px;color:#555;line-height:1.7}
-.flow{display:flex;align-items:center;gap:5px;flex-wrap:wrap;margin-top:6px}
-.fs{font-size:11px;padding:3px 9px;border-radius:4px;background:#f5f5f5;color:#555;border:0.5px solid #e5e5e5}
-.fa{font-size:11px;color:#ccc}
-.impact-box{margin-top:1rem;padding:0.9rem;background:#f9f9f9;border-radius:8px;font-size:13px;color:#555;line-height:1.6;border-left:3px solid #111}
-.impact-box strong{color:#111;font-weight:500;display:block;margin-bottom:3px}
-.modal-cta{margin-top:1.25rem;width:100%;padding:11px;background:#111;color:#fff;border:none;border-radius:8px;font-size:13px;font-weight:500;cursor:pointer;transition:background 0.15s}
-.modal-cta:hover{background:#333}
+.primary{background:#2563eb;color:#fff}
+.secondary{background:#111827;color:#fff;border:1px solid #1f2937}
 
-/* FUTURE */
-.future{padding:3rem 0;border-bottom:0.5px solid #e5e5e5}
-.future-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:1.25rem}
-.future-card{border:0.5px solid #e5e5e5;border-radius:12px;padding:1.25rem}
-.future-icon{font-size:20px;margin-bottom:0.75rem}
-.future-title{font-size:14px;font-weight:500;color:#111;margin-bottom:0.4rem}
-.future-desc{font-size:13px;color:#666;line-height:1.6}
+/* CARDS */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:16px;
+  margin-top:30px;
+}
+
+.card{
+  background:rgba(255,255,255,0.03);
+  border:1px solid rgba(255,255,255,0.08);
+  backdrop-filter:blur(10px);
+  border-radius:14px;
+  padding:20px;
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:translateY(-5px);
+  border-color:#3b82f6;
+  box-shadow:0 10px 30px rgba(59,130,246,0.2);
+}
+
+.card h3{margin-bottom:8px;font-size:16px}
+.card p{font-size:14px;color:#9ca3af}
+
+/* SECTION */
+section{padding:60px 0;border-bottom:1px solid rgba(255,255,255,0.05)}
+
+.quote{
+  font-size:22px;
+  border-left:3px solid #3b82f6;
+  padding-left:15px;
+  margin-bottom:20px;
+}
 
 /* CTA */
-.cta-section{padding:3rem 0}
-.cta-box{border:0.5px solid #e5e5e5;border-radius:12px;padding:2rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
-.cta-box p{font-size:16px;font-weight:500;color:#111;margin-bottom:4px}
-.cta-box span{font-size:13px;color:#666}
-.cta-btn{background:#111;color:#fff;border:none;padding:10px 20px;border-radius:8px;font-size:13px;font-weight:500;cursor:pointer;white-space:nowrap;transition:background 0.15s}
-.cta-btn:hover{background:#333}
+.cta{
+  text-align:center;
+  padding:60px 0;
+}
 
-/* FOOTER */
-footer{border-top:0.5px solid #e5e5e5;padding:1.5rem 0;text-align:center}
-footer p{font-size:12px;color:#aaa}
+footer{
+  text-align:center;
+  padding:20px;
+  font-size:12px;
+  color:#6b7280;
+}
 
-@media(max-width:600px){
-  .hero-name{font-size:1.8rem}
-  .stats{gap:1.5rem}
-  .nav-links{gap:1rem}
+/* ANIMATION */
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(20px)}
+  to{opacity:1;transform:translateY(0)}
 }
 </style>
 </head>
-<body>
 
-<nav>
-  <div class="wrap nav-inner">
-    <div class="nav-logo">Prince Ardiabah</div>
-    <div class="nav-links">
-      <a href="#story">Story</a>
-      <a href="#projects">Projects</a>
-      <a href="#future">Future</a>
-      <a href="#contact">Contact</a>
-    </div>
-  </div>
-</nav>
+<body>
 
 <div class="wrap">
 
-  <!-- HERO -->
-  <section class="hero" id="top">
-    <div class="hero-eyebrow">Automation Portfolio</div>
-    <div class="hero-name">Prince Ardiabah</div>
-    <div class="hero-tagline">I design systems that think. Not just workflows that connect tools — but architectures that remove friction, surface intelligence, and let teams focus on what humans do best.</div>
-    <div class="stats">
-      <div><span class="stat-n">19+</span><span class="stat-l">Workflows built</span></div>
-      <div><span class="stat-n">13</span><span class="stat-l">Live in production</span></div>
-      <div><span class="stat-n">6</span><span class="stat-l">Countries of clients</span></div>
-      <div><span class="stat-n">500+</span><span class="stat-l">People impacted</span></div>
-    </div>
-  </section>
+<nav>
+  <div><strong>Prince Ardiabah</strong></div>
+  <div>
+    <a href="#projects">Projects</a> ·
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
 
-  <!-- STORY -->
-  <section class="story" id="story">
-    <div class="section-eyebrow">The story behind the systems</div>
-    <div class="story-teaser">
-      Most automation builders come from tech. I came from <strong>people</strong>.<br><br>
-      I spent years working across business strategy, marketing, UI/UX, and youth advocacy — in boardrooms, communities, and NGO war rooms across Ghana, the UK, Germany, the US, and Canada. I watched brilliant organisations fail not because of bad ideas, but because of <strong>broken systems</strong>: manual processes, data silos, and the quiet cost of doing things by hand.
-    </div>
-    <div class="story-more" id="story-more">
-      <p>That frustration — watching capable people waste hours on tasks that should run themselves — is what pulled me toward automation. Not as a hobby. As a calling.</p>
-      <p>My background in <strong>marketing and UI/UX</strong> means I don't just build workflows — I design experiences. My years in <strong>community management and youth advocacy</strong>, mentoring 500+ young professionals, taught me how to listen for the real problem underneath the stated one. And my consulting work across four continents gave me the systems-thinking muscle to see how pieces connect — and where they break.</p>
-      <p>Today, when I build an automation, I'm not just mapping nodes. I'm applying everything — the strategist, the community builder, the advocate — to create something that actually changes how people work.</p>
-      <div class="journey" id="journey">
-        <div class="j-items">
-          <div class="j-item">
-            <div class="j-dot-col"><div class="j-dot"></div><div class="j-line"></div></div>
-            <div class="j-year">2021–22</div>
-            <div class="j-content"><div class="j-role">Youth Advocacy & Civic Leadership</div><div class="j-desc">Advisory Board President, Ghana Library Authority. UNICEF YEC Board Member. Learning how systems — political, social, organisational — either empower or exclude people.</div></div>
-          </div>
-          <div class="j-item">
-            <div class="j-dot-col"><div class="j-dot"></div><div class="j-line"></div></div>
-            <div class="j-year">2022–23</div>
-            <div class="j-content"><div class="j-role">Business Strategy & Consulting</div><div class="j-desc">Junior Consultant, Jamerson Strategic Consulting (USA). First exposure to how global businesses think — data-driven decisions, market positioning, strategic architecture.</div></div>
-          </div>
-          <div class="j-item">
-            <div class="j-dot-col"><div class="j-dot"></div><div class="j-line"></div></div>
-            <div class="j-year">2024</div>
-            <div class="j-content"><div class="j-role">Marketing, UI/UX & Market Expansion</div><div class="j-desc">Consulting across The WIP (UK), Diaminate (Canada), Brain Stacker (USA). Building growth systems, designing user experiences, leading West Africa market entry.</div></div>
-          </div>
-          <div class="j-item">
-            <div class="j-dot-col"><div class="j-dot"></div><div class="j-line"></div></div>
-            <div class="j-year">2024–now</div>
-            <div class="j-content"><div class="j-role">AI Automation — Everything Converges</div><div class="j-desc">Joined RapidWorks UG. Business strategy + marketing + community insight + systems thinking = automations that solve real problems at their root. 19+ workflows. 13 live in production.</div></div>
-          </div>
-          <div class="j-item">
-            <div class="j-dot-col"><div class="j-dot"></div></div>
-            <div class="j-year">Now</div>
-            <div class="j-content"><div class="j-role">Founder, Digital Bridge Ghana</div><div class="j-desc">Taking everything back home. Equipping young Ghanaians with AI literacy, automation skills, and the tools to build solutions for their own communities.</div></div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <button class="read-more-btn" id="read-more-btn" onclick="toggleStory()">Read the full story</button>
-  </section>
+<section class="hero">
+  <h1>Building intelligent systems for teams that move fast.</h1>
+  <p>I design AI-powered workflows and automation architectures that remove friction, surface intelligence, and help teams operate at their highest level.</p>
 
-  <!-- STACK -->
-  <section class="stack-section">
-    <div class="section-eyebrow">Stack</div>
-    <div class="pill-row">
-      <span class="pill">n8n</span><span class="pill">Make (Integromat)</span><span class="pill">Zapier</span><span class="pill">OpenAI</span><span class="pill">Groq / Llama 3</span><span class="pill">OpenAI Whisper</span><span class="pill">Supabase</span><span class="pill">Microsoft Teams</span><span class="pill">Webhooks</span><span class="pill">Diamond Flow Logic</span><span class="pill">ATS Integration</span><span class="pill">Web Scraping</span>
-    </div>
-  </section>
+  <div class="btns">
+    <a href="#projects"><button class="secondary">View Systems</button></a>
+    <a href="mailto:princeardiabah@gmail.com"><button class="primary">Work With Me</button></a>
+  </div>
 
-  <!-- PROJECTS -->
-  <section class="projects" id="projects">
-    <div class="section-eyebrow">Projects</div>
-    <div class="filter-row">
-      <button class="fb on" onclick="filter('all',this)">All</button>
-      <button class="fb" onclick="filter('ai',this)">AI-powered</button>
-      <button class="fb" onclick="filter('recruitment',this)">Recruitment</button>
-      <button class="fb" onclick="filter('ops',this)">Business ops</button>
-      <button class="fb" onclick="filter('data',this)">Data</button>
-    </div>
-    <div class="grid" id="grid"></div>
-  </section>
+  <p style="margin-top:20px;font-size:13px;">
+    Built systems used across <strong style="color:#fff;">Germany · UK · USA · Canada · Ghana</strong>
+  </p>
+</section>
 
-  <!-- FUTURE -->
-  <section class="future" id="future">
-    <div class="section-eyebrow">Where this is going</div>
-    <p style="font-size:1rem;color:#333;line-height:1.8;max-width:640px;margin-bottom:0.5rem">The thread running through everything I've done — advocacy, strategy, marketing, automation — is the same question: <strong style="color:#111">how do we build systems that serve people, not the other way around?</strong></p>
-    <div class="future-grid">
-      <div class="future-card">
-        <div class="future-icon">🌍</div>
-        <div class="future-title">Digital Bridge Ghana — West Africa</div>
-        <div class="future-desc">Scaling from a single programme to a regional movement. AI literacy and automation skills for youth across West Africa — turning the next generation from consumers into builders.</div>
-      </div>
-      <div class="future-card">
-        <div class="future-icon">⚙️</div>
-        <div class="future-title">AI tools for emerging markets</div>
-        <div class="future-desc">Building automation products designed for the realities of emerging markets — not ports of Western tools, but systems built from the ground up for the problems that actually exist here.</div>
-      </div>
-      <div class="future-card">
-        <div class="future-icon">🎯</div>
-        <div class="future-title">Global events & thought leadership</div>
-        <div class="future-desc">Bringing the conversation about AI, automation, and human impact to global stages — bridging the gap between the tech ecosystem and the communities it should be serving.</div>
-      </div>
-      <div class="future-card">
-        <div class="future-icon">🦄</div>
-        <div class="future-title">A unicorn from Africa</div>
-        <div class="future-desc">Turning a decade of global experience — four continents, six countries of clients, real systems built for real problems — into a venture that proves world-class can come from anywhere.</div>
-      </div>
-    </div>
-  </section>
+<section>
+  <div class="quote">
+    Most automation builders come from tech. I came from people.
+  </div>
 
-  <!-- CTA -->
-  <section class="cta-section" id="contact">
-    <div class="cta-box">
-      <div>
-        <p>Have a workflow problem?</p>
-        <span>Tell me what's slowing your team down. I'll tell you if automation can solve it — and design the system if it can.</span>
-      </div>
-      <a href="mailto:princeardiabah@gmail.com"><button class="cta-btn">Get in touch</button></a>
-    </div>
-  </section>
+  <p style="color:#9ca3af;max-width:700px;">
+    I work at the intersection of business strategy, marketing, and AI automation — building systems that don't just work, but actually make teams better.
+  </p>
+</section>
 
-</div>
+<section id="projects">
+  <h2>Selected Systems</h2>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Conversational Database AI</h3>
+      <p>Natural language interface for internal data — ask questions, get answers instantly.</p>
+    </div>
+
+    <div class="card">
+      <h3>Meeting Intelligence Pipeline</h3>
+      <p>Automatically turns meetings into structured tasks with owners and deadlines.</p>
+    </div>
+
+    <div class="card">
+      <h3>Applicant Intelligence System</h3>
+      <p>Scores and ranks candidates instantly — eliminating manual recruitment effort.</p>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="contact">
+  <h2>Have a workflow problem?</h2>
+  <p style="color:#9ca3af;margin:10px 0 20px;">
+    Tell me what’s slowing your team down. I’ll design the system to fix it.
+  </p>
+  <a href="mailto:princeardiabah@gmail.com">
+    <button class="primary">Get in touch</button>
+  </a>
+</section>
 
 <footer>
-  <div class="wrap">
-    <p>Prince Ardiabah · Kumasi, Ghana · princeardiabah@gmail.com · linkedin.com/in/prince-ardiabah</p>
-  </div>
+  Prince Ardiabah · AI Automation Strategist
 </footer>
 
-<!-- MODAL -->
-<div class="modal-bg" id="modal" onclick="closeModal(event)">
-  <div class="modal" id="modal-inner"></div>
 </div>
 
 <script>
-const P=[
-  {id:1,cat:"ai",live:true,standout:true,tag:"AI-powered",title:"The Oracle — Conversational Database Interface",client:"RapidWorks UG · Germany",desc:"A natural language bot in Microsoft Teams that lets anyone ask 'What is the team working on?' or 'Is Yannick free?' in plain English or voice note — and gets a witty, human-like answer instantly.",tools:["n8n","Microsoft Teams","Groq NLP","Supabase","Diamond Flow Logic"],flow:["Message or voice note received","NLP parses intent","Diamond branching routes query","Supabase queried","Human-like summary returned"],problem:"Team members spent too much time manually checking databases or chasing status updates — a daily tax on everyone's focus.",solution:"Built 'The Oracle': a conversational AI layer on top of the company database. Using a custom Diamond Flow branching logic, it interprets free-form questions, queries Supabase in real time, and responds with context-aware, human-like summaries — all without leaving Microsoft Teams.",impact:"Transformed a static database into a living, conversational asset. Zero friction data retrieval for the entire organisation."},
-  {id:9,cat:"ai",live:true,standout:true,tag:"AI-powered",title:"Website & Business Model Analyser",client:"Businesses & Non-profits · Multiple countries",desc:"An AI diagnostic that audits a website and its underlying business model — identifying what's working, what's broken, and exactly what to fix. Built for both businesses and non-profits.",tools:["n8n","OpenAI","Web Scraping","Supabase","Webhook"],flow:["URL submitted","Website scraped & parsed","AI analyses structure & model","Strengths and gaps identified","Structured report delivered"],problem:"Most businesses and non-profits have no clear picture of whether their website and business model are actually working together — or quietly losing them customers and donors.",solution:"An automation that takes a URL, scrapes and parses the site's content and structure, then sends a carefully engineered prompt to an LLM that analyses the business model, value proposition, CTA clarity, trust signals, and conversion logic — returning a structured, actionable report segmented by what's strong and what needs urgent attention.",impact:"Gives organisations an honest, expert-level audit in minutes rather than weeks. Equally valuable for a startup converting visitors and a non-profit attracting donors."},
-  {id:2,cat:"ai",live:true,standout:false,tag:"AI-powered",title:"Meeting Intelligence Pipeline",client:"RapidWorks UG · Germany",desc:"Listens to meeting outputs, transcribes with Whisper, distils dialogue into action items using Llama 3, and populates Supabase with tasks, owners, and deadlines — automatically.",tools:["n8n","OpenAI Whisper","Groq / Llama 3","Supabase"],flow:["Meeting ends","Transcript captured","AI extracts action items & owners","Tasks written to Supabase","Team notified"],problem:"Critical action items and decisions were routinely lost in the gap between a live meeting and the project board.",solution:"A pipeline that intercepts meeting transcripts, runs them through Whisper for clean transcription, then sends structured prompts to Llama 3 to extract tasks, assign owners, and set deadlines — all pushed directly to Supabase with no human in the loop.",impact:"Meeting-to-task latency dropped from hours to seconds. Zero information loss. Total team accountability."},
-  {id:5,cat:"ai",live:true,standout:false,tag:"AI-powered",title:"Ghostwriter Button Listener",client:"RapidWorks UG · Germany",desc:"One-click AI content generation. Press a button, the system pulls context, constructs a prompt, generates a structured draft, and delivers it — ready to edit.",tools:["n8n","Webhooks","OpenAI","Make"],flow:["Button clicked","Context retrieved","Prompt constructed","LLM generates draft","Output delivered"],problem:"Content creation was a bottleneck — team members needed drafts quickly but AI tools required manual context-setting every time.",solution:"A webhook-triggered workflow that listens for a button press, automatically pulls relevant context from the project database, constructs a structured prompt, and returns a polished draft — collapsing the content creation cycle to seconds.",impact:"Content drafting time cut dramatically. Team ships faster without sacrificing quality or consistency."},
-  {id:3,cat:"recruitment",live:true,standout:false,tag:"Recruitment",title:"Applicant Intelligence System",client:"bauTalents · Germany",desc:"Real-time monitoring that applies complex scoring formulas to incoming applicants, instantly ranks candidates, and flags top talent for HR — eliminating manual vetting entirely.",tools:["n8n","Webhooks","Logic Filtering","ATS Integration"],flow:["Applicant submits","Webhook fires","Scoring formulas applied","Candidate ranked","Top tier flagged for HR"],problem:"High-volume recruitment created 'data fatigue' — manual formula calculations and vetting delayed hiring decisions by hours.",solution:"An automated observer that triggers on every new applicant, applies multi-variable scoring logic, categorises candidates by tier, and immediately surfaces top matches to the hiring team — with no manual calculation.",impact:"Eliminated 100% of manual calculation time. Top candidates now contacted within minutes of submission."},
-  {id:4,cat:"recruitment",live:false,standout:false,tag:"Recruitment",title:"Job Scraper & Candidate Finder",client:"bauTalents · Germany",desc:"Scrapes job listings and candidate data at scale, structures it into a clean data table, and feeds the recruitment pipeline with qualified leads — fully automated.",tools:["n8n","Web Scraping","Supabase","Webhooks"],flow:["Schedule triggers","Scrape target sources","Parse & clean data","Push to data table","Trigger downstream pipeline"],problem:"Recruiters were manually sourcing job listings and candidate profiles across multiple platforms — time-intensive and error-prone.",solution:"A scheduled scraper that pulls structured data from target sources, normalises field formats, deduplicates records, and feeds a clean Supabase table that the rest of the recruitment pipeline reads from.",impact:"Removed hours of manual sourcing weekly. Recruitment pipeline always has fresh, structured data to work from."},
-  {id:6,cat:"ops",live:false,standout:false,tag:"Business ops",title:"Auto Onboarding System",client:"RapidWorks UG · Germany",desc:"Turns a trigger event into a fully provisioned new team member or client — workspace created, tasks assigned, welcome comms sent, database updated — in under 2 minutes.",tools:["n8n","Supabase","Email","Notion"],flow:["Onboarding triggered","Workspace provisioned","Tasks assigned","Welcome email sent","Record created in Supabase"],problem:"Onboarding involved multiple manual steps across several tools — slow, inconsistent, and prone to things being missed.",solution:"A single-trigger n8n workflow that chains every onboarding step: provisions the workspace, creates the Supabase record, assigns team tasks, and fires the welcome email — all in one automated run.",impact:"Onboarding time reduced from hours to minutes. Consistent experience every time, zero manual steps."},
-  {id:7,cat:"data",live:false,standout:false,tag:"Data",title:"Excel Auto-Update Pipeline",client:"bauTalents · Germany",desc:"Keeps a shared Excel tracker in sync with live recruitment pipeline data automatically — no manual exports, no stale spreadsheets.",tools:["n8n","Microsoft Excel","Webhooks","ATS Integration"],flow:["Data changes in ATS","Webhook triggers","Rows identified","Excel updated","Stakeholders notified"],problem:"The HR team relied on a shared Excel tracker that was always out of date — manual updates were slow and often skipped.",solution:"A webhook-triggered pipeline that listens for changes in the ATS, maps updated fields to the correct Excel rows, and writes the changes in place — so the tracker is always a live reflection of the pipeline.",impact:"Eliminated the manual export cycle entirely. Stakeholders always see current data without asking anyone to update it."},
-  {id:8,cat:"data",live:false,standout:false,tag:"Data",title:"Link Aggregator — Data Table Builder",client:"bauTalents · Germany",desc:"Scrapes and aggregates structured links and metadata from target sources into a clean, queryable Supabase table — the foundation other automations build on.",tools:["n8n","Web Scraping","Supabase","Data Parsing"],flow:["Trigger fires","Scrape target pages","Extract links & metadata","Deduplicate","Write to Supabase"],problem:"Multiple automations needed a reliable, structured source of links and job data — but there was no clean, centralised table to query from.",solution:"A scraper that systematically pulls links and metadata from target sources, deduplicates against existing records, and maintains a clean Supabase table that other workflows query as their single source of truth.",impact:"Created the data foundation that powers the rest of the recruitment automation stack."}
-];
-
-function render(items){
-  document.getElementById('grid').innerHTML=items.map(p=>`
-    <div class="card${p.live?' live':''}${p.standout?' standout':''}" onclick="openModal(${p.id})">
-      <div style="display:flex;align-items:center;justify-content:space-between;gap:8px">
-        <span class="card-tag">${p.tag}</span>
-        ${p.live?'<span style="font-size:11px;color:#16a34a"><span class="live-dot"></span>Live</span>':''}
-      </div>
-      <div class="card-title">${p.title}</div>
-      <div class="card-client">${p.client}</div>
-      <div class="card-desc">${p.desc}</div>
-      <div class="card-badges">${p.tools.slice(0,3).map(t=>`<span class="badge">${t}</span>`).join('')}${p.tools.length>3?`<span class="badge">+${p.tools.length-3}</span>`:''}</div>
-    </div>`).join('');
-}
-
-function filter(cat,btn){
-  document.querySelectorAll('.fb').forEach(b=>b.classList.remove('on'));
-  btn.classList.add('on');
-  render(cat==='all'?P:P.filter(p=>p.cat===cat));
-}
-
-function openModal(id){
-  const p=P.find(x=>x.id===id);
-  document.getElementById('modal-inner').innerHTML=`
-    <div class="modal-head">
-      <div>
-        <div style="display:flex;gap:8px;align-items:center;margin-bottom:8px">
-          <span class="card-tag">${p.tag}</span>
-          ${p.live?'<span style="font-size:11px;color:#16a34a"><span class="live-dot"></span>Live in production</span>':''}
-        </div>
-        <div class="modal-title">${p.title}</div>
-        <div class="modal-client">${p.client}</div>
-      </div>
-      <button class="modal-close" onclick="closeModal()">×</button>
-    </div>
-    <div class="ms"><div class="ms-label">The problem</div><div class="ms-body">${p.problem}</div></div>
-    <div class="ms"><div class="ms-label">The system</div><div class="ms-body">${p.solution}</div></div>
-    <div class="ms"><div class="ms-label">Workflow</div><div class="flow">${p.flow.map((s,i)=>`<span class="fs">${s}</span>${i<p.flow.length-1?'<span class="fa">→</span>':''}`).join('')}</div></div>
-    <div class="ms"><div class="ms-label">Tools</div><div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:6px">${p.tools.map(t=>`<span class="badge">${t}</span>`).join('')}</div></div>
-    <div class="impact-box"><strong>Impact</strong>${p.impact}</div>
-    <a href="mailto:princeardiabah@gmail.com"><button class="modal-cta">Work with me on something like this</button></a>`;
-  document.getElementById('modal').classList.add('open');
-}
-
-function closeModal(e){
-  if(!e||e.target===document.getElementById('modal'))
-    document.getElementById('modal').classList.remove('open');
-}
-
-let expanded=false;
-function toggleStory(){
-  expanded=!expanded;
-  document.getElementById('story-more').style.display=expanded?'block':'none';
-  document.getElementById('journey').style.display=expanded?'block':'none';
-  document.getElementById('read-more-btn').textContent=expanded?'Show less':'Read the full story';
-}
-
-render(P);
+lucide.createIcons();
 </script>
+
 </body>
 </html>
