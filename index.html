@@ -5,151 +5,187 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Prince Ardiabah — AI Automation Strategist</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 <script src="https://unpkg.com/lucide@latest"></script>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-
-body{
-  font-family:'Inter',sans-serif;
-  background: radial-gradient(circle at top, #0f172a, #020617);
-  color:#e5e7eb;
-  line-height:1.7;
+:root {
+    --bg: #030014;
+    --card-bg: rgba(255, 255, 255, 0.03);
+    --accent: #7c3aed;
+    --accent-glow: rgba(124, 58, 237, 0.3);
+    --text-main: #f9fafb;
+    --text-dim: #9ca3af;
 }
 
-.wrap{max-width:1000px;margin:auto;padding:0 20px}
+*{margin:0;padding:0;box-sizing:border-box; scroll-behavior: smooth;}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg);
+    background-image: 
+        radial-gradient(circle at 50% -20%, #3b2071 0%, transparent 50%),
+        radial-gradient(circle at 0% 100%, #1e1b4b 0%, transparent 30%);
+    color: var(--text-main);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.wrap { max-width: 1100px; margin: auto; padding: 0 24px; }
 
 /* NAV */
-nav{
-  display:flex;
-  justify-content:space-between;
-  padding:20px 0;
-  border-bottom:1px solid rgba(255,255,255,0.05);
-}
-nav a{color:#9ca3af;text-decoration:none;font-size:14px}
-nav a:hover{color:#fff}
-
-/* HERO */
-.hero{
-  padding:80px 0;
-}
-.hero h1{
-  font-size:44px;
-  margin-bottom:10px;
-}
-.hero p{
-  color:#9ca3af;
-  max-width:600px;
-  margin-bottom:20px;
-}
-.btns{display:flex;gap:10px}
-button{
-  padding:10px 18px;
-  border-radius:8px;
-  border:none;
-  cursor:pointer;
-  font-weight:500;
-}
-.primary{background:#2563eb;color:#fff}
-.secondary{background:#111827;color:#fff;border:1px solid #1f2937}
-
-/* FLOW DIAGRAM */
-.flow{
-  margin-top:40px;
-  display:flex;
-  gap:10px;
-  align-items:center;
-  flex-wrap:wrap;
-}
-.node{
-  padding:8px 12px;
-  background:#111827;
-  border-radius:6px;
-  font-size:12px;
-  position:relative;
-}
-.node::after{
-  content:"";
-  position:absolute;
-  width:100%;
-  height:2px;
-  background:#3b82f6;
-  left:100%;
-  top:50%;
-  transform:translateY(-50%);
-  animation:flow 2s linear infinite;
-}
-.node:last-child::after{display:none}
-
-@keyframes flow{
-  0%{opacity:0;transform:translateY(-50%) translateX(-10px)}
-  50%{opacity:1}
-  100%{opacity:0;transform:translateY(-50%) translateX(10px)}
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(10px);
 }
 
-/* SECTION */
-section{
-  padding:80px 0;
-  border-bottom:1px solid rgba(255,255,255,0.05);
+nav .logo { font-weight: 800; font-size: 1.2rem; letter-spacing: -1px; }
+nav .links { display: flex; gap: 25px; }
+nav a { color: var(--text-dim); text-decoration: none; font-size: 14px; transition: 0.3s; }
+nav a:hover { color: #fff; text-shadow: 0 0 10px var(--accent); }
+
+/* HERO SECTION */
+.hero {
+    padding: 120px 0 80px;
+    text-align: center;
 }
 
-/* REVEAL ANIMATION */
-.reveal{
-  opacity:0;
-  transform:translateY(40px);
-  transition:all 0.6s ease;
-}
-.reveal.active{
-  opacity:1;
-  transform:translateY(0);
+.badge {
+    background: rgba(124, 58, 237, 0.1);
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    display: inline-block;
 }
 
-/* CARDS */
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:16px;
+.hero h1 {
+    font-size: clamp(40px, 8vw, 72px);
+    line-height: 1.1;
+    font-weight: 800;
+    margin-bottom: 24px;
+    background: linear-gradient(to bottom, #fff 60%, #6366f1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
-.card{
-  background:rgba(255,255,255,0.03);
-  border:1px solid rgba(255,255,255,0.08);
-  backdrop-filter:blur(10px);
-  border-radius:14px;
-  padding:20px;
-  transition:0.3s;
-}
-.card:hover{
-  transform:translateY(-6px);
-  border-color:#3b82f6;
-  box-shadow:0 10px 30px rgba(59,130,246,0.25);
-}
-.card h3{margin-bottom:8px}
-.card p{font-size:14px;color:#9ca3af}
 
-/* BEFORE AFTER */
-.compare{
-  display:flex;
-  gap:20px;
-  flex-wrap:wrap;
+.hero p {
+    color: var(--text-dim);
+    font-size: 1.1rem;
+    max-width: 650px;
+    margin: 0 auto 40px;
 }
-.box{
-  flex:1;
-  padding:20px;
-  border-radius:10px;
+
+.btns { display: flex; gap: 15px; justify-content: center; }
+.btn {
+    padding: 14px 28px;
+    border-radius: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 15px;
 }
-.before{background:#1f2937}
-.after{background:#022c22}
+.primary { background: var(--accent); color: #fff; box-shadow: 0 0 20px var(--accent-glow); }
+.primary:hover { transform: scale(1.05); box-shadow: 0 0 30px var(--accent); }
+.secondary { background: transparent; border: 1px solid rgba(255,255,255,0.1); color: #fff; }
+.secondary:hover { background: rgba(255,255,255,0.05); }
 
-/* CTA */
-.cta{text-align:center}
+/* SKILLS CLOUD */
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    margin-top: 60px;
+}
+.skill-tag {
+    background: var(--card-bg);
+    border: 1px solid rgba(255,255,255,0.05);
+    padding: 8px 16px;
+    border-radius: 10px;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
 
-/* FOOTER */
-footer{
-  text-align:center;
-  padding:30px;
-  font-size:12px;
-  color:#6b7280;
+/* SECTION TITLES */
+section { padding: 100px 0; }
+h2 { font-size: 2.5rem; margin-bottom: 40px; text-align: center; }
+
+/* PROJECT CARDS */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
+}
+
+.card {
+    background: var(--card-bg);
+    border: 1px solid rgba(255,255,255,0.05);
+    padding: 32px;
+    border-radius: 24px;
+    transition: 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.card:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: var(--accent);
+    transform: translateY(-10px);
+}
+
+.card i { color: var(--accent); margin-bottom: 20px; }
+.card h3 { font-size: 1.4rem; margin-bottom: 12px; }
+.card p { color: var(--text-dim); font-size: 0.95rem; }
+
+/* SERVICES / PRICING (Inspired by your image) */
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+.price-card {
+    background: linear-gradient(145deg, rgba(255,255,255,0.05), rgba(255,255,255,0));
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 40px;
+    border-radius: 24px;
+    text-align: center;
+}
+.price-card.featured {
+    border-color: var(--accent);
+    background: rgba(124, 58, 237, 0.05);
+}
+.price-card h4 { text-transform: uppercase; letter-spacing: 2px; color: var(--accent); margin-bottom: 10px; }
+.price-card .cost { font-size: 3rem; font-weight: 800; margin-bottom: 20px; }
+
+/* ANIMATION */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 1s all ease;
+}
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+footer {
+    padding: 60px 0;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    text-align: center;
+    color: var(--text-dim);
+    font-size: 14px;
 }
 </style>
 </head>
@@ -159,112 +195,100 @@ footer{
 <div class="wrap">
 
 <nav>
-  <div><strong>Prince Ardiabah</strong></div>
-  <div>
-    <a href="#projects">Projects</a> ·
-    <a href="#contact">Contact</a>
-  </div>
+    <div class="logo">PRINCE.AI</div>
+    <div class="links">
+        <a href="#projects">Work</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+    </div>
 </nav>
 
-<section class="hero reveal">
-  <h1>Building intelligent systems for teams that move fast.</h1>
-  <p>
-    I design AI-powered workflows and automation architectures that remove friction, surface intelligence, and help teams operate at their highest level.
-  </p>
+<section class="hero">
+    <div class="reveal active">
+        <span class="badge">2026 NEXT-GEN AI STRATEGY</span>
+        <h1>AI-Driven Success.<br>Redefining the Future.</h1>
+        <p>I help scale startups through advanced automation, brand strategy, and intelligent system architecture.</p>
+        
+        <div class="btns">
+            <a href="#contact" class="btn primary">Start a Project</a>
+            <a href="#projects" class="btn secondary">View Systems</a>
+        </div>
 
-  <div class="btns">
-    <a href="#projects"><button class="secondary">View Systems</button></a>
-    <a href="mailto:princeardiabah@gmail.com"><button class="primary">Work With Me</button></a>
-  </div>
-
-  <p style="margin-top:20px;font-size:13px;">
-    Built systems used across <strong style="color:#fff;">Germany · UK · USA · Canada · Ghana</strong>
-  </p>
-
-  <!-- Animated Flow -->
-  <div class="flow">
-    <div class="node">Input</div>
-    <div class="node">AI Layer</div>
-    <div class="node">Logic Engine</div>
-    <div class="node">Database</div>
-    <div class="node">Insight</div>
-  </div>
-</section>
-
-<section class="reveal">
-  <div style="font-size:22px;border-left:3px solid #3b82f6;padding-left:15px;">
-    Most automation builders come from tech. I came from people.
-  </div>
+        <div class="skills-grid">
+            <div class="skill-tag"><i data-lucide="cpu"></i> AI Automation</div>
+            <div class="skill-tag"><i data-lucide="layers"></i> Brand Strategy</div>
+            <div class="skill-tag"><i data-lucide="users"></i> Youth Mentorship</div>
+            <div class="skill-tag"><i data-lucide="code"></i> No-Code Architecture</div>
+            <div class="skill-tag"><i data-lucide="globe"></i> Remote Operations</div>
+        </div>
+    </div>
 </section>
 
 <section id="projects" class="reveal">
-  <h2>Selected Systems</h2>
-
-  <div class="grid">
-
-    <div class="card">
-      <h3>Conversational Database AI</h3>
-      <p>Natural language interface for internal data.</p>
+    <h2>Core Systems</h2>
+    <div class="grid">
+        <div class="card">
+            <i data-lucide="database" size="32"></i>
+            <h3>Conversational Intelligence</h3>
+            <p>Built complex RAG pipelines that allow teams to "chat" with their internal documentation and databases instantly.</p>
+        </div>
+        <div class="card">
+            <i data-lucide="workflow" size="32"></i>
+            <h3>Rapid Branding Engine</h3>
+            <p>Automated brand identity workflows for startups, reducing turnaround time from weeks to hours.</p>
+        </div>
+        <div class="card">
+            <i data-lucide="zap" size="32"></i>
+            <h3>The ASC Ecosystem</h3>
+            <p>A mentorship infrastructure designed to connect African students with global career opportunities.</p>
+        </div>
     </div>
-
-    <div class="card">
-      <h3>Meeting Intelligence Pipeline</h3>
-      <p>Turns meetings into structured tasks automatically.</p>
-    </div>
-
-    <div class="card">
-      <h3>Applicant Intelligence System</h3>
-      <p>Scores and ranks candidates instantly.</p>
-    </div>
-
-  </div>
 </section>
 
-<section class="reveal">
-  <h2>Before vs After</h2>
-
-  <div class="compare">
-    <div class="box before">
-      <h3>Before</h3>
-      <p>Manual processes, delays, data silos, lost information.</p>
+<section id="services" class="reveal">
+    <h2>Partnership Tiers</h2>
+    <div class="pricing-grid">
+        <div class="price-card">
+            <h4>Strategy</h4>
+            <div class="cost">Audit</div>
+            <p style="margin-bottom:20px; color:var(--text-dim)">A deep dive into your current workflows to identify AI opportunities.</p>
+            <a href="mailto:princeardiabah@gmail.com" class="btn secondary">Inquire</a>
+        </div>
+        <div class="price-card featured">
+            <h4>Execution</h4>
+            <div class="cost">Build</div>
+            <p style="margin-bottom:20px; color:var(--text-dim)">Custom-built AI agents and automated pipelines integrated into your stack.</p>
+            <a href="mailto:princeardiabah@gmail.com" class="btn primary">Book Now</a>
+        </div>
     </div>
-
-    <div class="box after">
-      <h3>After</h3>
-      <p>Automated systems, real-time insights, scalable workflows.</p>
-    </div>
-  </div>
 </section>
 
-<section class="cta reveal" id="contact">
-  <h2>Have a workflow problem?</h2>
-  <p style="color:#9ca3af;margin:10px 0 20px;">
-    Tell me what’s slowing your team down. I’ll design the system to fix it.
-  </p>
-  <a href="mailto:princeardiabah@gmail.com">
-    <button class="primary">Get in touch</button>
-  </a>
+<section id="contact" class="reveal" style="text-align: center;">
+    <h2>Let's build the future.</h2>
+    <p style="color: var(--text-dim); margin-bottom: 40px;">Currently operating from Ghana, serving clients worldwide.</p>
+    <a href="mailto:princeardiabah@gmail.com" class="btn primary">Get in Touch</a>
 </section>
 
 <footer>
-  Prince Ardiabah · AI Automation Strategist
+    &copy; 2026 Prince Ardiabah · AI Strategist & Marketing Lead
 </footer>
 
 </div>
 
 <script>
-// Scroll reveal
-const reveals = document.querySelectorAll('.reveal');
-window.addEventListener('scroll',()=>{
-  reveals.forEach(el=>{
-    const top = el.getBoundingClientRect().top;
-    if(top < window.innerHeight - 100){
-      el.classList.add('active');
-    }
-  });
-});
+// Scroll Reveal Effect
+const observerOptions = { threshold: 0.1 };
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+        }
+    });
+}, observerOptions);
 
-// Icons
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Initialize Icons
 lucide.createIcons();
 </script>
 
