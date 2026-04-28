@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Prince Ardiabah — Automation Strategist</title>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Prince Ardiabah — AI Automation Strategist</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <script src="https://unpkg.com/lucide@latest"></script>
@@ -15,106 +15,72 @@ body{
   font-family:'Inter',sans-serif;
   background: radial-gradient(circle at top, #0f172a, #020617);
   color:#e5e7eb;
-  line-height:1.6;
+  line-height:1.7;
 }
 
-.wrap{max-width:1000px;margin:auto;padding:0 20px}
+.wrap{max-width:1100px;margin:auto;padding:0 20px}
 
 /* NAV */
-nav{
-  display:flex;
-  justify-content:space-between;
-  padding:20px 0;
-  border-bottom:1px solid rgba(255,255,255,0.05);
-}
-
+nav{display:flex;justify-content:space-between;padding:20px 0;border-bottom:1px solid rgba(255,255,255,0.05)}
 nav a{color:#9ca3af;text-decoration:none;font-size:14px}
 nav a:hover{color:#fff}
 
 /* HERO */
-.hero{
-  padding:80px 0;
-  animation:fadeUp 0.8s ease;
-}
-
-.hero h1{
-  font-size:42px;
-  margin-bottom:10px;
-}
-
-.hero p{
-  color:#9ca3af;
-  max-width:600px;
-  margin-bottom:25px;
-}
-
+.hero{padding:80px 0}
+.hero h1{font-size:44px;margin-bottom:10px}
+.hero p{color:#9ca3af;max-width:600px;margin-bottom:20px}
 .btns{display:flex;gap:10px}
-
-button{
-  padding:10px 18px;
-  border-radius:8px;
-  border:none;
-  cursor:pointer;
-  font-weight:500;
-}
-
+button{padding:10px 18px;border-radius:8px;border:none;cursor:pointer;font-weight:500}
 .primary{background:#2563eb;color:#fff}
 .secondary{background:#111827;color:#fff;border:1px solid #1f2937}
 
-/* CARDS */
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:16px;
-  margin-top:30px;
-}
+/* FLOW */
+.flow{margin-top:40px;display:flex;gap:10px;flex-wrap:wrap}
+.node{padding:8px 12px;background:#111827;border-radius:6px;font-size:12px;position:relative}
+.node::after{content:"";position:absolute;width:100%;height:2px;background:#3b82f6;left:100%;top:50%;transform:translateY(-50%);animation:flow 2s infinite}
+.node:last-child::after{display:none}
+@keyframes flow{0%{opacity:0}50%{opacity:1}100%{opacity:0}}
 
+/* SECTION */
+section{padding:80px 0;border-bottom:1px solid rgba(255,255,255,0.05)}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(40px);transition:all 0.6s}
+.reveal.active{opacity:1;transform:translateY(0)}
+
+/* GRID */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+
+/* CARD */
 .card{
   background:rgba(255,255,255,0.03);
   border:1px solid rgba(255,255,255,0.08);
-  backdrop-filter:blur(10px);
   border-radius:14px;
   padding:20px;
+  cursor:pointer;
   transition:0.3s;
 }
-
 .card:hover{
-  transform:translateY(-5px);
+  transform:translateY(-6px);
   border-color:#3b82f6;
-  box-shadow:0 10px 30px rgba(59,130,246,0.2);
+  box-shadow:0 10px 30px rgba(59,130,246,0.25);
 }
+.card h3{margin-bottom:8px}
+.card p{color:#9ca3af;font-size:14px}
 
-.card h3{margin-bottom:8px;font-size:16px}
-.card p{font-size:14px;color:#9ca3af}
+/* FILTER */
+.filters{margin-bottom:20px;display:flex;gap:10px;flex-wrap:wrap}
+.filters button{background:#111827;color:#9ca3af;border:1px solid #1f2937}
+.filters button.active{background:#2563eb;color:#fff}
 
-/* SECTION */
-section{padding:60px 0;border-bottom:1px solid rgba(255,255,255,0.05)}
+/* BEFORE AFTER */
+.compare{display:flex;gap:20px;flex-wrap:wrap}
+.box{flex:1;padding:20px;border-radius:10px}
+.before{background:#1f2937}
+.after{background:#022c22}
 
-.quote{
-  font-size:22px;
-  border-left:3px solid #3b82f6;
-  padding-left:15px;
-  margin-bottom:20px;
-}
-
-/* CTA */
-.cta{
-  text-align:center;
-  padding:60px 0;
-}
-
-footer{
-  text-align:center;
-  padding:20px;
-  font-size:12px;
-  color:#6b7280;
-}
-
-/* ANIMATION */
-@keyframes fadeUp{
-  from{opacity:0;transform:translateY(20px)}
-  to{opacity:1;transform:translateY(0)}
-}
+/* FOOTER */
+footer{text-align:center;padding:30px;color:#6b7280;font-size:12px}
 </style>
 </head>
 
@@ -124,62 +90,56 @@ footer{
 
 <nav>
   <div><strong>Prince Ardiabah</strong></div>
-  <div>
-    <a href="#projects">Projects</a> ·
-    <a href="#contact">Contact</a>
-  </div>
+  <div><a href="#projects">Projects</a> · <a href="#contact">Contact</a></div>
 </nav>
 
-<section class="hero">
+<section class="hero reveal">
   <h1>Building intelligent systems for teams that move fast.</h1>
-  <p>I design AI-powered workflows and automation architectures that remove friction, surface intelligence, and help teams operate at their highest level.</p>
+  <p>I design AI-powered workflows and automation architectures that remove friction and surface intelligence.</p>
 
   <div class="btns">
     <a href="#projects"><button class="secondary">View Systems</button></a>
     <a href="mailto:princeardiabah@gmail.com"><button class="primary">Work With Me</button></a>
   </div>
 
-  <p style="margin-top:20px;font-size:13px;">
-    Built systems used across <strong style="color:#fff;">Germany · UK · USA · Canada · Ghana</strong>
-  </p>
-</section>
-
-<section>
-  <div class="quote">
-    Most automation builders come from tech. I came from people.
+  <div class="flow">
+    <div class="node">Input</div>
+    <div class="node">AI</div>
+    <div class="node">Logic</div>
+    <div class="node">Database</div>
+    <div class="node">Insight</div>
   </div>
-
-  <p style="color:#9ca3af;max-width:700px;">
-    I work at the intersection of business strategy, marketing, and AI automation — building systems that don't just work, but actually make teams better.
-  </p>
 </section>
 
-<section id="projects">
+<section class="reveal">
   <h2>Selected Systems</h2>
 
-  <div class="grid">
-    <div class="card">
-      <h3>Conversational Database AI</h3>
-      <p>Natural language interface for internal data — ask questions, get answers instantly.</p>
-    </div>
+  <div class="filters">
+    <button onclick="filter('all',this)" class="active">All</button>
+    <button onclick="filter('ai',this)">AI</button>
+    <button onclick="filter('recruitment',this)">Recruitment</button>
+  </div>
 
-    <div class="card">
-      <h3>Meeting Intelligence Pipeline</h3>
-      <p>Automatically turns meetings into structured tasks with owners and deadlines.</p>
-    </div>
+  <div class="grid" id="grid"></div>
+</section>
 
-    <div class="card">
-      <h3>Applicant Intelligence System</h3>
-      <p>Scores and ranks candidates instantly — eliminating manual recruitment effort.</p>
+<section class="reveal">
+  <h2>Before vs After</h2>
+  <div class="compare">
+    <div class="box before">
+      <h3>Before</h3>
+      <p>Manual, slow, fragmented workflows.</p>
+    </div>
+    <div class="box after">
+      <h3>After</h3>
+      <p>Automated, intelligent, scalable systems.</p>
     </div>
   </div>
 </section>
 
-<section class="cta" id="contact">
+<section class="reveal" id="contact">
   <h2>Have a workflow problem?</h2>
-  <p style="color:#9ca3af;margin:10px 0 20px;">
-    Tell me what’s slowing your team down. I’ll design the system to fix it.
-  </p>
+  <p style="color:#9ca3af">Tell me what’s slowing your team down.</p>
   <a href="mailto:princeardiabah@gmail.com">
     <button class="primary">Get in touch</button>
   </a>
@@ -192,7 +152,38 @@ footer{
 </div>
 
 <script>
-lucide.createIcons();
+const P = [
+  {title:"The Oracle",cat:"ai",slug:"oracle",desc:"Conversational database AI"},
+  {title:"Meeting Pipeline",cat:"ai",slug:"meeting",desc:"Meeting → tasks automation"},
+  {title:"Applicant System",cat:"recruitment",slug:"applicant",desc:"Auto candidate scoring"}
+];
+
+function render(list){
+  document.getElementById("grid").innerHTML = list.map(p=>`
+    <div class="card" onclick="location.href='projects/${p.slug}.html'">
+      <h3>${p.title}</h3>
+      <p>${p.desc}</p>
+    </div>
+  `).join("");
+}
+
+function filter(cat,btn){
+  document.querySelectorAll(".filters button").forEach(b=>b.classList.remove("active"));
+  btn.classList.add("active");
+  render(cat==="all"?P:P.filter(p=>p.cat===cat));
+}
+
+render(P);
+
+// reveal
+const reveals=document.querySelectorAll('.reveal');
+window.addEventListener('scroll',()=>{
+  reveals.forEach(el=>{
+    if(el.getBoundingClientRect().top < window.innerHeight-100){
+      el.classList.add('active');
+    }
+  });
+});
 </script>
 
 </body>
