@@ -3,298 +3,1162 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prince Ardiabah | AI Automation & Systems Architect</title>
+    <title>Prince Ardiabah | AI Automation Specialist</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
+
     <style>
-        /* BASE THEME & ORIGINAL STYLES */
         :root {
-            --bg-dark: #0a0a0c;
-            --accent-color: #7c4dff; 
-            --text-main: #f0f0f0;
-            --text-dim: #a0a0a0;
-            --glass-bg: rgba(255, 255, 255, 0.03);
-            --glass-border: rgba(255, 255, 255, 0.08);
+            --bg: #04030b;
+            --bg-2: #080713;
+            --panel: rgba(255, 255, 255, 0.035);
+            --line: rgba(255, 255, 255, 0.1);
+            --line-strong: rgba(255, 255, 255, 0.18);
+            --text: #f7f7fb;
+            --muted: #aaa6ba;
+            --soft: #d6d1df;
+            --violet: #a78bfa;
+            --orange: #ff7a45;
+            --green: #22c55e;
+            --shadow: 0 24px 80px rgba(0, 0, 0, 0.34);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
-            background-color: var(--bg-dark);
-            color: var(--text-main);
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            min-height: 100vh;
+            font-family: "Inter", sans-serif;
+            color: var(--text);
+            background:
+                radial-gradient(circle at 52% -18%, rgba(139, 92, 246, 0.38), transparent 31rem),
+                radial-gradient(circle at 12% 26%, rgba(56, 189, 248, 0.12), transparent 26rem),
+                radial-gradient(circle at 88% 18%, rgba(255, 122, 69, 0.12), transparent 24rem),
+                linear-gradient(180deg, var(--bg), var(--bg-2) 46%, #030209);
             line-height: 1.6;
-            margin: 0;
+            overflow-x: hidden;
         }
 
-        /* GLASSMORPHISM ENHANCEMENT */
-        .glass {
-            background: var(--glass-bg);
-            backdrop-filter: blur(18px);
-            -webkit-backdrop-filter: blur(18px);
-            border: 1px solid var(--glass-border);
-            border-radius: 16px;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .glass:hover {
-            border-color: var(--accent-color);
-            filter: drop-shadow(0 0 15px rgba(124, 77, 255, 0.15));
-            transform: translateY(-5px);
-        }
-
-        /* LAYOUT CORE */
-        .section { padding: 100px 10%; }
-        .accent { color: var(--accent-color); }
-        
-        /* NAVIGATION (Original Style with Glass Update) */
-        nav {
+        body::before {
+            content: "";
             position: fixed;
-            width: 100%;
-            padding: 20px 0;
-            z-index: 1000;
-            background: rgba(10, 10, 12, 0.7);
-            backdrop-filter: blur(10px);
+            inset: 0;
+            z-index: -3;
+            background-image:
+                linear-gradient(to right, rgba(167, 139, 250, 0.055) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(167, 139, 250, 0.055) 1px, transparent 1px);
+            background-size: 44px 44px;
+            mask-image: linear-gradient(to bottom, black, rgba(0, 0, 0, 0.8), transparent 92%);
         }
 
-        /* HERO SECTION */
-        #hero {
-            height: 80vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
+        body::after {
+            content: "";
+            position: fixed;
+            inset: 0;
+            z-index: -2;
+            pointer-events: none;
+            opacity: 0.86;
+            background:
+                url("data:image/svg+xml,%3Csvg width='1440' height='1200' viewBox='0 0 1440 1200' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23a78bfa' stroke-width='1.2' stroke-linecap='round' stroke-linejoin='round' opacity='.52'%3E%3Cpath d='M55 176H188C215 176 215 242 242 242H384'/%3E%3Cpath d='M1184 164H1298C1330 164 1330 238 1363 238H1414'/%3E%3Cpath d='M18 544H132C171 544 171 622 210 622H344'/%3E%3Cpath d='M1062 470H1186C1225 470 1225 552 1264 552H1418'/%3E%3Cpath d='M122 828H292C327 828 327 910 362 910H516'/%3E%3Cpath d='M932 824H1090C1130 824 1130 918 1170 918H1392'/%3E%3Ccircle cx='55' cy='176' r='9'/%3E%3Ccircle cx='384' cy='242' r='9'/%3E%3Ccircle cx='1184' cy='164' r='9'/%3E%3Ccircle cx='1414' cy='238' r='9'/%3E%3Ccircle cx='18' cy='544' r='8'/%3E%3Ccircle cx='344' cy='622' r='8'/%3E%3Ccircle cx='1062' cy='470' r='8'/%3E%3Ccircle cx='1418' cy='552' r='8'/%3E%3Ccircle cx='122' cy='828' r='8'/%3E%3Ccircle cx='516' cy='910' r='8'/%3E%3Ccircle cx='932' cy='824' r='8'/%3E%3Ccircle cx='1392' cy='918' r='8'/%3E%3Crect x='179' y='144' width='82' height='48' rx='8'/%3E%3Crect x='1240' y='132' width='86' height='48' rx='8'/%3E%3Crect x='132' y='512' width='92' height='48' rx='8'/%3E%3Crect x='1178' y='438' width='92' height='48' rx='8'/%3E%3Crect x='284' y='796' width='92' height='48' rx='8'/%3E%3Crect x='1082' y='792' width='94' height='48' rx='8'/%3E%3C/g%3E%3Cg fill='%23ff7a45' opacity='.78'%3E%3Ccircle cx='55' cy='176' r='3'/%3E%3Ccircle cx='384' cy='242' r='3'/%3E%3Ccircle cx='1414' cy='238' r='3'/%3E%3Ccircle cx='344' cy='622' r='3'/%3E%3Ccircle cx='1418' cy='552' r='3'/%3E%3Ccircle cx='516' cy='910' r='3'/%3E%3Ccircle cx='1392' cy='918' r='3'/%3E%3C/g%3E%3C/svg%3E") center top / cover no-repeat;
         }
 
-        .hero-title {
-            font-size: clamp(2.5rem, 8vw, 4.5rem);
-            font-weight: 800;
-            margin-bottom: 20px;
-        }
-
-        /* ABOUT GRID */
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1.6fr 1fr;
-            gap: 50px;
-            margin-top: 40px;
-        }
-
-        .signal-list {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            padding: 20px;
-        }
-
-        /* SECTORS */
-        .sector-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-
-        .sector-card {
-            padding: 40px;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .sector-card i {
-            margin-bottom: 20px;
-            color: var(--accent-color);
-        }
-
-        /* CASE STUDIES / SYSTEMS */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-        }
-
-        .metrics {
-            display: flex;
-            gap: 25px;
-            margin-top: 20px;
-            border-top: 1px solid var(--glass-border);
-            padding-top: 20px;
-        }
-
-        .counter-box { text-align: left; }
-        .counter { font-size: 2rem; font-weight: 700; color: var(--accent-color); }
-
-        /* BUTTONS */
-        .btn {
-            padding: 16px 32px;
-            border-radius: 50px;
+        a {
+            color: inherit;
             text-decoration: none;
-            font-weight: 600;
-            transition: 0.3s;
+        }
+
+        .wrap {
+            width: min(1180px, calc(100% - 40px));
+            margin: 0 auto;
+        }
+
+        .nav {
+            position: sticky;
+            top: 0;
+            z-index: 20;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+            padding: 18px 0;
+            border-bottom: 1px solid var(--line);
+            backdrop-filter: blur(18px);
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .avatar {
+            display: grid;
+            width: 42px;
+            height: 42px;
+            place-items: center;
+            border: 1px solid rgba(167, 139, 250, 0.55);
+            border-radius: 50%;
+            background:
+                radial-gradient(circle at 35% 25%, rgba(255, 122, 69, 0.34), transparent 42%),
+                linear-gradient(135deg, rgba(139, 92, 246, 0.36), rgba(56, 189, 248, 0.14));
+            color: #fff;
+            font-family: "Space Grotesk", sans-serif;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+        }
+
+        .brand strong {
+            display: block;
+            font-family: "Space Grotesk", sans-serif;
+            font-size: 0.98rem;
+            letter-spacing: 0.02em;
+        }
+
+        .brand span {
+            display: block;
+            color: var(--muted);
+            font-size: 0.76rem;
+            line-height: 1.2;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+        }
+
+        .nav-links a {
+            color: var(--muted);
+            font-size: 0.77rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            transition: color 180ms ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--text);
+        }
+
+        .hero {
+            min-height: calc(100vh - 80px);
+            display: grid;
+            align-items: center;
+            padding: 88px 0 70px;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1.02fr) minmax(360px, 0.78fr);
+            gap: 64px;
+            align-items: center;
+        }
+
+        .eyebrow {
             display: inline-flex;
             align-items: center;
             gap: 10px;
+            width: fit-content;
+            margin-bottom: 24px;
+            padding: 8px 12px;
+            border: 1px solid rgba(167, 139, 250, 0.36);
+            border-radius: 999px;
+            background: rgba(139, 92, 246, 0.1);
+            color: #ded4ff;
+            font-size: 0.72rem;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
         }
 
-        .btn-primary { background: var(--accent-color); color: white; }
-        .btn-primary:hover { opacity: 0.9; transform: scale(1.05); }
+        .pulse {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--green);
+            box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.72);
+            animation: pulse 1.8s infinite;
+        }
 
-        /* CTA BOX */
-        .sync-box {
-            padding: 80px 40px;
+        @keyframes pulse {
+            70% { box-shadow: 0 0 0 10px rgba(34, 197, 94, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: "Space Grotesk", sans-serif;
+            letter-spacing: 0;
+        }
+
+        h1 {
+            max-width: 900px;
+            font-size: clamp(3.25rem, 7vw, 6.75rem);
+            line-height: 0.94;
+            margin-bottom: 28px;
+        }
+
+        .accent {
+            color: var(--violet);
+        }
+
+        .hero-copy {
+            max-width: 720px;
+            color: var(--soft);
+            font-size: clamp(1.04rem, 2vw, 1.24rem);
+            margin-bottom: 34px;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            min-height: 48px;
+            padding: 0 18px;
+            border: 1px solid var(--line-strong);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.055);
+            color: var(--text);
+            font-weight: 800;
+            transition: transform 180ms ease, background 180ms ease, border-color 180ms ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            border-color: rgba(167, 139, 250, 0.72);
+            background: rgba(139, 92, 246, 0.16);
+        }
+
+        .btn-primary {
+            border-color: rgba(255, 122, 69, 0.75);
+            background: linear-gradient(135deg, var(--orange), #a855f7);
+            box-shadow: 0 18px 44px rgba(139, 92, 246, 0.22);
+        }
+
+        .orbit-panel {
+            position: relative;
+            min-height: 520px;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            overflow: hidden;
+            background:
+                linear-gradient(180deg, rgba(255, 255, 255, 0.065), rgba(255, 255, 255, 0.02)),
+                radial-gradient(circle at 30% 20%, rgba(255, 122, 69, 0.12), transparent 16rem);
+            box-shadow: var(--shadow);
+        }
+
+        .orbit-panel::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(to right, rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+            background-size: 34px 34px;
+            mask-image: linear-gradient(to bottom, black, transparent 94%);
+        }
+
+        .hero-workflow {
+            position: absolute;
+            inset: 42px 28px;
+        }
+
+        .flow-node {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            min-width: 136px;
+            padding: 10px 12px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 8px;
+            background: rgba(12, 9, 26, 0.86);
+            box-shadow: 0 12px 34px rgba(0, 0, 0, 0.28);
+        }
+
+        .flow-node svg {
+            width: 18px;
+            height: 18px;
+            color: var(--orange);
+            flex: 0 0 auto;
+        }
+
+        .flow-node b {
+            display: block;
+            font-size: 0.77rem;
+            line-height: 1.1;
+        }
+
+        .flow-node small {
+            display: block;
+            color: var(--muted);
+            font-size: 0.66rem;
+            line-height: 1.2;
+        }
+
+        .hero-workflow svg.lines {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            overflow: visible;
+        }
+
+        .wire {
+            fill: none;
+            stroke: rgba(167, 139, 250, 0.72);
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-dasharray: 7 9;
+            animation: flow 7s linear infinite;
+        }
+
+        @keyframes flow {
+            to { stroke-dashoffset: -160; }
+        }
+
+        .node-a { left: 0; top: 28px; }
+        .node-b { right: 8px; top: 92px; }
+        .node-c { left: 36px; top: 228px; }
+        .node-d { right: 20px; top: 298px; }
+        .node-e { left: 104px; bottom: 12px; }
+
+        .panel-caption {
+            position: absolute;
+            left: 22px;
+            right: 22px;
+            bottom: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 14px;
+            padding-top: 16px;
+            border-top: 1px solid var(--line);
+            color: var(--muted);
+            font-size: 0.82rem;
+        }
+
+        .section {
+            padding: 104px 0;
+            border-top: 1px solid var(--line);
+        }
+
+        .section-head {
+            display: flex;
+            align-items: end;
+            justify-content: space-between;
+            gap: 24px;
+            margin-bottom: 38px;
+        }
+
+        .section-kicker {
+            display: block;
+            margin-bottom: 10px;
+            color: var(--orange);
+            font-size: 0.74rem;
+            font-weight: 800;
+            letter-spacing: 0.11em;
+            text-transform: uppercase;
+        }
+
+        .section h2 {
+            max-width: 760px;
+            font-size: clamp(2.15rem, 4vw, 4.25rem);
+            line-height: 1;
+        }
+
+        .section-lede {
+            max-width: 510px;
+            color: var(--muted);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) 360px;
+            gap: 42px;
+            align-items: start;
+        }
+
+        .about-copy {
+            display: grid;
+            gap: 18px;
+            color: var(--soft);
+            font-size: 1.02rem;
+        }
+
+        .about-copy p:first-child {
+            color: var(--text);
+            font-size: 1.18rem;
+        }
+
+        .insight-panel {
+            position: sticky;
+            top: 94px;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: var(--panel);
+            overflow: hidden;
+        }
+
+        .insight-panel header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px;
+            border-bottom: 1px solid var(--line);
+            background: rgba(255, 255, 255, 0.04);
+        }
+
+        .insight-panel h3 {
+            font-size: 1rem;
+        }
+
+        .signal-list {
+            display: grid;
+            gap: 1px;
+            background: var(--line);
+        }
+
+        .signal {
+            display: grid;
+            grid-template-columns: 32px 1fr;
+            gap: 12px;
+            padding: 16px 18px;
+            background: rgba(6, 5, 16, 0.92);
+        }
+
+        .signal i {
+            color: var(--violet);
+        }
+
+        .signal b {
+            display: block;
+            font-size: 0.86rem;
+            margin-bottom: 2px;
+        }
+
+        .signal span {
+            display: block;
+            color: var(--muted);
+            font-size: 0.82rem;
+            line-height: 1.45;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 14px;
+            margin-top: 36px;
+        }
+
+        .stat {
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            padding: 22px;
+            background: rgba(255, 255, 255, 0.035);
+        }
+
+        .stat strong {
+            display: block;
+            font-family: "Space Grotesk", sans-serif;
+            color: var(--text);
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            line-height: 1;
+        }
+
+        .stat span {
+            display: block;
+            margin-top: 10px;
+            color: var(--muted);
+            font-size: 0.73rem;
+            font-weight: 800;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        .sectors-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            overflow: hidden;
+            background: var(--line);
+        }
+
+        .sector-card {
+            min-height: 178px;
+            padding: 24px;
+            background: rgba(6, 5, 16, 0.9);
+            transition: transform 180ms ease, background 180ms ease;
+        }
+
+        .sector-card:hover {
+            transform: translateY(-3px);
+            background: rgba(139, 92, 246, 0.12);
+        }
+
+        .sector-card i {
+            color: var(--orange);
+            margin-bottom: 18px;
+        }
+
+        .sector-card h3 {
+            font-size: 1.02rem;
+            margin-bottom: 8px;
+        }
+
+        .sector-card p {
+            color: var(--muted);
+            font-size: 0.88rem;
+            line-height: 1.45;
+        }
+
+        .case-list {
+            display: grid;
+            gap: 22px;
+        }
+
+        .case-study {
+            display: grid;
+            grid-template-columns: minmax(0, 0.92fr) minmax(360px, 1.08fr);
+            gap: 34px;
+            align-items: center;
+            min-height: 420px;
+            padding: 30px;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background:
+                linear-gradient(135deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02)),
+                rgba(5, 4, 14, 0.72);
+            box-shadow: 0 18px 54px rgba(0, 0, 0, 0.18);
+        }
+
+        .case-study:nth-child(even) {
+            grid-template-columns: minmax(360px, 1.08fr) minmax(0, 0.92fr);
+        }
+
+        .case-study:nth-child(even) .case-content {
+            order: 2;
+        }
+
+        .case-study:nth-child(even) .workflow-card {
+            order: 1;
+        }
+
+        .case-meta {
+            display: inline-flex;
+            margin-bottom: 14px;
+            color: var(--orange);
+            font-size: 0.74rem;
+            font-weight: 800;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        .case-content h3 {
+            font-size: clamp(1.75rem, 3vw, 2.5rem);
+            line-height: 1.06;
+            margin-bottom: 18px;
+        }
+
+        .case-content p {
+            color: var(--muted);
+            margin-bottom: 12px;
+        }
+
+        .case-content b {
+            color: var(--text);
+        }
+
+        .case-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 22px;
+        }
+
+        .stack-tag {
+            display: inline-flex;
+            align-items: center;
+            min-height: 30px;
+            padding: 0 10px;
+            border: 1px solid rgba(167, 139, 250, 0.28);
+            border-radius: 8px;
+            background: rgba(139, 92, 246, 0.11);
+            color: #ded4ff;
+            font-size: 0.73rem;
+            font-weight: 800;
+        }
+
+        .workflow-card {
+            position: relative;
+            min-height: 338px;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 8px;
+            overflow: hidden;
+            background:
+                radial-gradient(circle at 18% 22%, rgba(255, 122, 69, 0.14), transparent 10rem),
+                radial-gradient(circle at 82% 70%, rgba(56, 189, 248, 0.1), transparent 11rem),
+                #070513;
+        }
+
+        .workflow-card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(to right, rgba(255, 255, 255, 0.055) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.055) 1px, transparent 1px);
+            background-size: 28px 28px;
+        }
+
+        .workflow-topbar {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            padding: 13px 14px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(4, 3, 11, 0.78);
+        }
+
+        .workflow-topbar b {
+            font-size: 0.76rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .workflow-topbar span {
+            color: var(--green);
+            font-size: 0.72rem;
+            font-weight: 800;
+        }
+
+        .workflow-canvas {
+            position: absolute;
+            inset: 52px 16px 16px;
+        }
+
+        .mini-node {
+            position: absolute;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            width: 142px;
+            min-height: 46px;
+            padding: 8px 10px;
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            border-radius: 8px;
+            background: rgba(13, 10, 29, 0.92);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.28);
+        }
+
+        .mini-node i {
+            color: var(--orange);
+            flex: 0 0 auto;
+        }
+
+        .mini-node b {
+            display: block;
+            font-size: 0.72rem;
+            line-height: 1.12;
+        }
+
+        .mini-node span {
+            display: block;
+            color: var(--muted);
+            font-size: 0.62rem;
+            line-height: 1.15;
+        }
+
+        .mini-node.source { left: 0; top: 20px; }
+        .mini-node.logic { left: 42%; top: 92px; transform: translateX(-50%); }
+        .mini-node.ai { right: 0; top: 26px; }
+        .mini-node.output { right: 30px; bottom: 22px; }
+        .mini-node.data { left: 24px; bottom: 38px; }
+
+        .workflow-canvas .lines {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            width: 100%;
+            height: 100%;
+            overflow: visible;
+        }
+
+        .workflow-canvas .wire {
+            stroke-width: 2.2;
+        }
+
+        .contact {
             text-align: center;
-            margin-top: 60px;
+            padding-bottom: 96px;
         }
 
-        /* MOBILE ADJUSTMENTS */
-        @media (max-width: 768px) {
-            .about-grid { grid-template-columns: 1fr; }
-            .section { padding: 60px 5%; }
+        .contact h2 {
+            max-width: 800px;
+            margin: 0 auto 20px;
+            font-size: clamp(2.3rem, 5vw, 4.6rem);
+            line-height: 1;
+        }
+
+        .contact p {
+            max-width: 620px;
+            margin: 0 auto 28px;
+            color: var(--muted);
+        }
+
+        .footer-note {
+            margin-top: 54px;
+            color: var(--muted);
+            font-size: 0.72rem;
+            font-weight: 800;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        @media (max-width: 1040px) {
+            .hero-grid,
+            .about-grid,
+            .case-study,
+            .case-study:nth-child(even) {
+                grid-template-columns: 1fr;
+            }
+
+            .case-study:nth-child(even) .case-content,
+            .case-study:nth-child(even) .workflow-card {
+                order: initial;
+            }
+
+            .orbit-panel {
+                min-height: 470px;
+            }
+
+            .stats,
+            .sectors-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .insight-panel {
+                position: static;
+            }
+        }
+
+        @media (max-width: 720px) {
+            .wrap {
+                width: min(100% - 28px, 1180px);
+            }
+
+            .nav {
+                align-items: flex-start;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                padding-top: 54px;
+            }
+
+            .hero-grid {
+                gap: 36px;
+            }
+
+            .hero-actions {
+                display: grid;
+            }
+
+            .orbit-panel,
+            .workflow-card {
+                min-height: 410px;
+            }
+
+            .hero-workflow {
+                inset: 26px 14px;
+            }
+
+            .flow-node,
+            .mini-node {
+                min-width: 118px;
+                width: 126px;
+                padding: 8px;
+            }
+
+            .flow-node b,
+            .mini-node b {
+                font-size: 0.66rem;
+            }
+
+            .panel-caption {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .section {
+                padding: 74px 0;
+            }
+
+            .section-head {
+                display: block;
+            }
+
+            .section-lede {
+                margin-top: 18px;
+            }
+
+            .stats,
+            .sectors-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .case-study {
+                padding: 18px;
+            }
         }
     </style>
 </head>
 <body>
+    <div class="wrap">
+        <nav class="nav" aria-label="Primary navigation">
+            <a class="brand" href="#">
+                <div class="avatar">PA</div>
+                <div>
+                    <strong>Prince Ardiabah</strong>
+                    <span>AI Automation Specialist</span>
+                </div>
+            </a>
 
-    <nav>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#sectors">Sectors</a>
+                <a href="#projects">Systems</a>
+                <a href="#contact">Contact</a>
+            </div>
         </nav>
 
-    <section id="hero">
-        <span class="accent" style="font-weight: 600; letter-spacing: 2px;">AI AUTOMATION ARCHITECT</span>
-        <h1 class="hero-title">I design systems that<br>make growth <span class="accent">inevitable.</span></h1>
-    </section>
-
-    <section class="section" id="about">
-        <div class="about-grid">
-            <div class="about-copy">
-                <h2 style="font-size: 2.5rem; margin-bottom: 30px;">Strategic <span class="accent">Perspective</span></h2>
-                <p><strong>I am an AI automation specialist</strong> focused on designing systems that allow businesses to operate, scale, and deliver with far less friction. My work centers on building end-to-end automation workflows that replace manual effort, reduce operational complexity, and turn scattered processes into structured, reliable systems.</p>
-                <p>What differentiates my approach is that I don’t come at automation purely from a technical lens. My background across strategy, consulting, and early-stage ecosystems—spanning Germany, UK, US, Canada, and Ghana—means I understand how businesses actually function: where decisions break down, where teams get stuck, and where growth quietly stalls behind the scenes.</p>
-                <p>At <strong>RapidWorks UG</strong>, I design and implement AI-driven systems that connect marketing, sales, and operations into cohesive, automated engines. I bridge the gap between what is technically possible and what is actually useful for a business.</p>
-            </div>
-            
-            <aside class="glass" style="padding: 10px;">
-                <div class="signal-list">
-                    <div class="signal">
-                        <i data-lucide="zap" class="accent"></i>
-                        <h3>Context-First Engineering</h3>
-                        <p>Automations designed for business outcomes, not just for technical novelty.</p>
-                    </div>
-                    <div class="signal">
-                        <i data-lucide="shield" class="accent"></i>
-                        <h3>Resilient Operations</h3>
-                        <p>Building systems that scale without adding proportional human headcount.</p>
+        <header class="hero">
+            <div class="hero-grid">
+                <div>
+                    <div class="eyebrow"><span class="pulse"></span> 25+ autonomous workflows live</div>
+                    <h1>AI automation for businesses ready to <span class="accent">scale without friction</span>.</h1>
+                    <p class="hero-copy">I design end-to-end automation systems that connect strategy, operations, sales, and delivery into reliable workflows built around real business outcomes.</p>
+                    <div class="hero-actions">
+                        <a class="btn btn-primary" href="#projects">Explore Systems <i data-lucide="arrow-right"></i></a>
+                        <a class="btn" href="#contact">Start a Strategic Sync <i data-lucide="calendar"></i></a>
                     </div>
                 </div>
-            </aside>
-        </div>
-    </section>
 
-    <section class="section" id="systems">
-        <h2 style="margin-bottom: 40px;">Systemic <span class="accent">Proof</span></h2>
-        <div class="projects-grid">
-            <div class="glass" style="padding: 30px;">
-                <div style="display:flex; justify-content: space-between; align-items: center;">
-                    <span class="accent" style="font-size: 0.8rem; font-weight: 700;">n8n • OPENAI • CRM</span>
-                    <i data-lucide="external-link" size="18"></i>
-                </div>
-                <h3>Africa Student Connect</h3>
-                <p>Automated the lead triage for thousands of students, connecting them to mentors via an AI-driven matching engine.</p>
-                <div class="metrics">
-                    <div class="counter-box">
-                        <div class="counter" data-target="11000">0</div>
-                        <small>Leads Processed</small>
+                <div class="orbit-panel" aria-label="Animated n8n-style workflow">
+                    <div class="hero-workflow">
+                        <svg class="lines" viewBox="0 0 420 440" preserveAspectRatio="none" aria-hidden="true">
+                            <path class="wire" d="M80 76 C180 76 220 130 334 130"></path>
+                            <path class="wire" d="M334 150 C250 200 190 210 102 254"></path>
+                            <path class="wire" d="M116 280 C210 312 250 344 330 340"></path>
+                            <path class="wire" d="M334 364 C250 420 206 414 162 398"></path>
+                        </svg>
+                        <div class="flow-node node-a"><i data-lucide="webhook"></i><div><b>Trigger</b><small>Lead or event</small></div></div>
+                        <div class="flow-node node-b"><i data-lucide="brain-circuit"></i><div><b>AI Logic</b><small>Classify intent</small></div></div>
+                        <div class="flow-node node-c"><i data-lucide="database"></i><div><b>Data Layer</b><small>Sync records</small></div></div>
+                        <div class="flow-node node-d"><i data-lucide="workflow"></i><div><b>n8n Router</b><small>Branch actions</small></div></div>
+                        <div class="flow-node node-e"><i data-lucide="send"></i><div><b>Delivery</b><small>Notify teams</small></div></div>
                     </div>
-                    <div class="counter-box">
-                        <div class="counter" data-target="90">0</div><span class="accent" style="font-size:1.5rem; font-weight:700;">%</span>
-                        <small>Manual Reduction</small>
+                    <div class="panel-caption">
+                        <span>Live automation architecture: trigger, reason, route, execute, report.</span>
+                        <span>n8n + LLMs + APIs</span>
                     </div>
                 </div>
             </div>
+        </header>
 
-            <div class="glass" style="padding: 30px;">
-                <div style="display:flex; justify-content: space-between; align-items: center;">
-                    <span class="accent" style="font-size: 0.8rem; font-weight: 700;">STRATEGY • OPERATIONS</span>
-                    <i data-lucide="external-link" size="18"></i>
-                </div>
-                <h3>RapidWorks UG</h3>
-                <p>Designed the internal operational infrastructure for cross-border collaboration and AI implementation.</p>
-                <div class="metrics">
-                    <div class="counter-box">
-                        <div class="counter" data-target="100">0</div><span class="accent" style="font-size:1.5rem; font-weight:700;">%</span>
-                        <small>Process Visibility</small>
+        <main>
+            <section class="section" id="about">
+                <div class="section-head">
+                    <div>
+                        <span class="section-kicker">About</span>
+                        <h2>Strategy-minded automation for businesses that need systems, not scattered tools.</h2>
                     </div>
-                    <div class="counter-box">
-                        <div class="counter" data-target="40">0</div><span class="accent" style="font-size:1.5rem; font-weight:700;">%</span>
-                        <small>Ops Efficiency</small>
-                    </div>
+                    <p class="section-lede">The strongest part of your current concept is the positioning: you are not presenting yourself as just a builder, but as someone who understands how work actually moves through a business.</p>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <section class="section" id="sectors">
-        <h2 style="text-align: center; margin-bottom: 50px;">Global <span class="accent">Experience</span></h2>
-        <div class="sector-grid">
-            <div class="sector-card glass">
-                <i data-lucide="rocket" size="40"></i>
-                <h3>Startups & SaaS</h3>
-                <p>Operational scaling for early-stage ventures.</p>
-            </div>
-            <div class="sector-card glass">
-                <i data-lucide="home" size="40"></i>
-                <h3>Airbnb/PropTech</h3>
-                <p>Automated guest management and ops.</p>
-            </div>
-            <div class="sector-card glass">
-                <i data-lucide="users" size="40"></i>
-                <h3>Social Impact</h3>
-                <p>Digital Bridge Ghana & Room_99 pathways.</p>
-            </div>
-        </div>
-    </section>
+                <div class="about-grid">
+                    <div>
+                        <div class="about-copy">
+                            <p>I’m an AI automation specialist focused on designing systems that help businesses operate, scale, and deliver with far less friction. My work centers on building end-to-end workflows that replace manual effort, reduce operational complexity, and turn scattered processes into structured, reliable systems.</p>
+                            <p>What differentiates my approach is that I don’t come at automation purely from a technical lens. My background across strategy, consulting, and early-stage ecosystems, spanning Germany, the United Kingdom, the United States, Canada, Ghana, and China, means I understand how businesses actually function: where decisions break down, where teams get stuck, and where growth quietly stalls behind the scenes.</p>
+                            <p>That perspective shapes how I design automation. I don’t just connect tools or deploy AI models. I map entire workflows, identify leverage points, and build systems that align with real business objectives. The result is automation that works commercially, supporting revenue, improving delivery speed, and helping teams scale without unnecessary complexity.</p>
+                            <p>At RapidWorks UG, I design and implement AI-driven systems that connect marketing, sales, and operations into cohesive automated engines. From integrating LLMs and no-code tools to redesigning internal workflows, my focus is on reducing dependency on constant human intervention and creating consistent, repeatable outcomes.</p>
+                            <p>Beyond commercial work, I apply the same automation and systems thinking to social impact through initiatives like Digital Bridge Ghana and Room_99, where the goal is to equip young people with practical, future-facing skills and create structured pathways for real-world problem solving.</p>
+                            <p>I don’t just build automations. I design the systems that make businesses run better, with less effort, more clarity, and the ability to scale without breaking.</p>
+                        </div>
 
-    <section class="section" id="sync">
-        <div class="sync-box glass">
-            <h2>Ready to de-bottleneck your growth?</h2>
-            <p style="color: var(--text-dim); max-width: 600px; margin: 0 auto 30px;">Book a session to map your current workflows and identify where AI automation can drive immediate ROI.</p>
-            <a href="#" class="btn btn-primary">Start a Strategic Sync <i data-lucide="calendar"></i></a>
-        </div>
-    </section>
+                        <div class="stats" id="stats">
+                            <div class="stat"><strong class="counter" data-target="25">0</strong><span>Workflows Live</span></div>
+                            <div class="stat"><strong class="counter" data-target="10">0</strong><span>Sectors Optimized</span></div>
+                            <div class="stat"><strong class="counter" data-target="7">0</strong><span>Global Markets</span></div>
+                            <div class="stat"><strong class="counter" data-target="11361">0</strong><span>Community Reach</span></div>
+                        </div>
+                    </div>
 
-    <footer style="padding: 40px; text-align: center; color: var(--text-dim); font-size: 0.9rem;">
-        &copy; 2026 Prince Ardiabah. Built with Strategy & AI.
-    </footer>
+                    <aside class="insight-panel">
+                        <header>
+                            <h3>Strategic Edge</h3>
+                            <i data-lucide="sparkles"></i>
+                        </header>
+                        <div class="signal-list">
+                            <div class="signal"><i data-lucide="map"></i><div><b>Workflow Mapping</b><span>Start with the real operating model before choosing tools.</span></div></div>
+                            <div class="signal"><i data-lucide="goal"></i><div><b>Commercial Alignment</b><span>Design automations around revenue, speed, quality, and delivery.</span></div></div>
+                            <div class="signal"><i data-lucide="network"></i><div><b>Systems Integration</b><span>Connect marketing, sales, operations, data, and AI into one engine.</span></div></div>
+                            <div class="signal"><i data-lucide="globe-2"></i><div><b>Global Context</b><span>Experience across Germany, UK, US, Canada, Ghana, and China.</span></div></div>
+                        </div>
+                    </aside>
+                </div>
+            </section>
+
+            <section class="section" id="sectors">
+                <div class="section-head">
+                    <div>
+                        <span class="section-kicker">Sectors</span>
+                        <h2>Automation patterns adapted to real operating environments.</h2>
+                    </div>
+                    <p class="section-lede">Your sector range is a strength. I tightened the cards so they read as practical use cases rather than broad categories.</p>
+                </div>
+
+                <div class="sectors-grid">
+                    <div class="sector-card"><i data-lucide="landmark"></i><h3>Fintech</h3><p>Loan scoring, fraud checks, onboarding, and risk workflows.</p></div>
+                    <div class="sector-card"><i data-lucide="shopping-cart"></i><h3>SME Retail</h3><p>Inventory alerts, channel sync, forecasting, and reorder logic.</p></div>
+                    <div class="sector-card"><i data-lucide="hotel"></i><h3>Hospitality</h3><p>Guest response, concierge flows, upsells, and service routing.</p></div>
+                    <div class="sector-card"><i data-lucide="truck"></i><h3>Logistics</h3><p>Route decisions, delivery tracking, driver updates, and dispatch.</p></div>
+                    <div class="sector-card"><i data-lucide="stethoscope"></i><h3>Healthcare</h3><p>Triage, queue logic, reminders, patient intake, and reporting.</p></div>
+                    <div class="sector-card"><i data-lucide="graduation-cap"></i><h3>Education</h3><p>Fee workflows, SMS reminders, student records, and admin ops.</p></div>
+                    <div class="sector-card"><i data-lucide="factory"></i><h3>Manufacturing</h3><p>Quality checks, alerts, defect logs, and supervisor escalation.</p></div>
+                    <div class="sector-card"><i data-lucide="building-2"></i><h3>Real Estate</h3><p>Listing sync, lead routing, qualification, and follow-up systems.</p></div>
+                    <div class="sector-card"><i data-lucide="briefcase-business"></i><h3>HR & Talent</h3><p>Sourcing, screening, scoring, and recruiter pipeline workflows.</p></div>
+                    <div class="sector-card"><i data-lucide="globe"></i><h3>Public Services</h3><p>Citizen portals, request tracking, status updates, and intake.</p></div>
+                </div>
+            </section>
+
+            <section class="section" id="projects">
+                <div class="section-head">
+                    <div>
+                        <span class="section-kicker">Systems</span>
+                        <h2>Ten workflow concepts, shown as stronger n8n-style automation canvases.</h2>
+                    </div>
+                    <p class="section-lede">I kept your original workflows and made the visual language more concrete: each case now has a living system diagram instead of a placeholder.</p>
+                </div>
+
+                <div class="case-list">
+                    <article class="case-study">
+                        <div class="case-content">
+                            <span class="case-meta">Fintech</span>
+                            <h3>Loan Decisioning Engine</h3>
+                            <p><b>The Problem:</b> Manual credit checks took 72 hours, slowing approvals and limiting growth for an SME lender.</p>
+                            <p><b>The Build:</b> An autonomous scoring workflow that cross-references mobile money data, financial APIs, and internal rules to generate instant risk profiles.</p>
+                            <div class="case-stack"><span class="stack-tag">n8n</span><span class="stack-tag">Postgres</span><span class="stack-tag">Risk Rules</span></div>
+                        </div>
+                        <div class="workflow-card" data-title="Loan Risk Canvas" data-source="Application" data-logic="Score Rules" data-ai="Risk Model" data-data="Postgres" data-output="Approval Queue"></div>
+                    </article>
+
+                    <article class="case-study">
+                        <div class="case-content">
+                            <span class="case-meta">Logistics</span>
+                            <h3>Last-Mile Optimization Agent</h3>
+                            <p><b>The Problem:</b> Inefficient driver routing created avoidable delays and daily revenue leakage.</p>
+                            <p><b>The Build:</b> A real-time optimization agent that checks traffic, delivery priority, and driver availability before dynamically routing fleets.</p>
+                            <div class="case-stack"><span class="stack-tag">n8n</span><span class="stack-tag">Google Maps API</span><span class="stack-tag">Dispatch Logic</span></div>
+                        </div>
+                        <div class="workflow-card" data-title="Route Logic Canvas" data-source="Orders" data-logic="Priority Sort" data-ai="Route Agent" data-data="Maps API" data-output="Driver Update"></div>
+                    </article>
+
+                    <article class="case-study">
+                        <div class="case-content">
+                            <span class="case-meta">HR Systems</span>
+                            <h3>Global Talent Sourcing Engine</h3>
+                            <p><b>The Problem:</b> Technical talent sourcing consumed 40+ hours per week per recruiter.</p>
+                            <p><b>The Build:</b> A scraper-based workflow that finds, enriches, and scores candidates against technical criteria before syncing them into a central table.</p>
+                            <div class="case-stack"><span class="stack-tag">n8n</span><span class="stack-tag">Supabase</span><span class="stack-tag">Scoring Logic</span></div>
+                        </div>
+                        <div class="workflow-card" data-title="Talent Pipeline Canvas" data-source="Source Lists" data-logic="Enrich Data" data-ai="Fit Score" data-data="Supabase" data-output="Recruiter Queue"></div>
+                    </article>
+
+                    <article class="case-study">
+                        <div class="case-content">
+                            <span class="case-meta">Manufacturing</span>
+                            <h3>AI Quality Control Bot</h3>
+                            <p><b>The Problem:</b> Inconsistent defect identification increased returns and slowed response time.</p>
+                            <p><b>The Build:</b> A computer vision workflow connected to n8n that flags defects, logs incidents, and alerts managers instantly.</p>
+                            <div class="case-stack"><span class="stack-tag">n8n</span><span class="stack-tag">OpenCV</span><span class="stack-tag">Alerts</span></div>
+                        </div>
+                        <div class="workflow-card" data-title="Quality Control Canvas" data-source="Camera Feed" data-logic="Frame Check" data-ai="Vision Model" data-data="Defect Log" data-output="Manager Alert"></div>
+                    </article>
+
+                    <article class="case-study">
+                        <div class="case-content">
+                            <span class="case-meta">Education</span>
+                            <h3>Autonomous Fee Management</h3>
+                            <p><b>The Problem:</b> Manual payment tracking and invoice follow-up created administrative drag for a school chain.</p>
+                            <p><b>The Build:</b> End-to-end automation for dynamic invoicing, payment matching, parent reminders, and finance reporting.</p>
+                            <div class="case-stack"><span class="stack-tag">ERP Sync</span><span class="stack-tag">n8n</span><span class="stack-tag">SMS</span></div>
+                        </div>
+                        <div class="workflow-card" data-title="Fee Management Canvas" data-source="Invoice" data-logic="Match Payment" data-ai="Reminder Rules" data-data="ERP Ledger" data-output="SMS Notice"></div>
+                    </article>
+
+                    <article class="case-study">
+                        <div class="case-content">
+                            <span class="case-meta">SME Retail</span>
+                            <h3>Predictive Inventory Bridge</h3>
+                            <p><b>The Problem:</b> Stock-outs and excess inventory came from reactive ordering and fragmented sales data.</p>
+                            <p><b>The Build:</b> A bridge automation connecting sales channels to ERPs for unified data integrity, demand signals, and reorder prompts.</p>
+                            <div class="case-stack"><span class="stack-tag">n8n</span><span class="stack-tag">Data Bridges</span><span class="stack-tag">ERP</span></div>
+                        </div>
+                        <div class="workflow-card" data-title="Inventory Bridge Canvas" data-source="Sales Data" data-logic="Demand Check" data-ai="Forecast" data-data="ERP Stock" data-output="Reorder Task"></div>
+                    </article>
+
+                    <article class="case-study">
+                        <div class="case-content">
+                            <span class="case-meta">Hospitality</span>
+                            <h3>Digital Hotel Agent</h3>
+                            <p><b>The Problem:</b> Delayed responses outside business hours caused missed bookings and lost upsell moments.</p>
+                            <p><b>The Build:</b> A conversational AI workflow for guest questions, concierge requests, escalation, and automated upsells.</p>
+                            <div class="case-stack"><span class="stack-tag">RAG LLM</span><span class="stack-tag">n8n</span><span class="stack-tag">CRM</span></div>
+                        </div>
+                        <div class="workflow-card" data-title="Hotel Agent Canvas" data-source="Guest Chat" data-logic="Intent Route" data-ai="RAG Agent" data-data="CRM" data-output="Upsell / Reply"></div>
+                    </article>
+
+                    <article class="case-study">
+                        <div class="case-content">
+                            <span class="case-meta">Public Services</span>
+                            <h3>Public Citizen Portal</h3>
+                            <p><b>The Problem:</b> Service requests bottlenecked because intake, processing, and status updates were handled manually.</p>
+                            <p><b>The Build:</b> A portal-backed workflow for application intake, back-office routing, status tracking, and citizen notifications.</p>
+                            <div class="case-stack"><span class="stack-tag">n8n</span><span class="stack-tag">Portal Logic</span><span class="stack-tag">Status Sync</span></div>
+                        </div>
+                        <div class="workflow-card" data-title="Citizen Portal Canvas" data-source="Portal Form" data-logic="Validate" data-ai="Case Triage" data-data="Case DB" data-output="Status Update"></div>
+                    </article>
+
+                    <article class="case-study">
+                        <div class="case-content">
+                            <span class="case-meta">Knowledge Ops</span>
+                            <h3>General Meeting Listener</h3>
+                            <p><b>The Problem:</b> Important strategy insights were lost because meeting notes were inconsistent and action items were scattered.</p>
+                            <p><b>The Build:</b> An autonomous listener that captures audio, transcribes discussion, extracts decisions, and syncs action items to project tools.</p>
+                            <div class="case-stack"><span class="stack-tag">Whisper AI</span><span class="stack-tag">n8n</span><span class="stack-tag">PM Sync</span></div>
+                        </div>
+                        <div class="workflow-card" data-title="Meeting Listener Canvas" data-source="Audio" data-logic="Transcript" data-ai="Action Extract" data-data="Knowledge Base" data-output="PM Tasks"></div>
+                    </article>
+
+                    <article class="case-study">
+                        <div class="case-content">
+                            <span class="case-meta">Real Estate</span>
+                            <h3>Listing Sync & Qualifier</h3>
+                            <p><b>The Problem:</b> Property managers lost leads because listings were hard to keep synced and follow-ups were too slow.</p>
+                            <p><b>The Build:</b> An online workflow for automated property synchronization, lead qualification, routing, and fast follow-up.</p>
+                            <div class="case-stack"><span class="stack-tag">API Sync</span><span class="stack-tag">n8n</span><span class="stack-tag">Lead Routing</span></div>
+                        </div>
+                        <div class="workflow-card" data-title="Listing Qualifier Canvas" data-source="Listings" data-logic="Sync Check" data-ai="Lead Score" data-data="Property DB" data-output="Agent Follow-up"></div>
+                    </article>
+                </div>
+            </section>
+
+            <section class="section contact" id="contact">
+                <span class="section-kicker">Contact</span>
+                <h2>Build the operating system behind your next stage of growth.</h2>
+                <p>For teams that need fewer manual bottlenecks, cleaner processes, and automation that is commercially useful from day one.</p>
+                <div class="hero-actions" style="justify-content:center;">
+                    <a href="mailto:princeardiabah@gmail.com" class="btn btn-primary">Email Me <i data-lucide="mail"></i></a>
+                    <a href="https://www.linkedin.com/in/prince-ardiabah-14b9171a9" class="btn">LinkedIn <i data-lucide="linkedin"></i></a>
+                </div>
+                <div class="footer-note">© 2026 Prince Ardiabah | Engineered globally</div>
+            </section>
+        </main>
+    </div>
 
     <script>
-        // 1. Initialize Lucide Icons
+        const makeWorkflow = (card) => {
+            const title = card.dataset.title;
+            const labels = {
+                source: card.dataset.source,
+                logic: card.dataset.logic,
+                ai: card.dataset.ai,
+                data: card.dataset.data,
+                output: card.dataset.output
+            };
+
+            card.innerHTML = `
+                <div class="workflow-topbar">
+                    <b>${title}</b>
+                    <span>Active</span>
+                </div>
+                <div class="workflow-canvas">
+                    <svg class="lines" viewBox="0 0 520 280" preserveAspectRatio="none" aria-hidden="true">
+                        <path class="wire" d="M74 52 C170 52 168 116 244 116"></path>
+                        <path class="wire" d="M314 116 C380 116 374 60 452 60"></path>
+                        <path class="wire" d="M270 144 C220 190 166 208 92 224"></path>
+                        <path class="wire" d="M310 148 C370 188 394 220 430 220"></path>
+                    </svg>
+                    <div class="mini-node source"><i data-lucide="webhook"></i><div><b>${labels.source}</b><span>Trigger</span></div></div>
+                    <div class="mini-node logic"><i data-lucide="workflow"></i><div><b>${labels.logic}</b><span>n8n branch</span></div></div>
+                    <div class="mini-node ai"><i data-lucide="brain-circuit"></i><div><b>${labels.ai}</b><span>AI decision</span></div></div>
+                    <div class="mini-node data"><i data-lucide="database"></i><div><b>${labels.data}</b><span>Source of truth</span></div></div>
+                    <div class="mini-node output"><i data-lucide="send"></i><div><b>${labels.output}</b><span>Outcome</span></div></div>
+                </div>
+            `;
+        };
+
+        document.querySelectorAll(".workflow-card").forEach(makeWorkflow);
         lucide.createIcons();
 
-        // 2. Rolling Counter Animation
-        const observerOptions = { threshold: 0.7 };
-        const counterObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const counter = entry.target;
-                    const target = +counter.getAttribute('data-target');
-                    let count = 0;
-                    const duration = 2000; // 2 seconds
-                    const increment = target / (duration / 16);
-
-                    const updateCount = () => {
-                        if (count < target) {
-                            count += increment;
-                            counter.innerText = Math.ceil(count);
-                            requestAnimationFrame(updateCount);
-                        } else {
-                            counter.innerText = target;
-                        }
-                    };
-                    updateCount();
-                    counterObserver.unobserve(counter);
-                }
+        const runCounter = () => {
+            document.querySelectorAll(".counter").forEach((counter) => {
+                const target = Number(counter.dataset.target);
+                let current = 0;
+                const steps = 56;
+                const tick = () => {
+                    current += target / steps;
+                    if (current < target) {
+                        counter.textContent = Math.ceil(current).toLocaleString();
+                        window.setTimeout(tick, 20);
+                    } else {
+                        counter.textContent = `${target.toLocaleString()}+`;
+                    }
+                };
+                tick();
             });
-        }, observerOptions);
+        };
 
-        document.querySelectorAll('.counter').forEach(c => counterObserver.observe(c));
+        const stats = document.querySelector("#stats");
+        if (stats) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        runCounter();
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.45 });
+            observer.observe(stats);
+        }
     </script>
 </body>
 </html>
