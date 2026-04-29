@@ -68,7 +68,23 @@
         .btn-s { background: #fff; color: #02010a; }
         .btn:hover { transform: translateY(-5px); }
 
-        @media(max-width:700px){ .project-grid { grid-template-columns: 1fr; } }
+        /* New Style for the Merged Tile */
+        .merged-tile { 
+            background: var(--panel); 
+            border: 1px solid var(--border); 
+            border-radius: 28px; 
+            overflow: hidden; 
+            transition: 0.3s ease;
+        }
+        .merged-tile:hover {
+            border-color: var(--accent);
+            box-shadow: 0 0 30px rgba(139, 92, 246, 0.05);
+        }
+
+        @media(max-width:850px){ 
+            .about-grid { grid-template-columns: 1fr !important; } 
+            .project-grid { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
@@ -118,37 +134,41 @@
         </div>
     </div>
 
-    <section id="about" style="padding: 60px 0;">
+    <section id="about" style="padding: 80px 0;">
         <h2 class="section-title">The Evolution of an Architect</h2>
-        <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px;">
+        
+        <div class="about-grid" style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px; align-items: start;">
             <div>
                 <p style="font-size: 1.2rem; line-height: 1.8; color: var(--text-dim);">
-                    My journey started in the trenches of <b>Business Strategy and Marketing</b>. At <b>RapidWorks</b>, I served as the Marketing and Admin Lead, identifying the structural friction points that cost companies time and revenue. 
+                    My journey didn't start with lines of code; it began in the trenches of <b>Business Strategy and Marketing</b>. At <b>RapidWorks</b>, I served as the Marketing and Admin Lead, where I didn't just manage teams—I identified the structural friction points that cost companies time and revenue.
                 </p>
                 <p style="margin-top:20px; color: var(--text-dim); line-height: 1.8; font-size: 1.1rem;">
-                    This unique vantage point allowed me to transition from recommending solutions to <b>architecting them</b>. I combine high-level marketing intelligence with advanced automation to bridge the gap between complex AI logic and real-world ROI.
+                    Today, I combine high-level marketing intelligence with advanced automation to build systems that don't just work—they grow. I bridge the gap between complex AI logic and real-world ROI.
                 </p>
-
-                <div style="margin-top:40px; padding:25px; background:rgba(139, 92, 246, 0.05); border:1px solid var(--accent); border-radius:20px;">
-                    <h4 style="font-size:10px; color:var(--accent); text-transform:uppercase; letter-spacing:2px; margin-bottom:10px;">Strategic Edge</h4>
-                    <p style="font-size: 0.95rem; line-height: 1.6; color: var(--text-main);">
-                        Unlike traditional engineers, my background in <b>consulting and marketing</b> allows me to surface deep business intelligence that technical-only teams often overlook. I don't just automate tasks; I engineer business outcomes with ROI-focused logic.
-                    </p>
-                </div>
             </div>
             
-            <div>
-                <div style="background:var(--panel); border:1px solid var(--border); padding:30px; border-radius:24px; margin-bottom:20px;">
-                    <h4 style="font-size:11px; color:var(--accent); margin-bottom:15px; letter-spacing:1px;">GLOBAL FOOTPRINT</h4>
-                    <div style="display:grid; grid-template-columns: 1fr 1fr; gap:12px; font-weight:700;">
-                        <div>🇺🇸 USA</div><div>🇩🇪 Germany</div>
-                        <div>🇬🇧 UK</div><div>🇨🇦 Canada</div>
-                        <div>🇬🇭 Ghana</div><div>🇮🇳 India</div>
+            <div class="merged-tile">
+                <div style="padding: 30px; border-bottom: 1px solid var(--border);">
+                    <h4 style="font-size: 11px; color: var(--accent); margin-bottom: 20px; letter-spacing: 1px; font-weight: 900;">GLOBAL FOOTPRINT</h4>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; font-weight: 700; font-size: 0.95rem;">
+                        <div style="display: flex; align-items: center; gap: 8px;">🇺🇸 <span style="color:var(--text-main)">USA</span></div>
+                        <div style="display: flex; align-items: center; gap: 8px;">🇩🇪 <span style="color:var(--text-main)">Germany</span></div>
+                        <div style="display: flex; align-items: center; gap: 8px;">🇬🇧 <span style="color:var(--text-main)">UK</span></div>
+                        <div style="display: flex; align-items: center; gap: 8px;">🇨🇦 <span style="color:var(--text-main)">Canada</span></div>
+                        <div style="display: flex; align-items: center; gap: 8px;">🇬🇭 <span style="color:var(--text-main)">Ghana</span></div>
+                        <div style="display: flex; align-items: center; gap: 8px;">🇮🇳 <span style="color:var(--text-main)">India</span></div>
                     </div>
+                    <p style="margin-top: 20px; font-size: 0.8rem; color: var(--text-dim); font-style: italic;">
+                        Currently operating remotely from Ghana for high-growth firms worldwide.
+                    </p>
                 </div>
-                <p style="font-size: 0.85rem; color: var(--text-dim); line-height: 1.6;">
-                    Currently operating remotely from <b>Ghana</b>, managing autonomous systems for high-growth teams globally.
-                </p>
+
+                <div style="padding: 30px; background: rgba(139, 92, 246, 0.04);">
+                    <h4 style="font-size: 11px; color: var(--accent); margin-bottom: 12px; letter-spacing: 1px; font-weight: 900;">COMPETITIVE EDGE</h4>
+                    <p style="font-size: 0.9rem; line-height: 1.6; color: var(--text-main);">
+                        Unlike traditional engineers, my background in <b>consulting and marketing</b> allows me to surface deep business intelligence that technical-only teams often overlook. I engineer outcomes with <b>ROI-focused logic</b>.
+                    </p>
+                </div>
             </div>
         </div>
     </section>
@@ -172,70 +192,60 @@
     <section id="systems">
         <h2 class="section-title">The Engine Room: 9 Core Automations</h2>
         <div class="project-grid">
-            
             <div class="case-study">
                 <div class="case-header"><span class="case-tag">bauTalents</span><i data-lucide="brain-circuit" size="18"></i></div>
                 <h3>Applicant Intelligence</h3>
                 <p>Real-time scoring formulas that rank top talent instantly from 1000s of weekly applications.</p>
                 <div class="compare-row"><div class="diff before">40h Sourcing</div><div class="diff after">Auto-Ranking</div></div>
             </div>
-
             <div class="case-study">
                 <div class="case-header"><span class="case-tag">RapidWorks</span><i data-lucide="message-square" size="18"></i></div>
                 <h3>The Oracle — Conversational DB</h3>
                 <p>Natural language bot in Microsoft Teams that queries company project data with witty, human-like intel.</p>
                 <div class="compare-row"><div class="diff before">Data Silos</div><div class="diff after">Instant AI Intel</div></div>
             </div>
-
             <div class="case-study">
                 <div class="case-header"><span class="case-tag">Fintech</span><i data-lucide="database" size="18"></i></div>
                 <h3>Loan Decisioning Engine</h3>
                 <p>Autonomous scoring engine cross-referencing mobile money data for instant risk profiles.</p>
                 <div class="compare-row"><div class="diff before">72h Checks</div><div class="diff after">Instant Result</div></div>
             </div>
-
             <div class="case-study">
                 <div class="case-header"><span class="case-tag">bauTalents</span><i data-lucide="search" size="18"></i></div>
                 <h3>Candidate Finder Scraper</h3>
                 <p>Scalable scraper structuring job board data into queryable Supabase tables for recruitment teams.</p>
                 <div class="compare-row"><div class="diff before">Manual Search</div><div class="diff after">Auto-Feed</div></div>
             </div>
-
             <div class="case-study">
                 <div class="case-header"><span class="case-tag">RapidWorks</span><i data-lucide="mic" size="18"></i></div>
                 <h3>Meeting Intelligence Pipeline</h3>
                 <p>Whisper + Llama 3 pipeline distilling raw meeting audio into action items and deadline trackers.</p>
                 <div class="compare-row"><div class="diff before">Manual Notes</div><div class="diff after">Auto-Sync Task</div></div>
             </div>
-
             <div class="case-study">
                 <div class="case-header"><span class="case-tag">RapidWorks</span><i data-lucide="user-plus" size="18"></i></div>
                 <h3>Auto Onboarding System</h3>
                 <p>Automated workspace provisioning and welcome communications triggered in under 2 minutes.</p>
                 <div class="compare-row"><div class="diff before">48h Setup</div><div class="diff after">2min Launch</div></div>
             </div>
-
             <div class="case-study">
                 <div class="case-header"><span class="case-tag">bauTalents</span><i data-lucide="file-spreadsheet" size="18"></i></div>
                 <h3>Excel Auto-Update Pipeline</h3>
                 <p>Live sync keeping recruitment trackers updated without manual exports or human error.</p>
                 <div class="compare-row"><div class="diff before">Stale Sheets</div><div class="diff after">Real-time Data</div></div>
             </div>
-
             <div class="case-study">
                 <div class="case-header"><span class="case-tag">RapidWorks</span><i data-lucide="pen-tool" size="18"></i></div>
                 <h3>Ghostwriter Button Listener</h3>
                 <p>One-click AI engine generating tech content drafts from raw project notes.</p>
                 <div class="compare-row"><div class="diff before">48h Drafting</div><div class="diff after">2min Draft</div></div>
             </div>
-
             <div class="case-study">
                 <div class="case-header"><span class="case-tag">bauTalents</span><i data-lucide="layers" size="18"></i></div>
                 <h3>Link Table Aggregator</h3>
                 <p>Metadata aggregator structuring scattered research links into central, queryable database tables.</p>
                 <div class="compare-row"><div class="diff before">Messy Links</div><div class="diff after">Queryable DB</div></div>
             </div>
-
         </div>
     </section>
 
