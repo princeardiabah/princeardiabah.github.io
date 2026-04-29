@@ -4,186 +4,79 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Prince Ardiabah — Global Systems Architect</title>
-
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
-
     <style>
         :root {
             --bg: #02010a; 
             --panel: rgba(255, 255, 255, 0.03);
             --accent: #8b5cf6;
-            --accent-glow: rgba(139, 92, 246, 0.4);
             --text-main: #f0f6ff;
             --text-dim: #9ca3af;
             --border: rgba(255, 255, 255, 0.06);
         }
-
         * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; background-color: var(--bg); color: var(--text-main); line-height: 1.6; }
+        .wrap { max-width: 1200px; margin: auto; padding: 0 24px; }
 
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg);
-            color: var(--text-main);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        .wrap { max-width: 1200px; margin: auto; padding: 0 24px; position: relative; }
-
-        /* HERO & STATS SECTION */
-        .hero { padding: 120px 0 60px; text-align: center; }
+        /* NAVIGATION & HERO */
+        nav { display: flex; justify-content: space-between; padding: 30px 0; align-items: center; }
+        .hero { padding: 80px 0; text-align: center; }
         .hero h1 { font-family: 'Space Grotesk'; font-size: clamp(40px, 8vw, 75px); line-height: 1.1; margin-bottom: 25px; font-weight: 700; }
-        
-        .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 60px; }
+        .status-badge { background: rgba(16,185,129,0.1); border: 1px solid #10b981; color:#10b981; padding: 6px 15px; border-radius: 50px; font-size: 10px; font-weight: 800; display: inline-block; margin-bottom: 20px; }
+
+        /* DASHBOARD STATS (From Image 8) */
+        .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin: 40px 0; }
         .stat-card { background: var(--panel); border: 1px solid var(--border); padding: 30px; border-radius: 20px; text-align: center; }
-        .stat-card h2 { font-family: 'Space Grotesk'; font-size: 2.5rem; margin-bottom: 5px; }
-        .stat-card p { font-size: 0.75rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1px; }
+        .stat-card h2 { font-family: 'Space Grotesk'; font-size: 2.5rem; }
 
-        /* SYSTEMS BUILT - IMAGE 2 STYLE */
-        #projects { padding: 100px 0; }
-        .section-header { text-align: center; margin-bottom: 80px; }
-        .section-header h2 { font-family: 'Space Grotesk'; font-size: 3rem; margin-bottom: 15px; }
+        /* SECTORS GRID (From Image 2 & 4) */
+        .sectors-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; margin-bottom: 100px; }
+        .sector-card { background: var(--panel); border: 1px solid var(--border); padding: 25px; border-radius: 16px; text-align: center; }
+        .sector-card h3 { font-family: 'Space Grotesk'; font-size: 1rem; margin: 10px 0; }
+        .sector-card p { font-size: 0.75rem; color: var(--text-dim); }
 
+        /* SYSTEMS BUILT (Exact Image 2 Structure) */
         .project-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-        .case-study { background: var(--panel); border: 1px solid var(--border); border-radius: 24px; padding: 40px; display: flex; flex-direction: column; transition: 0.3s; }
-        .case-study:hover { border-color: var(--accent); background: rgba(255,255,255,0.05); }
-        
-        .case-meta { font-size: 12px; font-weight: 700; color: var(--accent); text-transform: uppercase; margin-bottom: 12px; display: flex; justify-content: space-between; }
-        .case-study h3 { font-family: 'Space Grotesk'; font-size: 1.6rem; margin-bottom: 20px; }
-        .case-study p { font-size: 0.95rem; color: #d1d5db; margin-bottom: 12px; line-height: 1.5; }
-        .case-study b { color: var(--text-main); font-weight: 600; }
+        .case-study { background: var(--panel); border: 1px solid var(--border); border-radius: 24px; padding: 40px; display: flex; flex-direction: column; }
+        .case-meta { font-size: 12px; font-weight: 700; color: var(--accent); text-transform: uppercase; margin-bottom: 15px; display: flex; justify-content: space-between; }
+        .case-study h3 { font-family: 'Space Grotesk'; font-size: 1.8rem; margin-bottom: 20px; }
+        .case-study p { font-size: 0.95rem; margin-bottom: 12px; color: #d1d5db; }
+        .case-study b { color: var(--text-main); }
+        .case-stack { display: flex; gap: 8px; margin-top: auto; padding-top: 20px; }
+        .stack-tag { font-size: 10px; font-weight: 700; background: rgba(0,0,0,0.4); border: 1px solid var(--border); padding: 4px 10px; border-radius: 6px; }
 
-        .case-stack { display: flex; gap: 8px; margin-top: 20px; }
-        .stack-tag { font-size: 10px; font-weight: 700; background: rgba(0,0,0,0.4); border: 1px solid var(--border); padding: 4px 10px; border-radius: 6px; color: var(--text-dim); }
-
-        /* 10 SECTORS - AS SEEN IN IMAGE 4 */
-        .sectors-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 40px; }
-        .sector-card { background: var(--panel); border: 1px solid var(--border); padding: 30px; border-radius: 16px; text-align: center; }
-        .sector-card h3 { font-family: 'Space Grotesk'; font-size: 1.1rem; margin: 15px 0 8px; }
-        .sector-card p { font-size: 0.8rem; color: var(--text-dim); }
-
-        /* FOOTER */
-        footer { padding: 60px 0; border-top: 1px solid var(--border); text-align: center; font-size: 0.9rem; color: var(--text-dim); }
-        
-        @media (max-width: 900px) { 
-            .project-grid, .stats-grid, .sectors-grid { grid-template-columns: 1fr; } 
-        }
+        @media (max-width: 900px) { .project-grid, .stats-grid, .sectors-grid { grid-template-columns: 1fr; } }
     </style>
 </head>
-
 <body>
 <div class="wrap">
-    <nav style="display:flex; justify-content:space-between; padding:30px 0; align-items:center;">
+    <nav>
         <div style="display:flex; align-items:center; gap:10px;">
-            <div style="width:35px; height:35px; background:var(--accent); border-radius:50%; display:grid; place-items:center; font-weight:800; font-size:12px;">PA</div>
-            <span style="font-family:'Space Grotesk'; font-weight:700;">PRINCE.</span>
+            <span style="font-family:'Space Grotesk'; font-weight:700;">PRINCE ARDIABAH</span>
         </div>
-        <div style="display:flex; gap:25px; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:1px;">
+        <div style="display:flex; gap:25px; font-size:11px; font-weight:700; text-transform:uppercase;">
             <a href="#about" style="color:var(--text-dim); text-decoration:none;">About</a>
             <a href="#projects" style="color:var(--text-main); text-decoration:none;">Systems</a>
             <a href="#sectors" style="color:var(--text-dim); text-decoration:none;">Sectors</a>
-            <a href="#contact" style="border:1px solid var(--accent); padding:8px 16px; border-radius:8px; color:var(--text-main); text-decoration:none;">Hire Me</a>
+            <a href="#contact" style="color:var(--accent); text-decoration:none;">Contact</a>
         </div>
     </nav>
 
     <header class="hero">
-        <div style="background:rgba(16,185,129,0.1); border:1px solid #10b981; color:#10b981; padding:6px 15px; border-radius:50px; font-size:10px; font-weight:800; display:inline-block; margin-bottom:30px;">25+ AUTONOMATIONS ACTIVE IN PRODUCTION</div>
+        <div class="status-badge">25+ AUTONOMATIONS ACTIVE IN PRODUCTION</div>
         <h1>Building the <br><span style="color:var(--accent)">Autonomous Future.</span></h1>
-        <p style="color:var(--text-dim); max-width:600px; margin:auto;">Expert Systems Architect bridging the gap between strategy and AI automation for high-growth teams globally.</p>
         
         <div class="stats-grid">
-            <div class="stat-card"><h2>25+</h2><p>Systems Built</p></div>
-            <div class="stat-card"><h2>10+</h2><p>Sectors Optimized</p></div>
-            <div class="stat-card"><h2>7+</h2><p>Global Markets</p></div>
-            <div class="stat-card"><h2>11,361+</h2><p>Community Reach</p></div>
+            <div class="stat-card"><h2>25+</h2><p>SYSTEMS BUILT</p></div>
+            <div class="stat-card"><h2>10+</h2><p>SECTORS OPTIMIZED</p></div>
+            <div class="stat-card"><h2>7+</h2><p>GLOBAL MARKETS</p></div>
+            <div class="stat-card"><h2>11,361+</h2><p>COMMUNITY REACH</p></div>
         </div>
     </header>
 
-    <section id="projects">
-        <div class="section-header">
-            <h2>10 Case Studies in Automation</h2>
-        </div>
-
-        <div class="project-grid">
-            <div class="case-study">
-                <div class="case-meta">Fintech <span>• Live</span></div>
-                <h3>Loan Decisioning Engine</h3>
-                <p><b>The Problem:</b> Manual credit checks took 72 hours, stalling growth for an SME lender.</p>
-                <p><b>The Build:</b> Autonomous scoring engine cross-referencing mobile money data and financial APIs for instant risk profiles.</p>
-                <div class="case-stack"><span class="stack-tag">n8n</span><span class="stack-tag">Postgres</span><span class="stack-tag">Financial APIs</span></div>
-            </div>
-
-            <div class="case-study">
-                <div class="case-meta">AI-Powered <span>• Live</span></div>
-                <h3>The Oracle — Conversational Interface</h3>
-                <p><b>The Problem:</b> Information silos in MS Teams made tracking project status a manual headache for the CEO.</p>
-                <p><b>The Build:</b> A natural language bot that lets anyone ask "What is the team working on?" and gets a witty, human-like answer instantly.</p>
-                <div class="case-stack"><span class="stack-tag">n8n</span><span class="stack-tag">MS Teams</span><span class="stack-tag">Groq NLP</span></div>
-            </div>
-
-            <div class="case-study">
-                <div class="case-meta">Business Ops <span>• Live</span></div>
-                <h3>Meeting Intelligence Pipeline</h3>
-                <p><b>The Problem:</b> Hours lost transcribing meetings and manual task entry into databases.</p>
-                <p><b>The Build:</b> Listens to meetings, transcribes with Whisper, distills action items with Llama 3, and populates Supabase automatically.</p>
-                <div class="case-stack"><span class="stack-tag">n8n</span><span class="stack-tag">Whisper</span><span class="stack-tag">Supabase</span></div>
-            </div>
-
-            <div class="case-study">
-                <div class="case-meta">Content AI <span>• Live</span></div>
-                <h3>Ghostwriter Button Listener</h3>
-                <p><b>The Problem:</b> High-quality technical content took days to draft from raw notes.</p>
-                <p><b>The Build:</b> One-click AI content generation. The system pulls context, constructs a prompt, and delivers a structured draft ready to edit.</p>
-                <div class="case-stack"><span class="stack-tag">n8n</span><span class="stack-tag">Webhooks</span><span class="stack-tag">OpenAI</span></div>
-            </div>
-
-            <div class="case-study">
-                <div class="case-meta">Recruitment <span>• Live</span></div>
-                <h3>Applicant Intelligence System</h3>
-                <p><b>The Problem:</b> HR teams overwhelmed by 1000+ unqualified applications per week.</p>
-                <p><b>The Build:</b> Real-time monitoring applying complex scoring formulas to incoming applicants, instantly ranking candidates for HR.</p>
-                <div class="case-stack"><span class="stack-tag">n8n</span><span class="stack-tag">Logic Filtering</span><span class="stack-tag">Webhooks</span></div>
-            </div>
-
-            <div class="case-study">
-                <div class="case-meta">Data Engineering</div>
-                <h3>Job Scraper & Candidate Finder</h3>
-                <p><b>The Problem:</b> Manual sourcing of candidates from multiple job boards was inefficient.</p>
-                <p><b>The Build:</b> Scrapes job listings and candidate data at scale, structures it into a clean table, and feeds the recruitment pipeline.</p>
-                <div class="case-stack"><span class="stack-tag">n8n</span><span class="stack-tag">Web Scraping</span><span class="stack-tag">Supabase</span></div>
-            </div>
-
-            <div class="case-study">
-                <div class="case-meta">Business Ops <span>• Live</span></div>
-                <h3>Auto Onboarding System</h3>
-                <p><b>The Problem:</b> New hires waiting 48 hours for access to tools and task assignments.</p>
-                <p><b>The Build:</b> Turns a trigger event into a fully provisioned new team member — workspace created, tasks assigned, in under 2 mins.</p>
-                <div class="case-stack"><span class="stack-tag">n8n</span><span class="stack-tag">Supabase</span><span class="stack-tag">Email Automation</span></div>
-            </div>
-
-            <div class="case-study">
-                <div class="case-meta">Data Automation <span>• Live</span></div>
-                <h3>Excel Auto-Update Pipeline</h3>
-                <p><b>The Problem:</b> Stale trackers resulting from manual data exports and human error.</p>
-                <p><b>The Build:</b> Keeps a shared Excel tracker in sync with live recruitment data automatically — no manual exports, no stale spreadsheets.</p>
-                <div class="case-stack"><span class="stack-tag">n8n</span><span class="stack-tag">MS Excel</span><span class="stack-tag">Webhooks</span></div>
-            </div>
-
-            <div class="case-study">
-                <div class="case-meta">Data Infrastructure <span>• Live</span></div>
-                <h3>Link Aggregator — Data Builder</h3>
-                <p><b>The Problem:</b> Scattered research links across teams with no central queryable source.</p>
-                <p><b>The Build:</b> Aggregates structured links and metadata from target sources into a queryable Supabase table foundation.</p>
-                <div class="case-stack"><span class="stack-tag">n8n</span><span class="stack-tag">Supabase</span><span class="stack-tag">Automation</span></div>
-            </div>
-        </div>
-    </section>
-
-    <section id="sectors" style="padding-bottom:100px;">
-        <div class="section-header">
-            <h2 style="font-size:2.8rem;">10 Industrial Impact Sectors</h2>
-        </div>
+    <section id="sectors">
+        <h2 style="font-family:'Space Grotesk'; text-align:center; margin-bottom:40px;">10 Industrial Impact Sectors</h2>
         <div class="sectors-grid">
             <div class="sector-card"><i data-lucide="landmark"></i><h3>Fintech</h3><p>Loan scoring & fraud engines.</p></div>
             <div class="sector-card"><i data-lucide="shopping-cart"></i><h3>SME Retail</h3><p>Inventory prediction engines.</p></div>
@@ -193,18 +86,92 @@
             <div class="sector-card"><i data-lucide="graduation-cap"></i><h3>Education</h3><p>Autonomous fee management.</p></div>
             <div class="sector-card"><i data-lucide="factory"></i><h3>Manufacturing</h3><p>AI quality control bots.</p></div>
             <div class="sector-card"><i data-lucide="building"></i><h3>Real Estate</h3><p>Listing sync & lead qualification.</p></div>
+            <div class="sector-card"><i data-lucide="briefcase"></i><h3>HR & Talent</h3><p>Global talent sourcing engines.</p></div>
+            <div class="sector-card"><i data-lucide="globe"></i><h3>Public Services</h3><p>Digital citizen portals.</p></div>
         </div>
     </section>
 
-    <footer id="contact">
-        <p>LET'S BUILD SOMETHING THAT THINKS.</p>
-        <div style="margin:20px 0;">
-            <a href="mailto:princeardiabah@gmail.com" style="color:var(--accent); font-weight:800; text-decoration:none; font-size:1.2rem;">princeardiabah@gmail.com</a>
+    <section id="projects">
+        <h2 style="font-family:'Space Grotesk'; font-size: 2.5rem; text-align:center; margin-bottom: 60px;">Featured Automation Projects</h2>
+        <div class="project-grid">
+            <div class="case-study">
+                <div class="case-meta">Fintech <span>• Live</span></div>
+                <h3>Loan Decisioning Engine</h3>
+                <p><b>The Problem:</b> Manual credit checks took 72 hours, stalling growth for an SME lender.</p>
+                <p><b>The Build:</b> Autonomous scoring engine cross-referencing mobile money data and financial APIs for instant risk profiles.</p>
+                <div class="case-stack"><span class="stack-tag">n8n</span><span class="stack-tag">Postgres</span></div>
+            </div>
+
+            <div class="case-study">
+                <div class="case-meta">AI-Powered <span>• Live</span></div>
+                <h3>The Oracle — Conversational Interface</h3>
+                <p><b>The Problem:</b> Information silos in MS Teams made tracking project status a manual headache for the CEO.</p>
+                <p><b>The Build:</b> Natural language bot in Microsoft Teams that lets anyone ask "What is the team working on?" and gets a witty, human-like answer instantly.</p>
+                <div class="case-stack"><span class="stack-tag">n8n</span><span class="stack-tag">MS Teams</span><span class="stack-tag">Groq NLP</span></div>
+            </div>
+
+            <div class="case-study">
+                <div class="case-meta">Business Ops <span>• Live</span></div>
+                <h3>Meeting Intelligence Pipeline</h3>
+                <p><b>The Problem:</b> Hours lost transcribing meetings and manual task entry into databases.</p>
+                <p><b>The Build:</b> Listens to meeting outputs, transcribes with Whisper, distills dialogue into action items using Llama 3, and populates Supabase.</p>
+                <div class="case-stack"><span class="stack-tag">n8n</span><span class="stack-tag">Whisper</span><span class="stack-tag">Supabase</span></div>
+            </div>
+
+            <div class="case-study">
+                <div class="case-meta">AI-Powered <span>• Live</span></div>
+                <h3>Ghostwriter Button Listener</h3>
+                <p><b>The Problem:</b> High-quality technical content took days to draft from raw notes.</p>
+                <p><b>The Build:</b> One-click AI content generation. Press a button, the system pulls context, constructs a prompt, and generates a structured draft.</p>
+                <div class="case-stack"><span class="stack-tag">n8n</span><span class="stack-tag">Webhooks</span><span class="stack-tag">OpenAI</span></div>
+            </div>
+
+            <div class="case-study">
+                <div class="case-meta">Recruitment <span>• Live</span></div>
+                <h3>Applicant Intelligence System</h3>
+                <p><b>The Problem:</b> HR teams overwhelmed by 1000+ unqualified applications per week.</p>
+                <p><b>The Build:</b> Real-time monitoring that applies complex scoring formulas to incoming applicants, instantly ranking candidates for HR.</p>
+                <div class="case-stack"><span class="stack-tag">n8n</span><span class="stack-tag">Logic Filtering</span></div>
+            </div>
+
+            <div class="case-study">
+                <div class="case-meta">Recruitment</div>
+                <h3>Job Scraper & Candidate Finder</h3>
+                <p><b>The Problem:</b> Manual sourcing of candidates from multiple job boards was inefficient.</p>
+                <p><b>The Build:</b> Scrapes job listings and candidate data at scale, structures it into a clean data table, and feeds the recruitment pipeline.</p>
+                <div class="case-stack"><span class="stack-tag">n8n</span><span class="stack-tag">Web Scraping</span><span class="stack-tag">Supabase</span></div>
+            </div>
+
+            <div class="case-study">
+                <div class="case-meta">Business Ops <span>• Live</span></div>
+                <h3>Auto Onboarding System</h3>
+                <p><b>The Problem:</b> New hires waiting 48 hours for access to tools and task assignments.</p>
+                <p><b>The Build:</b> Turns a trigger event into a fully provisioned new team member — workspace created, tasks assigned, welcome comms sent.</p>
+                <div class="case-stack"><span class="stack-tag">n8n</span><span class="stack-tag">Supabase</span><span class="stack-tag">Email</span></div>
+            </div>
+
+            <div class="case-study">
+                <div class="case-meta">Data <span>• Live</span></div>
+                <h3>Excel Auto-Update Pipeline</h3>
+                <p><b>The Problem:</b> Stale trackers resulting from manual data exports and human error.</p>
+                <p><b>The Build:</b> Keeps a shared Excel tracker in sync with live recruitment pipeline data automatically — no manual exports.</p>
+                <div class="case-stack"><span class="stack-tag">n8n</span><span class="stack-tag">Microsoft Excel</span><span class="stack-tag">Webhooks</span></div>
+            </div>
+
+            <div class="case-study">
+                <div class="case-meta">Data <span>• Live</span></div>
+                <h3>Link Aggregator — Data Table Builder</h3>
+                <p><b>The Problem:</b> Scattered research links across teams with no central queryable source.</p>
+                <p><b>The Build:</b> Aggregates structured links and metadata from target sources into a queryable Supabase table foundation.</p>
+                <div class="case-stack"><span class="stack-tag">n8n</span><span class="stack-tag">Supabase</span></div>
+            </div>
         </div>
-        <p>© 2026 Prince Ardiabah · Kumasi, Ghana · LinkedIn — 11.3K followers</p>
+    </section>
+
+    <footer style="padding:100px 0; text-align:center; border-top:1px solid var(--border);">
+        <p>© 2026 Prince Ardiabah · Strategy & Systems</p>
     </footer>
 </div>
-
 <script>lucide.createIcons();</script>
 </body>
 </html>
