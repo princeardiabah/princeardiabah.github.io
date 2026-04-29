@@ -1,231 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Prince Ardiabah — Global Systems Architect</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-<script src="https://unpkg.com/lucide@latest"></script>
-
-<style>
-:root {
-    --bg: #02010a;
-    --panel: rgba(255,255,255,0.02);
-    --accent: #8b5cf6;
-    --accent-glow: rgba(139,92,246,0.2);
-    --text-main: #f9fafb;
-    --text-dim: #9ca3af;
-    --border: rgba(255,255,255,0.05);
-}
-
-* {margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth;}
-
-body{
-    font-family:'Inter',sans-serif;
-    background-color:var(--bg);
-    background-image:
-        radial-gradient(circle at 50% -20%, #2e1065 0%, transparent 45%),
-        linear-gradient(to right, rgba(139,92,246,0.02) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(139,92,246,0.02) 1px, transparent 1px);
-    background-size:100% 100%,40px 40px,40px 40px;
-    color:var(--text-main);
-    overflow-x:hidden;
-}
-
-/* animated edges */
-body::before, body::after{
-    content:"";
-    position:fixed;
-    width:350px;
-    height:100%;
-    opacity:0.12;
-    z-index:-1;
-}
-body::before{
-    left:0;
-    background:linear-gradient(#8b5cf6,transparent);
-    animation:flowUp 25s linear infinite;
-}
-body::after{
-    right:0;
-    background:linear-gradient(transparent,#8b5cf6);
-    animation:flowDown 30s linear infinite;
-}
-@keyframes flowUp{0%{transform:translateY(0);}100%{transform:translateY(-200px);}}
-@keyframes flowDown{0%{transform:translateY(0);}100%{transform:translateY(200px);}}
-
-/* nav */
-nav{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:24px;
-    border-bottom:1px solid var(--border);
-}
-.nav-left{display:flex;align-items:center;gap:10px;}
-.nav-left img{width:45px;height:45px;border-radius:50%;}
-.nav-links a{margin-left:20px;color:var(--text-dim);text-decoration:none;}
-.nav-links a:hover{color:var(--accent);}
-
-/* hero */
-.hero{text-align:center;padding:120px 20px;}
-.hero h1{
-    font-family:'Space Grotesk';
-    font-size:clamp(42px,8vw,80px);
-}
-.hero p{color:var(--text-dim);max-width:700px;margin:20px auto;}
-.btn-primary{
-    background:var(--accent);
-    padding:14px 30px;
-    border-radius:10px;
-    color:#fff;
-    text-decoration:none;
-}
-
-/* reveal */
-.reveal{opacity:0;transform:translateY(40px);transition:0.8s;}
-.reveal.show{opacity:1;transform:translateY(0);}
-
-/* case */
-.case-study{
-    background:var(--panel);
-    border:1px solid var(--border);
-    border-radius:30px;
-    padding:50px;
-    margin:40px 0;
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:40px;
-}
-
-/* highlight */
-.signature-system{
-    border:1px solid var(--accent);
-    box-shadow:0 0 60px rgba(139,92,246,0.25);
-}
-
-/* canvas animation */
-.canvas-placeholder{
-    border:1px dashed var(--border);
-    border-radius:20px;
-    position:relative;
-    overflow:hidden;
-}
-.canvas-placeholder::after{
-    content:"";
-    position:absolute;
-    width:200%;
-    height:200%;
-    background:radial-gradient(circle, rgba(139,92,246,0.25) 2px, transparent 2px);
-    background-size:60px 60px;
-    animation:gridMove 8s linear infinite;
-}
-@keyframes gridMove{
-    0%{transform:translate(0,0);}
-    100%{transform:translate(-60px,-60px);}
-}
-
-/* before after */
-.compare{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:10px;
-    margin-top:15px;
-}
-.before{background:rgba(255,0,0,0.05);padding:10px;border-radius:10px;}
-.after{background:rgba(16,185,129,0.05);padding:10px;border-radius:10px;}
-
-@media(max-width:900px){
-.case-study{grid-template-columns:1fr;}
-}
-</style>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Prince Ardiabah — Global Systems Architect</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        :root {
+            --bg: #02010a;
+            --panel: rgba(255,255,255,0.03);
+            --accent: #8b5cf6;
+            --text-main: #f9fafb;
+            --text-dim: #9ca3af;
+            --border: rgba(255,255,255,0.06);
+        }
+        * {margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth;}
+        body {
+            font-family:'Inter',sans-serif; background-color:var(--bg); color:var(--text-main);
+            background-image: radial-gradient(circle at 50% -20%, #2e1065 0%, transparent 45%);
+            overflow-x:hidden;
+        }
+        .wrap { max-width: 1200px; margin: auto; padding: 0 24px; }
+        nav { display:flex; justify-content:space-between; align-items:center; padding:30px 0; border-bottom:1px solid var(--border); }
+        .nav-left { display:flex; align-items:center; gap:12px; }
+        .nav-left img { width:42px; height:42px; border-radius:50%; border:1px solid var(--accent); }
+        .hero { text-align:center; padding:100px 20px 60px; }
+        .hero h1 { font-family:'Space Grotesk'; font-size:clamp(42px,8vw,80px); line-height:1.1; margin-bottom:20px; }
+        .case-study { 
+            background:var(--panel); border:1px solid var(--border); border-radius:32px; 
+            padding:45px; margin:25px 0; display:grid; grid-template-columns:1fr 1fr; gap:40px; 
+            opacity:0; transform:translateY(30px); transition:0.6s ease-out;
+        }
+        .case-study.show { opacity:1; transform:translateY(0); }
+        .compare { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:20px; }
+        .before, .after { padding:12px; border-radius:10px; font-size:12px; font-weight:700; }
+        .before { background:rgba(255,0,0,0.05); color:#ff453a; }
+        .after { background:rgba(0,255,100,0.05); color:#30d158; }
+        .canvas-placeholder { background:rgba(255,255,255,0.01); border:1px dashed var(--border); border-radius:20px; min-height:250px; }
+        .sectors-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)); gap:15px; margin:50px 0; }
+        .sector-tag { background:var(--panel); padding:20px; border-radius:15px; text-align:center; border:1px solid var(--border); }
+        @media(max-width:900px){ .case-study { grid-template-columns:1fr; } }
+    </style>
 </head>
-
 <body>
+<div class="wrap">
+    <nav>
+        <div class="nav-left"><img src="WhatsApp Image 2026-04-20 at 12.32.31.jpeg"><strong>PRINCE ARDIABAH</strong></div>
+        <div style="font-size:11px; font-weight:700;"><a href="mailto:princeardiabah@gmail.com" style="color:var(--accent); text-decoration:none;">HIRE ME</a></div>
+    </nav>
 
-<nav>
-<div class="nav-left">
-<img src="WhatsApp Image 2026-04-20 at 12.32.31.jpeg">
-<strong>PRINCE ARDIABAH</strong>
-</div>
-<div class="nav-links">
-<a href="#projects">Systems</a>
-</div>
-</nav>
+    <header class="hero">
+        <h1>Building the <span style="color:var(--accent)">Autonomous Future.</span></h1>
+        <p style="color:var(--text-dim)">Architecting high-ROI automation for global teams.</p>
+    </header>
 
-<header class="hero">
-<h1>Building Automations for <span style="color:#8b5cf6">Complex Systems</span></h1>
-<p>Expert Systems Architect bridging the gap between strategy and AI automation.</p>
-<a href="#projects" class="btn-primary">Explore Systems</a>
-</header>
+    <section id="projects">
+        <div class="case-study">
+            <div>
+                <span style="color:var(--accent); font-weight:800; font-size:10px;">FINTECH</span>
+                <h3>Loan Decisioning Engine</h3>
+                <p><b>The Problem:</b> Manual credit checks took 72 hours.</p>
+                <p><b>The Build:</b> Autonomous scoring engine cross-referencing mobile money data.</p>
+                <div class="compare"><div class="before">72h Manual</div><div class="after">Instant Result</div></div>
+            </div>
+            <div class="canvas-placeholder"></div>
+        </div>
 
-<section id="projects">
+        <div class="case-study">
+            <div>
+                <span style="color:var(--accent); font-weight:800; font-size:10px;">AI OPS</span>
+                <h3>The Oracle — Conversational DB</h3>
+                <p><b>The Problem:</b> Information silos made project tracking impossible.</p>
+                <p><b>The Build:</b> Natural language bot in Teams for real-time human-like status updates.</p>
+                <div class="compare"><div class="before">Siloed Data</div><div class="after">Witty AI Updates</div></div>
+            </div>
+            <div class="canvas-placeholder"></div>
+        </div>
 
-<!-- 1 -->
-<div class="case-study reveal signature-system">
-<div>
-<h3>Loan Decisioning Engine</h3>
-<p><b>The Problem:</b> Manual credit checks took 72 hours.</p>
-<p><b>The Build:</b> Autonomous scoring engine.</p>
-<div class="compare">
-<div class="before">Manual • Slow</div>
-<div class="after">Instant • Automated</div>
-</div>
-</div>
-<div class="canvas-placeholder"></div>
-</div>
+        <div class="case-study">
+            <div>
+                <span style="color:var(--accent); font-weight:800; font-size:10px;">RECRUITMENT</span>
+                <h3>Applicant Intelligence System</h3>
+                <p><b>The Problem:</b> 1000+ applicants per week overwhelming HR.</p>
+                <p><b>The Build:</b> Real-time scoring formulas to rank top talent automatically.</p>
+                <div class="compare"><div class="before">Manual Vetting</div><div class="after">Automated Ranking</div></div>
+            </div>
+            <div class="canvas-placeholder"></div>
+        </div>
 
-<!-- 2 -->
-<div class="case-study reveal">
-<div>
-<h3>Last-Mile Optimization Agent</h3>
-<p><b>The Problem:</b> 15% revenue loss daily.</p>
-<p><b>The Build:</b> Dynamic routing.</p>
-<div class="compare">
-<div class="before">Inefficient</div>
-<div class="after">Optimized</div>
-</div>
-</div>
-<div class="canvas-placeholder"></div>
-</div>
+        <div class="case-study">
+            <div>
+                <span style="color:var(--accent); font-weight:800; font-size:10px;">BUSINESS OPS</span>
+                <h3>Auto Onboarding System</h3>
+                <p><b>The Problem:</b> New hires waiting 48h for tool access.</p>
+                <p><b>The Build:</b> Automated provisioning—workspaces and comms ready in <2 mins.</p>
+                <div class="compare"><div class="before">48h Lag</div><div class="after">2min Setup</div></div>
+            </div>
+            <div class="canvas-placeholder"></div>
+        </div>
+    </section>
 
-<!-- 3 -->
-<div class="case-study reveal">
-<div>
-<h3>Global Talent Sourcing Engine</h3>
-<p><b>The Problem:</b> 40+ hrs sourcing.</p>
-<p><b>The Build:</b> Automated scoring.</p>
-<div class="compare">
-<div class="before">Manual hiring</div>
-<div class="after">Automated pipeline</div>
+    <section id="sectors">
+        <h2 style="text-align:center; font-family:'Space Grotesk'; margin-bottom:30px;">10 Industrial Impact Sectors</h2>
+        <div class="sectors-grid">
+            <div class="sector-tag">🏦 Fintech</div><div class="sector-tag">🚚 Logistics</div>
+            <div class="sector-tag">🏥 Healthcare</div><div class="sector-tag">🎓 Education</div>
+            <div class="sector-tag">🏭 Manufacturing</div><div class="sector-tag">🏠 Real Estate</div>
+            <div class="sector-tag">🛒 Retail</div><div class="sector-tag">💼 HR & Talent</div>
+            <div class="sector-tag">🏨 Hospitality</div><div class="sector-tag">🌐 Public Service</div>
+        </div>
+    </section>
+
+    <footer style="text-align:center; padding:80px 0; border-top:1px solid var(--border);">
+        <h2>Let's build something that thinks.</h2>
+        <p style="color:var(--text-dim); margin:20px 0;">© 2026 Prince Ardiabah · Kumasi, Ghana · 11.3K Community</p>
+        <a href="mailto:princeardiabah@gmail.com" style="background:var(--accent); color:#fff; padding:15px 30px; border-radius:10px; text-decoration:none; font-weight:700;">Initiate Strategic Sync</a>
+    </footer>
 </div>
-</div>
-<div class="canvas-placeholder"></div>
-</div>
-
-<!-- (CONTINUE SAME STRUCTURE FOR ALL YOUR ORIGINAL 10 — NOTHING REMOVED) -->
-
-</section>
-
-<footer style="text-align:center;padding:80px 20px;">
-<h2>Initiate Strategic Sync</h2>
-<a href="mailto:princeardiabah@gmail.com" class="btn-primary">Email Me</a>
-</footer>
-
 <script>
-lucide.createIcons();
-
-const observer=new IntersectionObserver(entries=>{
-entries.forEach(e=>{
-if(e.isIntersecting){e.target.classList.add('show');}
-});
-},{threshold:0.2});
-
-document.querySelectorAll('.reveal').forEach(el=>{
-observer.observe(el);
-});
+    const obs = new IntersectionObserver(entries => {
+        entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('show'); });
+    });
+    document.querySelectorAll('.case-study').forEach(el => obs.observe(el));
 </script>
-
 </body>
 </html>
