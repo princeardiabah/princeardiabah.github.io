@@ -20,7 +20,6 @@
         * {margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth;}
         body { font-family:'Inter',sans-serif; background-color:var(--bg); color:var(--text-main); overflow-x:hidden; }
         
-        /* n8n Flow Background */
         .n8n-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; background: radial-gradient(circle at 50% -20%, #2e1065 0%, transparent 45%); }
         .flow-lines { position: absolute; width: 100%; height: 100%; background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 10 L90 90 M90 10 L10 90' stroke='rgba(139, 92, 246, 0.04)' stroke-width='0.5' fill='none'/%3E%3C/svg%3E"); animation: backgroundScroll 100s linear infinite; }
         @keyframes backgroundScroll { from {background-position: 0 0;} to {background-position: 0 1000px;} }
@@ -33,29 +32,24 @@
         .hero { text-align:center; padding:80px 0 40px; }
         .hero h1 { font-family:'Space Grotesk'; font-size:clamp(40px,7vw,85px); line-height:1; font-weight: 700; margin-bottom: 20px; }
         
-        /* Tech Stack Marquee */
         .marquee-container { width: 100vw; margin-left: calc(-50vw + 50%); overflow: hidden; background: rgba(139, 92, 246, 0.03); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 20px 0; margin-bottom: 60px; }
-        .marquee-content { display: flex; gap: 60px; width: max-content; animation: scroll 30s linear infinite; }
-        .tech-item { font-family: 'Space Grotesk'; font-weight: 700; color: var(--text-dim); font-size: 1.2rem; display: flex; align-items: center; gap: 10px; }
+        .marquee-content { display: flex; gap: 60px; width: max-content; animation: scroll 35s linear infinite; }
+        .tech-item { font-family: 'Space Grotesk'; font-weight: 700; color: var(--text-dim); font-size: 1.1rem; display: flex; align-items: center; gap: 10px; }
         .tech-item span { color: var(--accent); }
         @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
-        /* Live Stats */
         .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 40px; }
         .stat-card { background: var(--panel); border: 1px solid var(--border); padding: 25px; border-radius: 20px; text-align: center; }
         .stat-card h2 { font-family: 'Space Grotesk'; font-size: 2.2rem; }
         .stat-card p { font-size: 10px; font-weight: 800; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1px; }
 
-        /* Sections Header Styling */
         .section-title { font-family: 'Space Grotesk'; font-size: 2.5rem; margin-bottom: 40px; text-align: center; }
 
-        /* Sectors Grid */
         .sectors-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; margin-bottom: 80px; }
         .sector-tag { background: var(--panel); border: 1px solid var(--border); padding: 25px; border-radius: 20px; transition: 0.3s; }
         .sector-tag:hover { border-color: var(--accent); background: rgba(139, 92, 246, 0.05); }
         .sector-tag h3 { font-size: 1.1rem; margin-bottom: 5px; display: flex; align-items: center; gap: 10px; }
 
-        /* Systems / Projects (Before/After Style) */
         .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 25px; padding-bottom: 100px; }
         .case-study { background: var(--panel); border: 1px solid var(--border); border-radius: 28px; padding: 35px; position: relative; }
         .case-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px; }
@@ -67,7 +61,6 @@
         .before { background: rgba(255, 69, 58, 0.07); color: var(--red); border: 1px solid rgba(255, 69, 58, 0.1); }
         .after { background: rgba(48, 209, 88, 0.07); color: var(--green); border: 1px solid rgba(48, 209, 88, 0.1); }
 
-        /* Footer CTA */
         .cta-section { background: var(--panel); border: 1px solid var(--border); border-radius: 40px; padding: 80px 20px; text-align: center; margin-bottom: 80px; }
         .btn-group { display: flex; justify-content: center; gap: 15px; margin-top: 30px; flex-wrap: wrap; }
         .btn { padding: 18px 35px; border-radius: 16px; text-decoration: none; font-weight: 800; display: inline-flex; align-items: center; gap: 12px; transition: 0.3s; }
@@ -109,17 +102,19 @@
             <div class="tech-item"><span>/</span> Supabase</div>
             <div class="tech-item"><span>/</span> Whisper</div>
             <div class="tech-item"><span>/</span> Llama 3</div>
-            <div class="tech-item"><span>/</span> Make</div>
+            <div class="tech-item"><span>/</span> Make.com</div>
             <div class="tech-item"><span>/</span> Python</div>
             <div class="tech-item"><span>/</span> Airtable</div>
+            <div class="tech-item"><span>/</span> Postgres</div>
             <div class="tech-item"><span>/</span> n8n</div>
             <div class="tech-item"><span>/</span> OpenAI</div>
             <div class="tech-item"><span>/</span> Supabase</div>
             <div class="tech-item"><span>/</span> Whisper</div>
             <div class="tech-item"><span>/</span> Llama 3</div>
-            <div class="tech-item"><span>/</span> Make</div>
+            <div class="tech-item"><span>/</span> Make.com</div>
             <div class="tech-item"><span>/</span> Python</div>
             <div class="tech-item"><span>/</span> Airtable</div>
+            <div class="tech-item"><span>/</span> Postgres</div>
         </div>
     </div>
 
@@ -128,22 +123,32 @@
         <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px;">
             <div>
                 <p style="font-size: 1.2rem; line-height: 1.8; color: var(--text-dim);">
-                    My journey started in the trenches of <b>Business Strategy and Marketing</b>. At <b>RapidWorks</b>, I served as the Marketing and Admin Lead, where I didn't just manage teams—I identified the structural friction points that cost companies time and revenue. 
+                    My journey started in the trenches of <b>Business Strategy and Marketing</b>. At <b>RapidWorks</b>, I served as the Marketing and Admin Lead, identifying the structural friction points that cost companies time and revenue. 
                 </p>
                 <p style="margin-top:20px; color: var(--text-dim); line-height: 1.8; font-size: 1.1rem;">
-                    This unique vantage point allowed me to transition from recommending solutions to <b>architecting them</b>. Today, I combine high-level marketing intelligence with advanced automation to build systems that don't just work—they grow. I bridge the gap between complex AI logic and real-world ROI.
+                    This unique vantage point allowed me to transition from recommending solutions to <b>architecting them</b>. I combine high-level marketing intelligence with advanced automation to bridge the gap between complex AI logic and real-world ROI.
                 </p>
-                <p style="margin-top:20px; color: var(--text-dim); line-height: 1.8;">
-                    Currently operating from <b>Ghana</b>, I engineer remote autonomous infrastructures for high-growth firms across the <b>USA, UK, Germany, Canada, and India</b>.
-                </p>
-            </div>
-            <div style="background:var(--panel); border:1px solid var(--border); padding:30px; border-radius:24px;">
-                <h4 style="font-size:11px; color:var(--accent); margin-bottom:15px;">GLOBAL FOOTPRINT</h4>
-                <div style="display:grid; grid-template-columns: 1fr 1fr; gap:10px; font-weight:700;">
-                    <div>🇺🇸 USA</div><div>🇩🇪 Germany</div>
-                    <div>🇬🇧 UK</div><div>🇨🇦 Canada</div>
-                    <div>🇬🇭 Ghana</div><div>🇮🇳 India</div>
+
+                <div style="margin-top:40px; padding:25px; background:rgba(139, 92, 246, 0.05); border:1px solid var(--accent); border-radius:20px;">
+                    <h4 style="font-size:10px; color:var(--accent); text-transform:uppercase; letter-spacing:2px; margin-bottom:10px;">Strategic Edge</h4>
+                    <p style="font-size: 0.95rem; line-height: 1.6; color: var(--text-main);">
+                        Unlike traditional engineers, my background in <b>consulting and marketing</b> allows me to surface deep business intelligence that technical-only teams often overlook. I don't just automate tasks; I engineer business outcomes with ROI-focused logic.
+                    </p>
                 </div>
+            </div>
+            
+            <div>
+                <div style="background:var(--panel); border:1px solid var(--border); padding:30px; border-radius:24px; margin-bottom:20px;">
+                    <h4 style="font-size:11px; color:var(--accent); margin-bottom:15px; letter-spacing:1px;">GLOBAL FOOTPRINT</h4>
+                    <div style="display:grid; grid-template-columns: 1fr 1fr; gap:12px; font-weight:700;">
+                        <div>🇺🇸 USA</div><div>🇩🇪 Germany</div>
+                        <div>🇬🇧 UK</div><div>🇨🇦 Canada</div>
+                        <div>🇬🇭 Ghana</div><div>🇮🇳 India</div>
+                    </div>
+                </div>
+                <p style="font-size: 0.85rem; color: var(--text-dim); line-height: 1.6;">
+                    Currently operating remotely from <b>Ghana</b>, managing autonomous systems for high-growth teams globally.
+                </p>
             </div>
         </div>
     </section>
@@ -220,7 +225,7 @@
             <div class="case-study">
                 <div class="case-header"><span class="case-tag">RapidWorks</span><i data-lucide="pen-tool" size="18"></i></div>
                 <h3>Ghostwriter Button Listener</h3>
-                <p>One-click AI engine that generates structured tech content drafts from raw project notes.</p>
+                <p>One-click AI engine generating tech content drafts from raw project notes.</p>
                 <div class="compare-row"><div class="diff before">48h Drafting</div><div class="diff after">2min Draft</div></div>
             </div>
 
