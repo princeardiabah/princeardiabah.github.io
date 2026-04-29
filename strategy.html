@@ -33,6 +33,13 @@
         .hero { text-align:center; padding:80px 0 40px; }
         .hero h1 { font-family:'Space Grotesk'; font-size:clamp(40px,7vw,85px); line-height:1; font-weight: 700; margin-bottom: 20px; }
         
+        /* Tech Stack Marquee */
+        .marquee-container { width: 100vw; margin-left: calc(-50vw + 50%); overflow: hidden; background: rgba(139, 92, 246, 0.03); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 20px 0; margin-bottom: 60px; }
+        .marquee-content { display: flex; gap: 60px; width: max-content; animation: scroll 30s linear infinite; }
+        .tech-item { font-family: 'Space Grotesk'; font-weight: 700; color: var(--text-dim); font-size: 1.2rem; display: flex; align-items: center; gap: 10px; }
+        .tech-item span { color: var(--accent); }
+        @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
         /* Live Stats */
         .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 40px; }
         .stat-card { background: var(--panel); border: 1px solid var(--border); padding: 25px; border-radius: 20px; text-align: center; }
@@ -61,11 +68,12 @@
         .after { background: rgba(48, 209, 88, 0.07); color: var(--green); border: 1px solid rgba(48, 209, 88, 0.1); }
 
         /* Footer CTA */
-        .cta-section { background: var(--panel); border: 1px solid var(--border); border-radius: 40px; padding: 60px 20px; text-align: center; margin-bottom: 80px; }
+        .cta-section { background: var(--panel); border: 1px solid var(--border); border-radius: 40px; padding: 80px 20px; text-align: center; margin-bottom: 80px; }
         .btn-group { display: flex; justify-content: center; gap: 15px; margin-top: 30px; flex-wrap: wrap; }
-        .btn { padding: 15px 30px; border-radius: 12px; text-decoration: none; font-weight: 800; display: inline-flex; align-items: center; gap: 10px; }
-        .btn-p { background: var(--accent); color: #fff; }
-        .btn-s { border: 1px solid var(--border); color: #fff; }
+        .btn { padding: 18px 35px; border-radius: 16px; text-decoration: none; font-weight: 800; display: inline-flex; align-items: center; gap: 12px; transition: 0.3s; }
+        .btn-p { background: var(--accent); color: #fff; box-shadow: 0 0 20px rgba(139, 92, 246, 0.3); }
+        .btn-s { background: #fff; color: #02010a; }
+        .btn:hover { transform: translateY(-5px); }
 
         @media(max-width:700px){ .project-grid { grid-template-columns: 1fr; } }
     </style>
@@ -94,15 +102,39 @@
         </div>
     </header>
 
+    <div class="marquee-container">
+        <div class="marquee-content">
+            <div class="tech-item"><span>/</span> n8n</div>
+            <div class="tech-item"><span>/</span> OpenAI</div>
+            <div class="tech-item"><span>/</span> Supabase</div>
+            <div class="tech-item"><span>/</span> Whisper</div>
+            <div class="tech-item"><span>/</span> Llama 3</div>
+            <div class="tech-item"><span>/</span> Make</div>
+            <div class="tech-item"><span>/</span> Python</div>
+            <div class="tech-item"><span>/</span> Airtable</div>
+            <div class="tech-item"><span>/</span> n8n</div>
+            <div class="tech-item"><span>/</span> OpenAI</div>
+            <div class="tech-item"><span>/</span> Supabase</div>
+            <div class="tech-item"><span>/</span> Whisper</div>
+            <div class="tech-item"><span>/</span> Llama 3</div>
+            <div class="tech-item"><span>/</span> Make</div>
+            <div class="tech-item"><span>/</span> Python</div>
+            <div class="tech-item"><span>/</span> Airtable</div>
+        </div>
+    </div>
+
     <section id="about" style="padding: 60px 0;">
-        <h2 class="section-title">Professional Journey</h2>
+        <h2 class="section-title">The Evolution of an Architect</h2>
         <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px;">
             <div>
                 <p style="font-size: 1.2rem; line-height: 1.8; color: var(--text-dim);">
-                    I don’t just build bots; I engineer business outcomes. With a background as a <b>Business Strategist</b> and <b>Marketing Consultant</b>, I bridge the gap between technical automation and high-level ROI.
+                    My journey started in the trenches of <b>Business Strategy and Marketing</b>. At <b>RapidWorks</b>, I served as the Marketing and Admin Lead, where I didn't just manage teams—I identified the structural friction points that cost companies time and revenue. 
+                </p>
+                <p style="margin-top:20px; color: var(--text-dim); line-height: 1.8; font-size: 1.1rem;">
+                    This unique vantage point allowed me to transition from recommending solutions to <b>architecting them</b>. Today, I combine high-level marketing intelligence with advanced automation to build systems that don't just work—they grow. I bridge the gap between complex AI logic and real-world ROI.
                 </p>
                 <p style="margin-top:20px; color: var(--text-dim); line-height: 1.8;">
-                    Based in <b>Ghana</b>, I orchestrate remote systems for high-growth teams in the <b>USA, UK, Germany, Canada, and India</b>.
+                    Currently operating from <b>Ghana</b>, I engineer remote autonomous infrastructures for high-growth firms across the <b>USA, UK, Germany, Canada, and India</b>.
                 </p>
             </div>
             <div style="background:var(--panel); border:1px solid var(--border); padding:30px; border-radius:24px;">
@@ -203,9 +235,10 @@
     </section>
 
     <section class="cta-section">
-        <h2 style="font-family:'Space Grotesk'; font-size:3rem;">Initiate Strategic Sync.</h2>
+        <h2 style="font-family:'Space Grotesk'; font-size:clamp(30px, 5vw, 60px);">Ready for a Strategic Sync?</h2>
+        <p style="color:var(--text-dim); margin-top:15px; font-size:1.2rem;">Let's engineer your growth together.</p>
         <div class="btn-group">
-            <a href="mailto:princeardiabah@gmail.com" class="btn btn-p"><i data-lucide="mail"></i> Email Me</a>
+            <a href="mailto:princeardiabah@gmail.com" class="btn btn-p"><i data-lucide="mail"></i> Email Sync</a>
             <a href="https://linkedin.com/in/princeardiabah" target="_blank" class="btn btn-s"><i data-lucide="linkedin"></i> LinkedIn (11.3K+)</a>
         </div>
     </section>
