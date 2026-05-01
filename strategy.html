@@ -96,14 +96,6 @@
             padding: 18px 0;
             border-bottom: 1px solid var(--line);
             backdrop-filter: blur(18px);
-            background: rgba(4, 3, 11, 0.62);
-            position: sticky;
-        }
-
-        .nav-actions {
-            display: flex;
-            align-items: center;
-            gap: 12px;
         }
 
         .brand {
@@ -143,23 +135,9 @@
         }
 
         .nav-links {
-            position: absolute;
-            right: 0;
-            top: calc(100% + 10px);
-            display: none;
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 14px;
-            min-width: 220px;
-            padding: 16px;
-            border: 1px solid var(--line);
-            border-radius: 12px;
-            background: rgba(7, 5, 20, 0.96);
-            box-shadow: 0 24px 54px rgba(0, 0, 0, 0.28);
-        }
-
-        .nav-links.is-open {
             display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
         .nav-links a {
@@ -199,26 +177,6 @@
             border-radius: 50%;
             background: var(--green);
             box-shadow: 0 0 12px rgba(34, 197, 94, 0.9);
-        }
-
-        .menu-toggle {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 42px;
-            height: 42px;
-            border: 1px solid var(--line-strong);
-            border-radius: 8px;
-            background: rgba(255, 255, 255, 0.055);
-            color: var(--text);
-            cursor: pointer;
-            transition: background 180ms ease, border-color 180ms ease, transform 180ms ease;
-        }
-
-        .menu-toggle:hover {
-            transform: translateY(-1px);
-            border-color: rgba(167, 139, 250, 0.72);
-            background: rgba(139, 92, 246, 0.16);
         }
 
         .hero {
@@ -289,19 +247,16 @@
         }
 
         .hero-copy {
-            max-width: 58ch;
+            max-width: 660px;
             color: var(--soft);
             font-size: clamp(1.04rem, 2vw, 1.24rem);
-            line-height: 1.65;
             margin-bottom: 34px;
         }
 
         .hero-actions {
             display: flex;
             flex-wrap: wrap;
-            align-items: center;
-            justify-content: flex-start;
-            gap: 16px;
+            gap: 14px;
         }
 
         .btn {
@@ -328,22 +283,7 @@
         .btn-primary {
             border-color: rgba(255, 122, 69, 0.75);
             background: linear-gradient(135deg, var(--orange), #a855f7);
-            color: #fff;
             box-shadow: 0 18px 44px rgba(139, 92, 246, 0.22);
-        }
-
-        .hero .hero-actions {
-            margin-top: 10px;
-        }
-
-        .hero .btn {
-            min-height: 56px;
-            padding: 0 24px;
-            font-size: 0.92rem;
-        }
-
-        .hero .btn-primary {
-            box-shadow: 0 22px 52px rgba(139, 92, 246, 0.26);
         }
 
         .orbit-panel {
@@ -455,12 +395,11 @@
         }
 
         .section-head {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 16px;
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(280px, 430px);
+            gap: clamp(22px, 4vw, 48px);
+            align-items: end;
             margin-bottom: 42px;
-            max-width: 100%;
         }
 
         .section-kicker {
@@ -474,17 +413,17 @@
         }
 
         .section h2 {
-            max-width: 24ch;
+            max-width: 760px;
             font-size: clamp(2.15rem, 4vw, 4.25rem);
             line-height: 1.02;
         }
 
         .section-lede {
-            max-width: 64ch;
+            max-width: 510px;
             color: var(--muted);
-            padding-bottom: 0;
+            justify-self: end;
+            padding-bottom: 4px;
             font-size: 0.98rem;
-            line-height: 1.68;
         }
 
         .proof-band {
@@ -526,10 +465,8 @@
         }
 
         .build-card p {
-            max-width: 30ch;
             color: var(--muted);
             font-size: 0.9rem;
-            line-height: 1.6;
         }
 
         .process-grid {
@@ -572,10 +509,9 @@
         }
 
         .process-step p {
-            max-width: 28ch;
             color: var(--muted);
             font-size: 0.86rem;
-            line-height: 1.58;
+            line-height: 1.5;
         }
 
         .about-grid {
@@ -588,10 +524,9 @@
         .about-copy {
             display: grid;
             gap: 16px;
-            max-width: 66ch;
+            max-width: 760px;
             color: var(--soft);
             font-size: 1.02rem;
-            line-height: 1.7;
         }
 
         .about-more {
@@ -667,7 +602,7 @@
             display: block;
             color: var(--muted);
             font-size: 0.82rem;
-            line-height: 1.5;
+            line-height: 1.45;
         }
 
         .stats {
@@ -706,12 +641,11 @@
 
         .media-card {
             border: 1px solid var(--line);
-            border-radius: 18px;
+            border-radius: 8px;
             background:
-                linear-gradient(135deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02)),
-                rgba(7, 5, 20, 0.88);
+                linear-gradient(135deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.018)),
+                rgba(6, 5, 16, 0.9);
             overflow: hidden;
-            box-shadow: 0 18px 48px rgba(0, 0, 0, 0.24);
         }
 
         .flag {
@@ -741,37 +675,20 @@
         }
 
         .media-grid {
-            position: relative;
-            max-width: 760px;
-            margin: 0 auto;
-            padding-bottom: 8px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
         }
 
         .media-card {
-            position: sticky;
-            top: 108px;
-            min-height: 0;
+            min-height: 260px;
             display: flex;
             flex-direction: column;
-            margin-bottom: 18px;
-        }
-
-        .media-card:not(:first-child) {
-            margin-top: -72px;
-        }
-
-        .media-card:nth-child(odd) {
-            transform: rotate(-0.55deg);
-        }
-
-        .media-card:nth-child(even) {
-            transform: rotate(0.55deg);
         }
 
         .media-preview {
             position: relative;
-            min-height: 0;
-            aspect-ratio: 16 / 10.5;
+            min-height: 166px;
             border-bottom: 1px solid var(--line);
             background:
                 radial-gradient(circle at 28% 26%, rgba(255, 122, 69, 0.14), transparent 8rem),
@@ -779,7 +696,6 @@
                 linear-gradient(to bottom, rgba(255,255,255,0.055) 1px, transparent 1px),
                 #070513;
             background-size: auto, 26px 26px, 26px 26px, auto;
-            overflow: hidden;
         }
 
         .media-preview::after {
@@ -788,22 +704,6 @@
             inset: 28px;
             border: 1px dashed rgba(167, 139, 250, 0.42);
             border-radius: 8px;
-        }
-
-        .media-preview.has-image::after {
-            display: none;
-        }
-
-        .media-preview img {
-            position: absolute;
-            inset: 14px;
-            width: calc(100% - 28px);
-            height: calc(100% - 28px);
-            object-fit: contain;
-            object-position: center top;
-            display: block;
-            border-radius: 12px;
-            background: rgba(7, 5, 20, 0.9);
         }
 
         .media-play {
@@ -823,21 +723,18 @@
         }
 
         .media-body {
-            padding: 18px 22px 22px;
-            background: linear-gradient(180deg, rgba(7, 5, 20, 0.4), rgba(7, 5, 20, 0.92));
+            padding: 18px;
         }
 
         .media-body h3 {
             font-size: 1rem;
             margin-bottom: 8px;
-            line-height: 1.2;
         }
 
         .media-body p {
             color: var(--muted);
-            font-size: 0.9rem;
-            line-height: 1.58;
-            max-width: 42ch;
+            font-size: 0.86rem;
+            line-height: 1.5;
         }
 
         .sectors-grid {
@@ -875,15 +772,12 @@
         }
 
         .sector-card p {
-            max-width: 28ch;
             color: var(--muted);
             font-size: 0.88rem;
-            line-height: 1.55;
+            line-height: 1.45;
         }
 
         .case-list {
-            max-width: 1080px;
-            margin: 0 auto;
             display: grid;
             gap: 22px;
         }
@@ -893,21 +787,21 @@
             grid-template-columns: minmax(0, 0.92fr) minmax(360px, 1.08fr);
             gap: 34px;
             align-items: stretch;
-            min-height: 390px;
+            min-height: 420px;
             padding: 30px;
             border: 1px solid var(--line);
             border-radius: 8px;
             background:
-                linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.015)),
-                rgba(7, 5, 20, 0.96);
+                linear-gradient(135deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02)),
+                rgba(5, 4, 14, 0.72);
             box-shadow: 0 18px 54px rgba(0, 0, 0, 0.18);
         }
 
         .case-study.featured {
-            border-color: rgba(212, 168, 79, 0.28);
+            border-color: rgba(255, 122, 69, 0.38);
             background:
                 linear-gradient(135deg, rgba(255, 122, 69, 0.08), rgba(139, 92, 246, 0.06)),
-                rgba(9, 7, 24, 0.97);
+                rgba(5, 4, 14, 0.78);
         }
 
         .case-study.featured .case-meta::before {
@@ -942,7 +836,7 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            max-width: 60ch;
+            max-width: 620px;
             padding: 6px 0;
         }
 
@@ -955,8 +849,7 @@
         .case-content p {
             color: var(--muted);
             margin-bottom: 10px;
-            max-width: 56ch;
-            line-height: 1.62;
+            max-width: 58ch;
         }
 
         .case-content b {
@@ -987,7 +880,7 @@
             position: relative;
             align-self: stretch;
             min-width: 0;
-            min-height: 300px;
+            min-height: 338px;
             border: 1px solid rgba(255, 255, 255, 0.12);
             border-radius: 8px;
             overflow: hidden;
@@ -1125,18 +1018,16 @@
         }
 
         .contact h2 {
-            max-width: 13ch;
+            max-width: 800px;
             margin: 0 auto 20px;
             font-size: clamp(2.3rem, 5vw, 4.6rem);
             line-height: 1;
-            text-wrap: balance;
         }
 
         .contact p {
-            max-width: 42ch;
+            max-width: 620px;
             margin: 0 auto 28px;
             color: var(--muted);
-            line-height: 1.65;
         }
 
         .footer-note {
@@ -1150,6 +1041,7 @@
 
         @media (max-width: 1040px) {
             .hero-grid,
+            .section-head,
             .about-grid,
             .case-study,
             .case-study:nth-child(even) {
@@ -1157,7 +1049,8 @@
             }
 
             .section-lede {
-                max-width: 54ch;
+                justify-self: start;
+                max-width: 720px;
                 padding-bottom: 0;
             }
 
@@ -1171,11 +1064,7 @@
             }
 
             .media-grid {
-                max-width: 100%;
-            }
-
-            .media-card {
-                top: 96px;
+                grid-template-columns: 1fr;
             }
 
             .orbit-panel {
@@ -1196,6 +1085,9 @@
                 position: static;
             }
 
+            .availability {
+                display: none;
+            }
         }
 
         @media (max-width: 720px) {
@@ -1204,14 +1096,11 @@
             }
 
             .nav {
-                align-items: center;
-                flex-wrap: wrap;
+                align-items: flex-start;
             }
 
             .nav-links {
-                width: 100%;
-                right: 0;
-                top: calc(100% + 8px);
+                display: none;
             }
 
             .availability {
@@ -1238,11 +1127,6 @@
             .hero-actions {
                 display: grid;
                 justify-content: stretch;
-            }
-
-            .hero .btn {
-                width: 100%;
-                min-height: 54px;
             }
 
             .eyebrow {
@@ -1287,48 +1171,22 @@
             }
 
             .section-head {
-                gap: 16px;
+                display: grid;
+                gap: 18px;
                 margin-bottom: 30px;
-            }
-
-            .section h2,
-            .contact h2 {
-                max-width: 20ch;
             }
 
             .section-lede {
                 margin-top: 0;
                 font-size: 0.94rem;
-                max-width: 100%;
             }
 
             .stats,
             .sectors-grid,
             .build-grid,
-            .process-grid {
-                grid-template-columns: 1fr;
-            }
-
+            .process-grid,
             .media-grid {
-                max-width: 100%;
-            }
-
-            .media-card {
-                position: relative;
-                top: auto;
-                min-height: 0;
-                margin-top: 0;
-                margin-bottom: 18px;
-                transform: none;
-            }
-
-            .media-preview {
-                min-height: 220px;
-                aspect-ratio: auto;
-            }
-
-            .case-study {
-                margin-bottom: 0;
+                grid-template-columns: 1fr;
             }
 
             .proof-band {
@@ -1371,19 +1229,14 @@
                 </div>
             </a>
 
-            <div class="nav-actions">
-                <div class="nav-links" id="site-menu">
-                    <a href="#about">About</a>
-                    <a href="#sectors">Industries</a>
-                    <a href="#projects">Projects</a>
-                    <a href="#media">Media</a>
-                    <a href="#contact">Contact</a>
-                </div>
-                <a class="availability" href="#contact">Open to Projects</a>
-                <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Toggle menu">
-                    <i data-lucide="menu"></i>
-                </button>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#sectors">Industries</a>
+                <a href="#projects">Projects</a>
+                <a href="#media">Media</a>
+                <a href="#contact">Contact</a>
             </div>
+            <a class="availability" href="#contact">Open to Projects</a>
         </nav>
 
         <header class="hero">
@@ -1394,7 +1247,7 @@
                     <p class="hero-copy">I don’t just connect tools. I design the systems businesses actually run on: AI workflows, data pipelines, and operating logic built around real outcomes.</p>
                     <div class="hero-actions">
                         <a class="btn btn-primary" href="#projects">Explore Projects <i data-lucide="arrow-right"></i></a>
-                        <a class="btn" href="https://calendly.com/princeardiabah/lets-automate-your-workflow" target="_blank" rel="noreferrer">Initiate Strategic Sync <i data-lucide="calendar"></i></a>
+                        <a class="btn" href="#contact">Initiate Strategic Sync <i data-lucide="calendar"></i></a>
                     </div>
                 </div>
 
@@ -1436,7 +1289,7 @@
                         <span class="section-kicker">What I Build</span>
                         <h2>Automation systems that remove the hidden drag inside growing teams.</h2>
                     </div>
-                    <p class="section-lede">I build practical systems around the tools teams already use, then add AI, logic, data, and routing where they create the most leverage.</p>
+                    <p class="section-lede">I focus on practical systems that connect the tools businesses already use, then add AI, logic, data, and routing where they create real leverage.</p>
                 </div>
 
                 <div class="build-grid">
@@ -1455,7 +1308,7 @@
                         <span class="section-kicker">How I Work</span>
                         <h2>From messy workflow to reliable operating system.</h2>
                     </div>
-                    <p class="section-lede">The work starts with business reality before tools. I focus on the moments where better structure creates the biggest return.</p>
+                    <p class="section-lede">My process starts with business reality before tools. The goal is not to automate everything, but to automate the points where leverage is highest.</p>
                 </div>
 
                 <div class="process-grid">
@@ -1517,7 +1370,7 @@
                         <span class="section-kicker">Industries</span>
                         <h2>Industries I’m built to automate.</h2>
                     </div>
-                    <p class="section-lede">These are the kinds of environments where I tend to do my best work: high movement, operational complexity, and real pressure to scale cleanly.</p>
+                    <p class="section-lede">I do my best work in businesses where operations are messy, teams move fast, and better systems create immediate leverage.</p>
                 </div>
 
                 <div class="sectors-grid">
@@ -1540,7 +1393,7 @@
                         <span class="section-kicker">Projects</span>
                         <h2>Automation projects I’ve built for complex business systems.</h2>
                     </div>
-                    <p class="section-lede">A selection of systems I’ve built to reduce manual work, connect moving parts, and make execution faster, clearer, and easier to trust.</p>
+                    <p class="section-lede">A portfolio of AI and n8n-driven workflows built to reduce manual work, connect data, and help teams move faster with more control.</p>
                 </div>
 
                 <div class="case-list">
@@ -1669,80 +1522,29 @@
                         <span class="section-kicker">Media</span>
                         <h2>Automation snapshots and build walkthroughs.</h2>
                     </div>
-                    <p class="section-lede">A closer look at the actual workflow structures behind the builds: real canvases, automations, and operating flows in motion.</p>
+                    <p class="section-lede">This section is designed for real workflow screenshots, short demos, and walkthroughs that show the systems in action.</p>
                 </div>
 
                 <div class="media-grid">
                     <article class="media-card">
-                        <div class="media-preview has-image">
-                            <img src="assets/media/conversation-analysis-pipeline.png" alt="Conversation analysis automation workflow">
-                        </div>
+                        <div class="media-preview"><div class="media-play"><i data-lucide="image"></i></div></div>
                         <div class="media-body">
-                            <h3>Conversation Analysis Pipeline</h3>
-                            <p>Audio intake, language processing, task aggregation, and structured reporting in one automated flow.</p>
+                            <h3>n8n Workflow Canvas</h3>
+                            <p>Add a real screenshot of an automation canvas, routing logic, or internal system flow.</p>
                         </div>
                     </article>
                     <article class="media-card">
-                        <div class="media-preview has-image">
-                            <img src="assets/media/candidate-research-pipeline.png" alt="Candidate research automation workflow">
-                        </div>
+                        <div class="media-preview"><div class="media-play"><i data-lucide="play"></i></div></div>
                         <div class="media-body">
-                            <h3>Candidate Research Pipeline</h3>
-                            <p>Structured lead and candidate discovery with batch processing, classification, and export-ready output.</p>
+                            <h3>Build Walkthrough</h3>
+                            <p>Use this for a Loom, YouTube, or short hosted demo explaining one workflow from trigger to output.</p>
                         </div>
                     </article>
                     <article class="media-card">
-                        <div class="media-preview has-image">
-                            <img src="assets/media/application-monitoring-flow.png" alt="Application monitoring workflow">
-                        </div>
+                        <div class="media-preview"><div class="media-play"><i data-lucide="monitor-play"></i></div></div>
                         <div class="media-body">
-                            <h3>Application Monitoring Flow</h3>
-                            <p>Rule-based observation workflow for detecting changes and triggering updates or alerts only when needed.</p>
-                        </div>
-                    </article>
-                    <article class="media-card">
-                        <div class="media-preview has-image">
-                            <img src="assets/media/change-detection-observer.png" alt="Change detection observer workflow">
-                        </div>
-                        <div class="media-body">
-                            <h3>Change Detection Observer</h3>
-                            <p>A compact observer setup for polling, comparing new states, and routing follow-up actions automatically.</p>
-                        </div>
-                    </article>
-                    <article class="media-card">
-                        <div class="media-preview has-image">
-                            <img src="assets/media/spreadsheet-sync-engine.png" alt="Spreadsheet sync engine workflow">
-                        </div>
-                        <div class="media-body">
-                            <h3>Spreadsheet Sync Engine</h3>
-                            <p>Loop-driven enrichment and sheet updates for keeping operational rows fresh without manual handling.</p>
-                        </div>
-                    </article>
-                    <article class="media-card">
-                        <div class="media-preview has-image">
-                            <img src="assets/media/meeting-summary-dispatcher.png" alt="Meeting summary dispatcher workflow">
-                        </div>
-                        <div class="media-body">
-                            <h3>Meeting Summary Dispatcher</h3>
-                            <p>Prompted summarization and outbound delivery flow for turning recorded sessions into clean outputs.</p>
-                        </div>
-                    </article>
-                    <article class="media-card">
-                        <div class="media-preview has-image">
-                            <img src="assets/media/webhook-intake-trigger.png" alt="Webhook intake trigger workflow">
-                        </div>
-                        <div class="media-body">
-                            <h3>Webhook Intake Trigger</h3>
-                            <p>A minimal capture flow for receiving events and immediately writing structured records into a system.</p>
-                        </div>
-                    </article>
-                    <article class="media-card">
-                        <div class="media-preview has-image">
-                            <img src="assets/media/model-response-bridge.png" alt="Model response bridge workflow">
-                        </div>
-                        <div class="media-body">
-                            <h3>Model Response Bridge</h3>
-                            <p>Simple AI response handling flow that takes structured input, generates output, and forwards it downstream.</p>
+                            <h3>System Output</h3>
+                            <p>Use this for before-and-after process views, agent responses, spreadsheet syncs, or dashboard outputs.</p>
                         </div>
                     </article>
                 </div>
@@ -1750,11 +1552,10 @@
 
             <section class="section contact" id="contact">
                 <span class="section-kicker">Contact</span>
-                <h2>Let’s design the systems your business actually needs.</h2>
-                <p>For teams that want clearer workflows, faster execution, and automation that is useful from day one.</p>
+                <h2>Start a build conversation for the systems your business actually needs.</h2>
+                <p>For teams that want cleaner workflows, faster execution, and automation that is useful from day one.</p>
                 <div class="hero-actions" style="justify-content:center;">
                     <a href="mailto:princeardiabah@gmail.com" class="btn btn-primary">Start a Build Conversation <i data-lucide="mail"></i></a>
-                    <a href="https://calendly.com/princeardiabah/lets-automate-your-workflow" target="_blank" rel="noreferrer" class="btn">Book a 30-Min Call <i data-lucide="calendar"></i></a>
                     <a href="https://www.linkedin.com/in/prince-ardiabah-14b9171a9" class="btn">Connect on LinkedIn <i data-lucide="linkedin"></i></a>
                 </div>
                 <div class="footer-note">© 2026 Prince Ardiabah | Engineered globally</div>
@@ -1824,30 +1625,6 @@
 
         document.querySelectorAll(".workflow-card").forEach(makeWorkflow);
         lucide.createIcons();
-
-        const menuToggle = document.querySelector(".menu-toggle");
-        const siteMenu = document.querySelector("#site-menu");
-
-        if (menuToggle && siteMenu) {
-            menuToggle.addEventListener("click", () => {
-                const isOpen = siteMenu.classList.toggle("is-open");
-                menuToggle.setAttribute("aria-expanded", String(isOpen));
-            });
-
-            siteMenu.querySelectorAll("a").forEach((link) => {
-                link.addEventListener("click", () => {
-                    siteMenu.classList.remove("is-open");
-                    menuToggle.setAttribute("aria-expanded", "false");
-                });
-            });
-
-            document.addEventListener("click", (event) => {
-                if (!siteMenu.contains(event.target) && !menuToggle.contains(event.target)) {
-                    siteMenu.classList.remove("is-open");
-                    menuToggle.setAttribute("aria-expanded", "false");
-                }
-            });
-        }
 
         const readMoreButton = document.querySelector(".read-more");
         const aboutMore = document.querySelector("#about-more");
