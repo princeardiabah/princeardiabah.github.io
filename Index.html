@@ -1,0 +1,1899 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prince Ardiabah | AI Automation Specialist</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        :root {
+            --bg: #04030b;
+            --bg-2: #080713;
+            --panel: rgba(255, 255, 255, 0.035);
+            --panel-strong: rgba(255, 255, 255, 0.065);
+            --line: rgba(255, 255, 255, 0.1);
+            --line-strong: rgba(255, 255, 255, 0.18);
+            --text: #f7f7fb;
+            --muted: #aaa6ba;
+            --soft: #d6d1df;
+            --purple: #8b5cf6;
+            --violet: #a78bfa;
+            --orange: #ff7a45;
+            --green: #22c55e;
+            --cyan: #38bdf8;
+            --shadow: 0 24px 80px rgba(0, 0, 0, 0.34);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            min-height: 100vh;
+            font-family: "Inter", sans-serif;
+            color: var(--text);
+            background:
+                radial-gradient(circle at 52% -18%, rgba(139, 92, 246, 0.38), transparent 31rem),
+                radial-gradient(circle at 12% 26%, rgba(56, 189, 248, 0.12), transparent 26rem),
+                radial-gradient(circle at 88% 18%, rgba(255, 122, 69, 0.12), transparent 24rem),
+                linear-gradient(180deg, var(--bg), var(--bg-2) 46%, #030209);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            z-index: -3;
+            background-image:
+                linear-gradient(to right, rgba(167, 139, 250, 0.055) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(167, 139, 250, 0.055) 1px, transparent 1px);
+            background-size: 44px 44px;
+            mask-image: linear-gradient(to bottom, black, rgba(0, 0, 0, 0.8), transparent 92%);
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+            inset: 0;
+            z-index: -2;
+            pointer-events: none;
+            opacity: 0.86;
+            background:
+                url("data:image/svg+xml,%3Csvg width='1440' height='1200' viewBox='0 0 1440 1200' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23a78bfa' stroke-width='1.2' stroke-linecap='round' stroke-linejoin='round' opacity='.52'%3E%3Cpath d='M55 176H188C215 176 215 242 242 242H384'/%3E%3Cpath d='M1184 164H1298C1330 164 1330 238 1363 238H1414'/%3E%3Cpath d='M18 544H132C171 544 171 622 210 622H344'/%3E%3Cpath d='M1062 470H1186C1225 470 1225 552 1264 552H1418'/%3E%3Cpath d='M122 828H292C327 828 327 910 362 910H516'/%3E%3Cpath d='M932 824H1090C1130 824 1130 918 1170 918H1392'/%3E%3Ccircle cx='55' cy='176' r='9'/%3E%3Ccircle cx='384' cy='242' r='9'/%3E%3Ccircle cx='1184' cy='164' r='9'/%3E%3Ccircle cx='1414' cy='238' r='9'/%3E%3Ccircle cx='18' cy='544' r='8'/%3E%3Ccircle cx='344' cy='622' r='8'/%3E%3Ccircle cx='1062' cy='470' r='8'/%3E%3Ccircle cx='1418' cy='552' r='8'/%3E%3Ccircle cx='122' cy='828' r='8'/%3E%3Ccircle cx='516' cy='910' r='8'/%3E%3Ccircle cx='932' cy='824' r='8'/%3E%3Ccircle cx='1392' cy='918' r='8'/%3E%3Crect x='179' y='144' width='82' height='48' rx='8'/%3E%3Crect x='1240' y='132' width='86' height='48' rx='8'/%3E%3Crect x='132' y='512' width='92' height='48' rx='8'/%3E%3Crect x='1178' y='438' width='92' height='48' rx='8'/%3E%3Crect x='284' y='796' width='92' height='48' rx='8'/%3E%3Crect x='1082' y='792' width='94' height='48' rx='8'/%3E%3C/g%3E%3Cg fill='%23ff7a45' opacity='.78'%3E%3Ccircle cx='55' cy='176' r='3'/%3E%3Ccircle cx='384' cy='242' r='3'/%3E%3Ccircle cx='1414' cy='238' r='3'/%3E%3Ccircle cx='344' cy='622' r='3'/%3E%3Ccircle cx='1418' cy='552' r='3'/%3E%3Ccircle cx='516' cy='910' r='3'/%3E%3Ccircle cx='1392' cy='918' r='3'/%3E%3C/g%3E%3C/svg%3E") center top / cover no-repeat;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .wrap {
+            width: min(1180px, calc(100% - 40px));
+            margin: 0 auto;
+        }
+
+        .nav {
+            position: sticky;
+            top: 0;
+            z-index: 20;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 18px;
+            padding: 18px 0;
+            border-bottom: 1px solid var(--line);
+            backdrop-filter: blur(18px);
+            background: rgba(4, 3, 11, 0.62);
+            position: sticky;
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .avatar {
+            display: grid;
+            width: 42px;
+            height: 42px;
+            place-items: center;
+            border: 1px solid rgba(167, 139, 250, 0.55);
+            border-radius: 50%;
+            background:
+                radial-gradient(circle at 35% 25%, rgba(255, 122, 69, 0.34), transparent 42%),
+                linear-gradient(135deg, rgba(139, 92, 246, 0.36), rgba(56, 189, 248, 0.14));
+            color: #fff;
+            font-family: "Space Grotesk", sans-serif;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+        }
+
+        .brand strong {
+            display: block;
+            font-family: "Space Grotesk", sans-serif;
+            font-size: 0.98rem;
+            letter-spacing: 0.02em;
+        }
+
+        .brand span {
+            display: block;
+            color: var(--muted);
+            font-size: 0.76rem;
+            line-height: 1.2;
+        }
+
+        .nav-links {
+            position: absolute;
+            right: 0;
+            top: calc(100% + 10px);
+            display: none;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 14px;
+            min-width: 220px;
+            padding: 16px;
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            background: rgba(7, 5, 20, 0.96);
+            box-shadow: 0 24px 54px rgba(0, 0, 0, 0.28);
+        }
+
+        .nav-links.is-open {
+            display: flex;
+        }
+
+        .nav-links a {
+            color: var(--muted);
+            font-size: 0.68rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            transition: color 180ms ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--text);
+        }
+
+        .availability {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            min-height: 34px;
+            padding: 0 10px;
+            border: 1px solid rgba(34, 197, 94, 0.32);
+            border-radius: 999px;
+            background: rgba(34, 197, 94, 0.08);
+            color: #bff7d0;
+            font-size: 0.68rem;
+            font-weight: 800;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+
+        .availability::before {
+            content: "";
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--green);
+            box-shadow: 0 0 12px rgba(34, 197, 94, 0.9);
+        }
+
+        .menu-toggle {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 42px;
+            height: 42px;
+            border: 1px solid var(--line-strong);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.055);
+            color: var(--text);
+            cursor: pointer;
+            transition: background 180ms ease, border-color 180ms ease, transform 180ms ease;
+        }
+
+        .menu-toggle:hover {
+            transform: translateY(-1px);
+            border-color: rgba(167, 139, 250, 0.72);
+            background: rgba(139, 92, 246, 0.16);
+        }
+
+        .hero {
+            min-height: calc(100vh - 80px);
+            display: grid;
+            align-items: center;
+            padding: 88px 0 70px;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(380px, 0.78fr);
+            gap: clamp(40px, 6vw, 76px);
+            align-items: center;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            width: fit-content;
+            margin-bottom: 24px;
+            padding: 8px 12px;
+            border: 1px solid rgba(167, 139, 250, 0.36);
+            border-radius: 999px;
+            background: rgba(139, 92, 246, 0.1);
+            color: #ded4ff;
+            font-size: 0.72rem;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .pulse {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--green);
+            box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.72);
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            70% { box-shadow: 0 0 0 10px rgba(34, 197, 94, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: "Space Grotesk", sans-serif;
+            letter-spacing: 0;
+        }
+
+        h1 {
+            max-width: 860px;
+            font-size: clamp(3.25rem, 7vw, 6.75rem);
+            line-height: 0.94;
+            margin-bottom: 28px;
+        }
+
+        .accent {
+            color: var(--violet);
+        }
+
+        .hero h1 .accent {
+            display: block;
+        }
+
+        .hero-copy {
+            max-width: 58ch;
+            color: var(--soft);
+            font-size: clamp(1.04rem, 2vw, 1.24rem);
+            line-height: 1.65;
+            margin-bottom: 34px;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 16px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            min-height: 48px;
+            padding: 0 18px;
+            border: 1px solid var(--line-strong);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.055);
+            color: var(--text);
+            font-weight: 800;
+            transition: transform 180ms ease, background 180ms ease, border-color 180ms ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            border-color: rgba(167, 139, 250, 0.72);
+            background: rgba(139, 92, 246, 0.16);
+        }
+
+        .btn-primary {
+            border-color: rgba(255, 122, 69, 0.75);
+            background: linear-gradient(135deg, var(--orange), #a855f7);
+            color: #fff;
+            box-shadow: 0 18px 44px rgba(139, 92, 246, 0.22);
+        }
+
+        .hero .hero-actions {
+            margin-top: 10px;
+        }
+
+        .hero .btn {
+            min-height: 56px;
+            padding: 0 24px;
+            font-size: 0.92rem;
+        }
+
+        .hero .btn-primary {
+            box-shadow: 0 22px 52px rgba(139, 92, 246, 0.26);
+        }
+
+        .orbit-panel {
+            position: relative;
+            min-height: 520px;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            overflow: hidden;
+            background:
+                linear-gradient(180deg, rgba(255, 255, 255, 0.065), rgba(255, 255, 255, 0.02)),
+                radial-gradient(circle at 30% 20%, rgba(255, 122, 69, 0.12), transparent 16rem);
+            box-shadow: var(--shadow);
+        }
+
+        .orbit-panel::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(to right, rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+            background-size: 34px 34px;
+            mask-image: linear-gradient(to bottom, black, transparent 94%);
+        }
+
+        .hero-workflow {
+            position: absolute;
+            inset: 42px 28px;
+        }
+
+        .flow-node {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            min-width: 136px;
+            padding: 10px 12px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 8px;
+            background: rgba(12, 9, 26, 0.86);
+            box-shadow: 0 12px 34px rgba(0, 0, 0, 0.28);
+        }
+
+        .flow-node svg {
+            width: 18px;
+            height: 18px;
+            color: var(--orange);
+            flex: 0 0 auto;
+        }
+
+        .flow-node b {
+            display: block;
+            font-size: 0.77rem;
+            line-height: 1.1;
+        }
+
+        .flow-node small {
+            display: block;
+            color: var(--muted);
+            font-size: 0.66rem;
+            line-height: 1.2;
+        }
+
+        .hero-workflow svg.lines {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            overflow: visible;
+        }
+
+        .wire {
+            fill: none;
+            stroke: rgba(167, 139, 250, 0.72);
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-dasharray: 7 9;
+            animation: flow 7s linear infinite;
+        }
+
+        @keyframes flow {
+            to { stroke-dashoffset: -160; }
+        }
+
+        .node-a { left: 0; top: 28px; }
+        .node-b { right: 8px; top: 92px; }
+        .node-c { left: 36px; top: 228px; }
+        .node-d { right: 20px; top: 298px; }
+        .node-e { left: 104px; bottom: 12px; }
+
+        .panel-caption {
+            position: absolute;
+            left: 22px;
+            right: 22px;
+            bottom: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 14px;
+            padding-top: 16px;
+            border-top: 1px solid var(--line);
+            color: var(--muted);
+            font-size: 0.82rem;
+        }
+
+        .section {
+            padding: clamp(76px, 9vw, 112px) 0;
+            border-top: 1px solid var(--line);
+        }
+
+        .section-head {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 16px;
+            margin-bottom: 42px;
+            max-width: 100%;
+        }
+
+        .section-kicker {
+            display: block;
+            margin-bottom: 10px;
+            color: var(--orange);
+            font-size: 0.74rem;
+            font-weight: 800;
+            letter-spacing: 0.11em;
+            text-transform: uppercase;
+        }
+
+        .section h2 {
+            max-width: 24ch;
+            font-size: clamp(2.15rem, 4vw, 4.25rem);
+            line-height: 1.02;
+        }
+
+        .section-lede {
+            max-width: 64ch;
+            color: var(--muted);
+            padding-bottom: 0;
+            font-size: 0.98rem;
+            line-height: 1.68;
+        }
+
+        .proof-band {
+            padding: 28px 0 58px;
+        }
+
+        .proof-band .stats {
+            margin-top: 0;
+            max-width: none;
+        }
+
+        .build-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            overflow: hidden;
+            background: var(--line);
+        }
+
+        .build-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            min-height: 190px;
+            padding: 24px;
+            background: rgba(6, 5, 16, 0.9);
+        }
+
+        .build-card i {
+            color: var(--orange);
+            margin-bottom: 18px;
+        }
+
+        .build-card h3 {
+            font-size: 1.08rem;
+            margin-bottom: 10px;
+            line-height: 1.15;
+        }
+
+        .build-card p {
+            max-width: 30ch;
+            color: var(--muted);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 1px;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            overflow: hidden;
+            background: var(--line);
+        }
+
+        .process-step {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            min-height: 212px;
+            padding: 24px;
+            background: rgba(6, 5, 16, 0.92);
+        }
+
+        .step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 34px;
+            height: 34px;
+            margin-bottom: 24px;
+            border: 1px solid rgba(255, 122, 69, 0.45);
+            border-radius: 50%;
+            color: var(--orange);
+            font-weight: 800;
+            font-size: 0.78rem;
+        }
+
+        .process-step h3 {
+            font-size: 1rem;
+            margin-bottom: 10px;
+            line-height: 1.15;
+        }
+
+        .process-step p {
+            max-width: 28ch;
+            color: var(--muted);
+            font-size: 0.86rem;
+            line-height: 1.58;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(320px, 370px);
+            gap: clamp(32px, 5vw, 56px);
+            align-items: start;
+        }
+
+        .about-copy {
+            display: grid;
+            gap: 16px;
+            max-width: 66ch;
+            color: var(--soft);
+            font-size: 1.02rem;
+            line-height: 1.7;
+        }
+
+        .about-more {
+            display: grid;
+            gap: 16px;
+        }
+
+        .about-more[hidden] {
+            display: none;
+        }
+
+        .read-more {
+            width: fit-content;
+            margin-top: 6px;
+            border: 1px solid rgba(167, 139, 250, 0.35);
+            background: rgba(139, 92, 246, 0.08);
+            color: var(--text);
+            cursor: pointer;
+        }
+
+        .about-copy p:first-child {
+            color: var(--text);
+            font-size: 1.18rem;
+        }
+
+        .insight-panel {
+            position: sticky;
+            top: 94px;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: var(--panel);
+            overflow: hidden;
+        }
+
+        .insight-panel header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px;
+            border-bottom: 1px solid var(--line);
+            background: rgba(255, 255, 255, 0.04);
+        }
+
+        .insight-panel h3 {
+            font-size: 1rem;
+        }
+
+        .signal-list {
+            display: grid;
+            gap: 1px;
+            background: var(--line);
+        }
+
+        .signal {
+            display: grid;
+            grid-template-columns: 32px 1fr;
+            gap: 12px;
+            padding: 16px 18px;
+            background: rgba(6, 5, 16, 0.92);
+        }
+
+        .signal i {
+            color: var(--violet);
+        }
+
+        .signal b {
+            display: block;
+            font-size: 0.86rem;
+            margin-bottom: 2px;
+        }
+
+        .signal span {
+            display: block;
+            color: var(--muted);
+            font-size: 0.82rem;
+            line-height: 1.5;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 14px;
+            margin-top: 34px;
+            max-width: 860px;
+        }
+
+        .stat {
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            padding: 22px 18px;
+            background: rgba(255, 255, 255, 0.035);
+        }
+
+        .stat strong {
+            display: block;
+            font-family: "Space Grotesk", sans-serif;
+            color: var(--text);
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            line-height: 1;
+        }
+
+        .stat span {
+            display: block;
+            margin-top: 10px;
+            color: var(--muted);
+            font-size: 0.73rem;
+            font-weight: 800;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            line-height: 1.25;
+        }
+
+        .media-card {
+            border: 1px solid var(--line);
+            border-radius: 18px;
+            background:
+                linear-gradient(135deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02)),
+                rgba(7, 5, 20, 0.88);
+            overflow: hidden;
+            box-shadow: 0 18px 48px rgba(0, 0, 0, 0.24);
+        }
+
+        .flag {
+            display: grid;
+            place-items: center;
+            width: 42px;
+            height: 32px;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 6px;
+            background: rgba(255, 255, 255, 0.06);
+            font-size: 1.35rem;
+        }
+
+        .footprint-pill {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            padding: 16px 18px;
+            border-top: 1px solid var(--line);
+            background: rgba(255, 255, 255, 0.025);
+        }
+
+        .footprint-pill .flag {
+            width: 36px;
+            height: 28px;
+            font-size: 1.15rem;
+        }
+
+        .media-grid {
+            position: relative;
+            max-width: 760px;
+            margin: 0 auto;
+            padding-bottom: 8px;
+        }
+
+        .media-card {
+            position: sticky;
+            top: 108px;
+            min-height: 0;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 18px;
+        }
+
+        .media-card:not(:first-child) {
+            margin-top: -72px;
+        }
+
+        .media-card:nth-child(odd) {
+            transform: rotate(-0.55deg);
+        }
+
+        .media-card:nth-child(even) {
+            transform: rotate(0.55deg);
+        }
+
+        .media-preview {
+            position: relative;
+            min-height: 0;
+            aspect-ratio: 16 / 10.5;
+            border-bottom: 1px solid var(--line);
+            background:
+                radial-gradient(circle at 28% 26%, rgba(255, 122, 69, 0.14), transparent 8rem),
+                linear-gradient(to right, rgba(255,255,255,0.055) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255,255,255,0.055) 1px, transparent 1px),
+                #070513;
+            background-size: auto, 26px 26px, 26px 26px, auto;
+            overflow: hidden;
+        }
+
+        .media-preview::after {
+            content: "";
+            position: absolute;
+            inset: 28px;
+            border: 1px dashed rgba(167, 139, 250, 0.42);
+            border-radius: 8px;
+        }
+
+        .media-preview.has-image::after {
+            display: none;
+        }
+
+        .media-preview img {
+            position: absolute;
+            inset: 14px;
+            width: calc(100% - 28px);
+            height: calc(100% - 28px);
+            object-fit: contain;
+            object-position: center top;
+            display: block;
+            border-radius: 12px;
+            background: rgba(7, 5, 20, 0.9);
+        }
+
+        .media-play {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            z-index: 2;
+            transform: translate(-50%, -50%);
+            display: grid;
+            place-items: center;
+            width: 54px;
+            height: 54px;
+            border: 1px solid rgba(255, 122, 69, 0.6);
+            border-radius: 50%;
+            background: rgba(255, 122, 69, 0.14);
+            color: var(--orange);
+        }
+
+        .media-body {
+            padding: 18px 22px 22px;
+            background: linear-gradient(180deg, rgba(7, 5, 20, 0.4), rgba(7, 5, 20, 0.92));
+        }
+
+        .media-body h3 {
+            font-size: 1rem;
+            margin-bottom: 8px;
+            line-height: 1.2;
+        }
+
+        .media-body p {
+            color: var(--muted);
+            font-size: 0.9rem;
+            line-height: 1.58;
+            max-width: 42ch;
+        }
+
+        .sectors-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            overflow: hidden;
+            background: var(--line);
+        }
+
+        .sector-card {
+            display: flex;
+            flex-direction: column;
+            min-height: 178px;
+            padding: 24px;
+            background: rgba(6, 5, 16, 0.9);
+            transition: transform 180ms ease, background 180ms ease;
+        }
+
+        .sector-card:hover {
+            transform: translateY(-3px);
+            background: rgba(139, 92, 246, 0.12);
+        }
+
+        .sector-card i {
+            color: var(--orange);
+            margin-bottom: 18px;
+        }
+
+        .sector-card h3 {
+            font-size: 1.02rem;
+            margin-bottom: 8px;
+            line-height: 1.15;
+        }
+
+        .sector-card p {
+            max-width: 28ch;
+            color: var(--muted);
+            font-size: 0.88rem;
+            line-height: 1.55;
+        }
+
+        .case-list {
+            max-width: 1080px;
+            margin: 0 auto;
+            display: grid;
+            gap: 22px;
+        }
+
+        .case-study {
+            display: grid;
+            grid-template-columns: minmax(0, 0.92fr) minmax(360px, 1.08fr);
+            gap: 34px;
+            align-items: stretch;
+            min-height: 390px;
+            padding: 30px;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background:
+                linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.015)),
+                rgba(7, 5, 20, 0.96);
+            box-shadow: 0 18px 54px rgba(0, 0, 0, 0.18);
+        }
+
+        .case-study.featured {
+            border-color: rgba(212, 168, 79, 0.28);
+            background:
+                linear-gradient(135deg, rgba(255, 122, 69, 0.08), rgba(139, 92, 246, 0.06)),
+                rgba(9, 7, 24, 0.97);
+        }
+
+        .case-study.featured .case-meta::before {
+            content: "Featured · ";
+            color: #f7f7fb;
+        }
+
+        .case-study:nth-child(even) {
+            grid-template-columns: minmax(360px, 1.08fr) minmax(0, 0.92fr);
+        }
+
+        .case-study:nth-child(even) .case-content {
+            order: 2;
+        }
+
+        .case-study:nth-child(even) .workflow-card {
+            order: 1;
+        }
+
+        .case-meta {
+            display: inline-flex;
+            margin-bottom: 14px;
+            color: var(--orange);
+            font-size: 0.74rem;
+            font-weight: 800;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            line-height: 1.25;
+        }
+
+        .case-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            max-width: 60ch;
+            padding: 6px 0;
+        }
+
+        .case-content h3 {
+            font-size: clamp(1.75rem, 3vw, 2.5rem);
+            line-height: 1.08;
+            margin-bottom: 18px;
+        }
+
+        .case-content p {
+            color: var(--muted);
+            margin-bottom: 10px;
+            max-width: 56ch;
+            line-height: 1.62;
+        }
+
+        .case-content b {
+            color: var(--text);
+        }
+
+        .case-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 18px;
+        }
+
+        .stack-tag {
+            display: inline-flex;
+            align-items: center;
+            min-height: 30px;
+            padding: 0 10px;
+            border: 1px solid rgba(167, 139, 250, 0.28);
+            border-radius: 8px;
+            background: rgba(139, 92, 246, 0.11);
+            color: #ded4ff;
+            font-size: 0.73rem;
+            font-weight: 800;
+        }
+
+        .workflow-card {
+            position: relative;
+            align-self: stretch;
+            min-width: 0;
+            min-height: 300px;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 8px;
+            overflow: hidden;
+            background:
+                radial-gradient(circle at 18% 22%, rgba(255, 122, 69, 0.14), transparent 10rem),
+                radial-gradient(circle at 82% 70%, rgba(56, 189, 248, 0.1), transparent 11rem),
+                #070513;
+        }
+
+        .workflow-card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(to right, rgba(255, 255, 255, 0.055) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.055) 1px, transparent 1px);
+            background-size: 28px 28px;
+        }
+
+        .workflow-topbar {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            padding: 13px 14px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(4, 3, 11, 0.78);
+        }
+
+        .workflow-topbar b {
+            font-size: 0.76rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            line-height: 1.2;
+        }
+
+        .workflow-topbar span {
+            color: var(--green);
+            font-size: 0.72rem;
+            font-weight: 800;
+        }
+
+        .workflow-canvas {
+            position: absolute;
+            inset: 52px 16px 16px;
+        }
+
+        .mini-node {
+            position: absolute;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            width: 142px;
+            min-height: 46px;
+            padding: 8px 10px;
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            border-radius: 8px;
+            background: rgba(13, 10, 29, 0.92);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.28);
+        }
+
+        .mini-node i {
+            color: var(--orange);
+            flex: 0 0 auto;
+        }
+
+        .mini-node b {
+            display: block;
+            font-size: 0.72rem;
+            line-height: 1.12;
+        }
+
+        .mini-node span {
+            display: block;
+            color: var(--muted);
+            font-size: 0.62rem;
+            line-height: 1.15;
+        }
+
+        .mini-node.source { left: 0; top: 20px; }
+        .mini-node.logic { left: 42%; top: 92px; transform: translateX(-50%); }
+        .mini-node.ai { right: 0; top: 26px; }
+        .mini-node.output { right: 30px; bottom: 22px; }
+        .mini-node.data { left: 24px; bottom: 38px; }
+
+        .workflow-canvas[data-pattern="linear"] .mini-node.source { left: 0; top: 118px; }
+        .workflow-canvas[data-pattern="linear"] .mini-node.logic { left: 26%; top: 118px; transform: none; }
+        .workflow-canvas[data-pattern="linear"] .mini-node.ai { left: 52%; top: 118px; right: auto; transform: none; }
+        .workflow-canvas[data-pattern="linear"] .mini-node.data { left: 26%; bottom: 22px; }
+        .workflow-canvas[data-pattern="linear"] .mini-node.output { right: 0; bottom: 82px; transform: none; }
+
+        .workflow-canvas[data-pattern="hub"] .mini-node.source { left: 0; top: 24px; }
+        .workflow-canvas[data-pattern="hub"] .mini-node.logic { left: 50%; top: 112px; transform: translateX(-50%); }
+        .workflow-canvas[data-pattern="hub"] .mini-node.ai { right: 0; top: 24px; transform: none; }
+        .workflow-canvas[data-pattern="hub"] .mini-node.data { left: 0; bottom: 24px; }
+        .workflow-canvas[data-pattern="hub"] .mini-node.output { right: 0; bottom: 24px; transform: none; }
+
+        .workflow-canvas[data-pattern="loop"] .mini-node.source { left: 30px; top: 26px; }
+        .workflow-canvas[data-pattern="loop"] .mini-node.logic { right: 34px; top: 32px; left: auto; transform: none; }
+        .workflow-canvas[data-pattern="loop"] .mini-node.ai { right: 34px; bottom: 34px; top: auto; transform: none; }
+        .workflow-canvas[data-pattern="loop"] .mini-node.data { left: 30px; bottom: 34px; }
+        .workflow-canvas[data-pattern="loop"] .mini-node.output { left: 50%; top: 112px; right: auto; bottom: auto; transform: translateX(-50%); }
+
+        .workflow-canvas[data-pattern="split"] .mini-node.source { left: 0; top: 112px; }
+        .workflow-canvas[data-pattern="split"] .mini-node.logic { left: 39%; top: 112px; transform: translateX(-50%); }
+        .workflow-canvas[data-pattern="split"] .mini-node.ai { right: 0; top: 24px; transform: none; }
+        .workflow-canvas[data-pattern="split"] .mini-node.data { right: 0; left: auto; bottom: 24px; }
+        .workflow-canvas[data-pattern="split"] .mini-node.output { left: 39%; right: auto; bottom: 18px; transform: none; }
+
+        .workflow-canvas[data-pattern="stack"] .mini-node.source { left: 0; top: 20px; }
+        .workflow-canvas[data-pattern="stack"] .mini-node.logic { left: 0; top: 112px; transform: none; }
+        .workflow-canvas[data-pattern="stack"] .mini-node.ai { right: 0; top: 66px; transform: none; }
+        .workflow-canvas[data-pattern="stack"] .mini-node.data { right: 0; left: auto; bottom: 38px; }
+        .workflow-canvas[data-pattern="stack"] .mini-node.output { left: 0; right: auto; bottom: 18px; transform: none; }
+
+        .workflow-canvas .lines {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            width: 100%;
+            height: 100%;
+            overflow: visible;
+        }
+
+        .workflow-canvas .wire {
+            stroke-width: 2.2;
+        }
+
+        .contact {
+            text-align: center;
+            padding-bottom: 96px;
+        }
+
+        .contact h2 {
+            max-width: 13ch;
+            margin: 0 auto 20px;
+            font-size: clamp(2.3rem, 5vw, 4.6rem);
+            line-height: 1;
+            text-wrap: balance;
+        }
+
+        .contact p {
+            max-width: 42ch;
+            margin: 0 auto 28px;
+            color: var(--muted);
+            line-height: 1.65;
+        }
+
+        .footer-note {
+            margin-top: 54px;
+            color: var(--muted);
+            font-size: 0.72rem;
+            font-weight: 800;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        @media (max-width: 1040px) {
+            .hero-grid,
+            .about-grid,
+            .case-study,
+            .case-study:nth-child(even) {
+                grid-template-columns: 1fr;
+            }
+
+            .section-lede {
+                max-width: 54ch;
+                padding-bottom: 0;
+            }
+
+            .case-study:nth-child(even) .case-content,
+            .case-study:nth-child(even) .workflow-card {
+                order: initial;
+            }
+
+            .case-content {
+                max-width: 760px;
+            }
+
+            .media-grid {
+                max-width: 100%;
+            }
+
+            .media-card {
+                top: 96px;
+            }
+
+            .orbit-panel {
+                min-height: 470px;
+            }
+
+            .stats,
+            .sectors-grid,
+            .build-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .process-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .insight-panel {
+                position: static;
+            }
+
+        }
+
+        @media (max-width: 720px) {
+            .wrap {
+                width: min(100% - 28px, 1180px);
+            }
+
+            .nav {
+                align-items: center;
+                flex-wrap: wrap;
+            }
+
+            .nav-links {
+                width: 100%;
+                right: 0;
+                top: calc(100% + 8px);
+            }
+
+            .availability {
+                display: none;
+            }
+
+            .hero {
+                padding-top: 54px;
+                text-align: center;
+            }
+
+            h1 {
+                max-width: 560px;
+                margin-left: auto;
+                margin-right: auto;
+                font-size: clamp(2.7rem, 14vw, 4.1rem);
+                line-height: 1.02;
+            }
+
+            .hero-grid {
+                gap: 36px;
+            }
+
+            .hero-actions {
+                display: grid;
+                justify-content: stretch;
+            }
+
+            .hero .btn {
+                width: 100%;
+                min-height: 54px;
+            }
+
+            .eyebrow {
+                margin-left: auto;
+                margin-right: auto;
+                max-width: 100%;
+            }
+
+            .hero-copy {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .orbit-panel,
+            .workflow-card {
+                min-height: 410px;
+            }
+
+            .hero-workflow {
+                inset: 26px 14px;
+            }
+
+            .flow-node,
+            .mini-node {
+                min-width: 118px;
+                width: 126px;
+                padding: 8px;
+            }
+
+            .flow-node b,
+            .mini-node b {
+                font-size: 0.66rem;
+            }
+
+            .panel-caption {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .section {
+                padding: 74px 0;
+            }
+
+            .section-head {
+                gap: 16px;
+                margin-bottom: 30px;
+            }
+
+            .section h2,
+            .contact h2 {
+                max-width: 20ch;
+            }
+
+            .section-lede {
+                margin-top: 0;
+                font-size: 0.94rem;
+                max-width: 100%;
+            }
+
+            .stats,
+            .sectors-grid,
+            .build-grid,
+            .process-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .media-grid {
+                max-width: 100%;
+            }
+
+            .media-card {
+                position: relative;
+                top: auto;
+                min-height: 0;
+                margin-top: 0;
+                margin-bottom: 18px;
+                transform: none;
+            }
+
+            .media-preview {
+                min-height: 220px;
+                aspect-ratio: auto;
+            }
+
+            .case-study {
+                margin-bottom: 0;
+            }
+
+            .proof-band {
+                padding: 18px 0 42px;
+            }
+
+            .case-study {
+                padding: 18px;
+                gap: 22px;
+            }
+
+            .case-content {
+                padding: 0;
+            }
+
+            .case-content h3 {
+                margin-bottom: 14px;
+            }
+
+            .case-content p {
+                font-size: 0.94rem;
+                line-height: 1.55;
+            }
+
+            .stack-tag {
+                min-height: 28px;
+                font-size: 0.68rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <nav class="nav" aria-label="Primary navigation">
+            <a class="brand" href="#">
+                <div class="avatar">PA</div>
+                <div>
+                    <strong>Prince Ardiabah</strong>
+                    <span>AI Automation Specialist</span>
+                </div>
+            </a>
+
+            <div class="nav-actions">
+                <div class="nav-links" id="site-menu">
+                    <a href="#about">About</a>
+                    <a href="#sectors">Industries</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#media">Media</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <a class="availability" href="#contact">Open to Projects</a>
+                <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Toggle menu">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
+        </nav>
+
+        <header class="hero">
+            <div class="hero-grid">
+                <div>
+                    <div class="eyebrow"><span class="pulse"></span> 25+ autonomous workflows live</div>
+                    <h1>Building Automations for <span class="accent">Complex Systems.</span></h1>
+                    <p class="hero-copy">I don’t just connect tools. I design the systems businesses actually run on: AI workflows, data pipelines, and operating logic built around real outcomes.</p>
+                    <div class="hero-actions">
+                        <a class="btn btn-primary" href="#projects">Explore Projects <i data-lucide="arrow-right"></i></a>
+                        <a class="btn" href="https://calendly.com/princeardiabah/lets-automate-your-workflow" target="_blank" rel="noreferrer">Initiate Strategic Sync <i data-lucide="calendar"></i></a>
+                    </div>
+                </div>
+
+                <div class="orbit-panel" aria-label="Animated n8n-style workflow">
+                    <div class="hero-workflow">
+                        <svg class="lines" viewBox="0 0 420 440" preserveAspectRatio="none" aria-hidden="true">
+                            <path class="wire" d="M80 76 C180 76 220 130 334 130"></path>
+                            <path class="wire" d="M334 150 C250 200 190 210 102 254"></path>
+                            <path class="wire" d="M116 280 C210 312 250 344 330 340"></path>
+                            <path class="wire" d="M334 364 C250 420 206 414 162 398"></path>
+                        </svg>
+                        <div class="flow-node node-a"><i data-lucide="webhook"></i><div><b>Trigger</b><small>Lead or event</small></div></div>
+                        <div class="flow-node node-b"><i data-lucide="brain-circuit"></i><div><b>AI Logic</b><small>Classify intent</small></div></div>
+                        <div class="flow-node node-c"><i data-lucide="database"></i><div><b>Data Layer</b><small>Sync records</small></div></div>
+                        <div class="flow-node node-d"><i data-lucide="workflow"></i><div><b>n8n Router</b><small>Branch actions</small></div></div>
+                        <div class="flow-node node-e"><i data-lucide="send"></i><div><b>Delivery</b><small>Notify teams</small></div></div>
+                    </div>
+                    <div class="panel-caption">
+                        <span>Live automation architecture: trigger, reason, route, execute, report.</span>
+                        <span>n8n + LLMs + APIs</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <section class="proof-band" aria-label="Impact stats">
+                <div class="stats" id="stats">
+                    <div class="stat"><strong class="counter" data-target="25">0</strong><span>Workflows Live</span></div>
+                    <div class="stat"><strong class="counter" data-target="10">0</strong><span>Systems Built</span></div>
+                    <div class="stat"><strong class="counter" data-target="7">0</strong><span>Markets Worked In</span></div>
+                    <div class="stat"><strong class="counter" data-target="11361">0</strong><span>LinkedIn Reach</span></div>
+                </div>
+            </section>
+
+            <section class="section" id="build">
+                <div class="section-head">
+                    <div>
+                        <span class="section-kicker">What I Build</span>
+                        <h2>Automation systems that remove the hidden drag inside growing teams.</h2>
+                    </div>
+                    <p class="section-lede">I build practical systems around the tools teams already use, then add AI, logic, data, and routing where they create the most leverage.</p>
+                </div>
+
+                <div class="build-grid">
+                    <div class="build-card"><i data-lucide="bot"></i><h3>AI Agents & Assistants</h3><p>Conversational systems that answer questions, process context, trigger actions, and reduce internal dependency on manual updates.</p></div>
+                    <div class="build-card"><i data-lucide="workflow"></i><h3>n8n Workflow Engines</h3><p>End-to-end automations for sales, operations, onboarding, content, recruitment, reporting, and internal delivery workflows.</p></div>
+                    <div class="build-card"><i data-lucide="database-zap"></i><h3>Data Pipelines</h3><p>Scrapers, syncs, structured databases, spreadsheet updates, and clean operational tables teams can actually trust.</p></div>
+                    <div class="build-card"><i data-lucide="file-search"></i><h3>Intelligence Systems</h3><p>Business audits, meeting intelligence, candidate scoring, link aggregation, and decision support built around structured outputs.</p></div>
+                    <div class="build-card"><i data-lucide="plug-zap"></i><h3>Tool Integrations</h3><p>Microsoft Teams, Supabase, Excel, email, webhooks, LLMs, and APIs connected into one reliable operating flow.</p></div>
+                    <div class="build-card"><i data-lucide="chart-no-axes-combined"></i><h3>Operational Scale</h3><p>Systems designed to reduce repetitive work, improve visibility, speed up execution, and help teams grow without breaking.</p></div>
+                </div>
+            </section>
+
+            <section class="section" id="process">
+                <div class="section-head">
+                    <div>
+                        <span class="section-kicker">How I Work</span>
+                        <h2>From messy workflow to reliable operating system.</h2>
+                    </div>
+                    <p class="section-lede">The work starts with business reality before tools. I focus on the moments where better structure creates the biggest return.</p>
+                </div>
+
+                <div class="process-grid">
+                    <div class="process-step"><span class="step-number">01</span><h3>Map the Work</h3><p>Understand how information, decisions, people, and tools currently move through the business.</p></div>
+                    <div class="process-step"><span class="step-number">02</span><h3>Find the Bottleneck</h3><p>Identify where time is lost, context breaks, handoffs fail, or teams depend too much on manual follow-up.</p></div>
+                    <div class="process-step"><span class="step-number">03</span><h3>Design the System</h3><p>Define the triggers, logic, data sources, AI layers, human approvals, and outputs before building.</p></div>
+                    <div class="process-step"><span class="step-number">04</span><h3>Build & Test</h3><p>Implement the workflow, test edge cases, clean the output, and make the automation usable for real teams.</p></div>
+                    <div class="process-step"><span class="step-number">05</span><h3>Improve the Engine</h3><p>Monitor what happens after launch, then refine the workflow so it becomes more reliable over time.</p></div>
+                </div>
+            </section>
+
+            <section class="section" id="about">
+                <div class="section-head">
+                    <div>
+                        <span class="section-kicker">About</span>
+                        <h2>Strategy first. Systems always.</h2>
+                    </div>
+                </div>
+
+                <div class="about-grid">
+                    <div>
+                        <div class="about-copy">
+                            <p>I’m an AI automation specialist focused on designing systems that help businesses operate, scale, and deliver with far less friction. My work turns scattered processes into structured workflows that reduce manual effort and create repeatable outcomes.</p>
+                            <p>My advantage is that I do not approach automation from a purely technical lens. With experience across strategy, consulting, early-stage ecosystems, and markets including Germany, the United Kingdom, the United States, Canada, Ghana, and China, I understand where teams get stuck and where growth quietly slows down behind the scenes.</p>
+                            <div class="about-more" id="about-more" hidden>
+                                <p>At RapidWorks UG, I design and implement AI-driven systems that connect marketing, sales, operations, data, and internal communication. I map the workflow first, identify the leverage points, then build automations that work commercially, not just technically.</p>
+                                <p>Beyond commercial work, I apply the same systems thinking through Digital Bridge Ghana and Room_99, building structured pathways for young people to learn practical, future-facing skills.</p>
+                            </div>
+                            <button class="btn read-more" type="button" aria-expanded="false" aria-controls="about-more">Read More <i data-lucide="chevron-down"></i></button>
+                        </div>
+                    </div>
+
+                    <aside class="insight-panel">
+                        <header>
+                            <h3>Strategic Edge</h3>
+                            <i data-lucide="sparkles"></i>
+                        </header>
+                        <div class="signal-list">
+                            <div class="signal"><i data-lucide="map"></i><div><b>Workflow Mapping</b><span>Start with the real operating model before choosing tools.</span></div></div>
+                            <div class="signal"><i data-lucide="goal"></i><div><b>Commercial Alignment</b><span>Design automations around revenue, speed, quality, and delivery.</span></div></div>
+                            <div class="signal"><i data-lucide="network"></i><div><b>Systems Integration</b><span>Connect marketing, sales, operations, data, and AI into one engine.</span></div></div>
+                            <div class="signal"><i data-lucide="globe-2"></i><div><b>Global Context</b><span>Experience across Germany, UK, US, Canada, Ghana, and China.</span></div></div>
+                        </div>
+                        <div class="footprint-pill" aria-label="Global footprint countries">
+                            <span class="flag" title="Germany">🇩🇪</span>
+                            <span class="flag" title="Ghana">🇬🇭</span>
+                            <span class="flag" title="United Kingdom">🇬🇧</span>
+                            <span class="flag" title="United States">🇺🇸</span>
+                            <span class="flag" title="Canada">🇨🇦</span>
+                            <span class="flag" title="China">🇨🇳</span>
+                        </div>
+                    </aside>
+                </div>
+            </section>
+
+            <section class="section" id="sectors">
+                <div class="section-head">
+                    <div>
+                        <span class="section-kicker">Industries</span>
+                        <h2>Industries I’m built to automate.</h2>
+                    </div>
+                    <p class="section-lede">These are the kinds of environments where I tend to do my best work: high movement, operational complexity, and real pressure to scale cleanly.</p>
+                </div>
+
+                <div class="sectors-grid">
+                    <div class="sector-card"><i data-lucide="landmark"></i><h3>Fintech</h3><p>Loan scoring, fraud checks, onboarding, and risk workflows.</p></div>
+                    <div class="sector-card"><i data-lucide="shopping-cart"></i><h3>SME Retail</h3><p>Inventory alerts, channel sync, forecasting, and reorder logic.</p></div>
+                    <div class="sector-card"><i data-lucide="hotel"></i><h3>Hospitality</h3><p>Guest response, concierge flows, upsells, and service routing.</p></div>
+                    <div class="sector-card"><i data-lucide="truck"></i><h3>Logistics</h3><p>Route decisions, delivery tracking, driver updates, and dispatch.</p></div>
+                    <div class="sector-card"><i data-lucide="stethoscope"></i><h3>Healthcare</h3><p>Triage, queue logic, reminders, patient intake, and reporting.</p></div>
+                    <div class="sector-card"><i data-lucide="graduation-cap"></i><h3>Education</h3><p>Fee workflows, SMS reminders, student records, and admin ops.</p></div>
+                    <div class="sector-card"><i data-lucide="factory"></i><h3>Manufacturing</h3><p>Quality checks, alerts, defect logs, and supervisor escalation.</p></div>
+                    <div class="sector-card"><i data-lucide="building-2"></i><h3>Real Estate</h3><p>Listing sync, lead routing, qualification, and follow-up systems.</p></div>
+                    <div class="sector-card"><i data-lucide="briefcase-business"></i><h3>HR & Talent</h3><p>Sourcing, screening, scoring, and recruiter pipeline workflows.</p></div>
+                    <div class="sector-card"><i data-lucide="globe"></i><h3>Public Services</h3><p>Citizen portals, request tracking, status updates, and intake.</p></div>
+                </div>
+            </section>
+
+            <section class="section" id="projects">
+                <div class="section-head">
+                    <div>
+                        <span class="section-kicker">Projects</span>
+                        <h2>Automation projects I’ve built for complex business systems.</h2>
+                    </div>
+                    <p class="section-lede">A selection of systems I’ve built to reduce manual work, connect moving parts, and make execution faster, clearer, and easier to trust.</p>
+                </div>
+
+                <div class="case-list">
+                    <article class="case-study featured">
+                        <div class="case-content">
+                            <span class="case-meta">RapidWorks UG · Germany</span>
+                            <h3>The Oracle — Conversational Database</h3>
+                            <p><b>The Problem:</b> Teams constantly interrupt workflows to ask for updates, availability, and internal context.</p>
+                            <p><b>The Build:</b> A conversational AI layer embedded in Microsoft Teams, connected to internal databases and operational data.</p>
+                            <p><b>The Output:</b> Real-time answers to operational questions via text or voice, delivered instantly.</p>
+                            <p><b>The Result:</b> Eliminates internal communication bottlenecks and reduces dependency on human updates.</p>
+                            <div class="case-stack"><span class="stack-tag">n8n</span><span class="stack-tag">Microsoft Teams</span><span class="stack-tag">Groq / LLM</span></div>
+                        </div>
+                        <div class="workflow-card" data-pattern="hub" data-title="Oracle Database Canvas" data-source="Teams Query" data-logic="Context Route" data-ai="Groq / LLM" data-data="Internal DB" data-output="Voice / Text Answer"></div>
+                    </article>
+
+                    <article class="case-study featured">
+                        <div class="case-content">
+                            <span class="case-meta">Multi-Country</span>
+                            <h3>Business Model Analyser</h3>
+                            <p><b>The Problem:</b> Founders operate without clear visibility into what’s working and what’s broken in their business models.</p>
+                            <p><b>The Build:</b> An AI-powered diagnostic system that scrapes websites and evaluates structure, positioning, and performance logic.</p>
+                            <p><b>The Output:</b> Instant, structured audits highlighting strengths, weaknesses, and growth opportunities.</p>
+                            <p><b>The Result:</b> Replaces hours of manual consulting with real-time strategic insight.</p>
+                            <div class="case-stack"><span class="stack-tag">n8n</span><span class="stack-tag">OpenAI</span><span class="stack-tag">Web Scraping</span></div>
+                        </div>
+                        <div class="workflow-card" data-pattern="split" data-title="Business Audit Canvas" data-source="Website URL" data-logic="Scrape + Parse" data-ai="OpenAI Audit" data-data="Model Signals" data-output="Strategy Report"></div>
+                    </article>
+
+                    <article class="case-study featured">
+                        <div class="case-content">
+                            <span class="case-meta">RapidWorks UG · Germany</span>
+                            <h3>Meeting Intelligence Pipeline</h3>
+                            <p><b>The Problem:</b> Critical insights from meetings are lost or poorly tracked, leading to execution gaps.</p>
+                            <p><b>The Build:</b> An automated pipeline that transcribes conversations, processes context with LLMs, and stores structured outputs.</p>
+                            <p><b>The Output:</b> Clear summaries, action items, and decisions synced into a central database.</p>
+                            <p><b>The Result:</b> Transforms meetings into actionable systems with zero information loss.</p>
+                            <div class="case-stack"><span class="stack-tag">Whisper</span><span class="stack-tag">Groq / Llama 3</span><span class="stack-tag">Supabase</span><span class="stack-tag">n8n</span></div>
+                        </div>
+                        <div class="workflow-card" data-pattern="linear" data-title="Meeting Intelligence Canvas" data-source="Audio" data-logic="Transcribe" data-ai="Llama 3 Context" data-data="Supabase" data-output="Actions + Decisions"></div>
+                    </article>
+
+                    <article class="case-study">
+                        <div class="case-content">
+                            <span class="case-meta">RapidWorks UG · Germany</span>
+                            <h3>Ghostwriter Button Listener</h3>
+                            <p><b>The Problem:</b> Content creation is slow, inconsistent, and dependent on manual effort.</p>
+                            <p><b>The Build:</b> A trigger-based system that pulls context, constructs prompts, and generates structured content instantly.</p>
+                            <p><b>The Output:</b> One-click generation of ready-to-edit drafts across multiple use cases.</p>
+                            <p><b>The Result:</b> Increases content production speed and removes creative bottlenecks.</p>
+                            <div class="case-stack"><span class="stack-tag">n8n</span><span class="stack-tag">OpenAI</span><span class="stack-tag">Webhooks</span></div>
+                        </div>
+                        <div class="workflow-card" data-pattern="loop" data-title="Ghostwriter Canvas" data-source="Button Trigger" data-logic="Prompt Builder" data-ai="OpenAI Draft" data-data="Context Bank" data-output="Ready Draft"></div>
+                    </article>
+
+                    <article class="case-study">
+                        <div class="case-content">
+                            <span class="case-meta">Germany</span>
+                            <h3>Applicant Intelligence System</h3>
+                            <p><b>The Problem:</b> Manual CV screening is slow, inconsistent, and difficult to scale.</p>
+                            <p><b>The Build:</b> A real-time scoring engine using logic filters and evaluation criteria to rank candidates automatically.</p>
+                            <p><b>The Output:</b> Instantly prioritized candidate lists based on predefined performance indicators.</p>
+                            <p><b>The Result:</b> Accelerates hiring decisions and improves candidate selection accuracy.</p>
+                            <div class="case-stack"><span class="stack-tag">n8n</span><span class="stack-tag">Logic Filtering</span><span class="stack-tag">Webhooks</span></div>
+                        </div>
+                        <div class="workflow-card" data-pattern="stack" data-title="Applicant Scoring Canvas" data-source="CV Intake" data-logic="Filter Criteria" data-ai="Score Logic" data-data="Candidate Table" data-output="Ranked List"></div>
+                    </article>
+
+                    <article class="case-study">
+                        <div class="case-content">
+                            <span class="case-meta">Germany</span>
+                            <h3>Job Scraper & Candidate Finder</h3>
+                            <p><b>The Problem:</b> Candidate and job data are scattered across multiple platforms, making sourcing inefficient.</p>
+                            <p><b>The Build:</b> A scraping and structuring engine that aggregates job listings and candidate data into a unified system.</p>
+                            <p><b>The Output:</b> Clean, organized datasets ready for recruitment workflows.</p>
+                            <p><b>The Result:</b> Creates scalable, automated sourcing pipelines with centralized data access.</p>
+                            <div class="case-stack"><span class="stack-tag">Web Scraping</span><span class="stack-tag">Supabase</span><span class="stack-tag">n8n</span></div>
+                        </div>
+                        <div class="workflow-card" data-pattern="split" data-title="Sourcing Pipeline Canvas" data-source="Job Boards" data-logic="Normalize Data" data-ai="Match Signals" data-data="Supabase" data-output="Recruitment Dataset"></div>
+                    </article>
+
+                    <article class="case-study">
+                        <div class="case-content">
+                            <span class="case-meta">RapidWorks UG · Germany</span>
+                            <h3>Auto Onboarding System</h3>
+                            <p><b>The Problem:</b> Onboarding new team members is manual, time-consuming, and inconsistent.</p>
+                            <p><b>The Build:</b> An automated workflow that triggers account setup, task allocation, and onboarding communication.</p>
+                            <p><b>The Output:</b> Fully prepared work environments delivered within minutes of onboarding.</p>
+                            <p><b>The Result:</b> Reduces onboarding time drastically and ensures consistent team integration.</p>
+                            <div class="case-stack"><span class="stack-tag">n8n</span><span class="stack-tag">Supabase</span><span class="stack-tag">Email Automation</span></div>
+                        </div>
+                        <div class="workflow-card" data-pattern="linear" data-title="Onboarding Canvas" data-source="New Hire" data-logic="Provision Tasks" data-ai="Rule Engine" data-data="Supabase" data-output="Welcome Flow"></div>
+                    </article>
+
+                    <article class="case-study">
+                        <div class="case-content">
+                            <span class="case-meta">Germany</span>
+                            <h3>Excel Auto-Update Pipeline</h3>
+                            <p><b>The Problem:</b> Manual updates to shared Excel files lead to outdated data and inefficiencies.</p>
+                            <p><b>The Build:</b> A live synchronization system connecting operational data sources directly to Excel.</p>
+                            <p><b>The Output:</b> Continuously updated spreadsheets without manual input.</p>
+                            <p><b>The Result:</b> Eliminates manual data handling and ensures real-time accuracy.</p>
+                            <div class="case-stack"><span class="stack-tag">Excel API</span><span class="stack-tag">Webhooks</span><span class="stack-tag">n8n</span></div>
+                        </div>
+                        <div class="workflow-card" data-pattern="hub" data-title="Excel Sync Canvas" data-source="Ops Data" data-logic="Webhook Sync" data-ai="Validation Rules" data-data="Excel API" data-output="Live Spreadsheet"></div>
+                    </article>
+
+                    <article class="case-study">
+                        <div class="case-content">
+                            <span class="case-meta">Germany</span>
+                            <h3>Link Aggregator Table Builder</h3>
+                            <p><b>The Problem:</b> Critical data sources are fragmented and difficult to query efficiently.</p>
+                            <p><b>The Build:</b> An aggregation system that collects, structures, and normalizes data into a central database.</p>
+                            <p><b>The Output:</b> A clean, queryable table of structured links and metadata.</p>
+                            <p><b>The Result:</b> Transforms scattered information into centralized, usable intelligence.</p>
+                            <div class="case-stack"><span class="stack-tag">n8n</span><span class="stack-tag">Web Scraping</span><span class="stack-tag">Supabase</span></div>
+                        </div>
+                        <div class="workflow-card" data-pattern="loop" data-title="Link Aggregator Canvas" data-source="Source Links" data-logic="Collect + Clean" data-ai="Metadata Rules" data-data="Supabase" data-output="Queryable Table"></div>
+                    </article>
+                </div>
+            </section>
+
+            <section class="section" id="media">
+                <div class="section-head">
+                    <div>
+                        <span class="section-kicker">Media</span>
+                        <h2>Automation snapshots and build walkthroughs.</h2>
+                    </div>
+                    <p class="section-lede">A closer look at the actual workflow structures behind the builds: real canvases, automations, and operating flows in motion.</p>
+                </div>
+
+                <div class="media-grid">
+                    <article class="media-card">
+                        <div class="media-preview has-image">
+                            <img src="assets/media/conversation-analysis-pipeline.png" alt="Conversation analysis automation workflow">
+                        </div>
+                        <div class="media-body">
+                            <h3>Conversation Analysis Pipeline</h3>
+                            <p>Audio intake, language processing, task aggregation, and structured reporting in one automated flow.</p>
+                        </div>
+                    </article>
+                    <article class="media-card">
+                        <div class="media-preview has-image">
+                            <img src="assets/media/candidate-research-pipeline.png" alt="Candidate research automation workflow">
+                        </div>
+                        <div class="media-body">
+                            <h3>Candidate Research Pipeline</h3>
+                            <p>Structured lead and candidate discovery with batch processing, classification, and export-ready output.</p>
+                        </div>
+                    </article>
+                    <article class="media-card">
+                        <div class="media-preview has-image">
+                            <img src="assets/media/application-monitoring-flow.png" alt="Application monitoring workflow">
+                        </div>
+                        <div class="media-body">
+                            <h3>Application Monitoring Flow</h3>
+                            <p>Rule-based observation workflow for detecting changes and triggering updates or alerts only when needed.</p>
+                        </div>
+                    </article>
+                    <article class="media-card">
+                        <div class="media-preview has-image">
+                            <img src="assets/media/change-detection-observer.png" alt="Change detection observer workflow">
+                        </div>
+                        <div class="media-body">
+                            <h3>Change Detection Observer</h3>
+                            <p>A compact observer setup for polling, comparing new states, and routing follow-up actions automatically.</p>
+                        </div>
+                    </article>
+                    <article class="media-card">
+                        <div class="media-preview has-image">
+                            <img src="assets/media/spreadsheet-sync-engine.png" alt="Spreadsheet sync engine workflow">
+                        </div>
+                        <div class="media-body">
+                            <h3>Spreadsheet Sync Engine</h3>
+                            <p>Loop-driven enrichment and sheet updates for keeping operational rows fresh without manual handling.</p>
+                        </div>
+                    </article>
+                    <article class="media-card">
+                        <div class="media-preview has-image">
+                            <img src="assets/media/meeting-summary-dispatcher.png" alt="Meeting summary dispatcher workflow">
+                        </div>
+                        <div class="media-body">
+                            <h3>Meeting Summary Dispatcher</h3>
+                            <p>Prompted summarization and outbound delivery flow for turning recorded sessions into clean outputs.</p>
+                        </div>
+                    </article>
+                    <article class="media-card">
+                        <div class="media-preview has-image">
+                            <img src="assets/media/webhook-intake-trigger.png" alt="Webhook intake trigger workflow">
+                        </div>
+                        <div class="media-body">
+                            <h3>Webhook Intake Trigger</h3>
+                            <p>A minimal capture flow for receiving events and immediately writing structured records into a system.</p>
+                        </div>
+                    </article>
+                    <article class="media-card">
+                        <div class="media-preview has-image">
+                            <img src="assets/media/model-response-bridge.png" alt="Model response bridge workflow">
+                        </div>
+                        <div class="media-body">
+                            <h3>Model Response Bridge</h3>
+                            <p>Simple AI response handling flow that takes structured input, generates output, and forwards it downstream.</p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section class="section contact" id="contact">
+                <span class="section-kicker">Contact</span>
+                <h2>Let’s design the systems your business actually needs.</h2>
+                <p>For teams that want clearer workflows, faster execution, and automation that is useful from day one.</p>
+                <div class="hero-actions" style="justify-content:center;">
+                    <a href="mailto:princeardiabah@gmail.com" class="btn btn-primary">Start a Build Conversation <i data-lucide="mail"></i></a>
+                    <a href="https://calendly.com/princeardiabah/lets-automate-your-workflow" target="_blank" rel="noreferrer" class="btn">Book a 30-Min Call <i data-lucide="calendar"></i></a>
+                    <a href="https://www.linkedin.com/in/prince-ardiabah-14b9171a9" class="btn">Connect on LinkedIn <i data-lucide="linkedin"></i></a>
+                </div>
+                <div class="footer-note">© 2026 Prince Ardiabah | Engineered globally</div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        const makeWorkflow = (card) => {
+            const title = card.dataset.title;
+            const pattern = card.dataset.pattern || "hub";
+            const labels = {
+                source: card.dataset.source,
+                logic: card.dataset.logic,
+                ai: card.dataset.ai,
+                data: card.dataset.data,
+                output: card.dataset.output
+            };
+            const paths = {
+                linear: `
+                        <path class="wire" d="M70 144 H160"></path>
+                        <path class="wire" d="M240 144 H320"></path>
+                        <path class="wire" d="M390 144 C430 144 430 188 452 188"></path>
+                        <path class="wire" d="M204 168 V224"></path>
+                        <path class="wire" d="M204 224 C292 250 350 226 428 206"></path>`,
+                hub: `
+                        <path class="wire" d="M94 58 C168 58 188 118 244 138"></path>
+                        <path class="wire" d="M430 58 C354 58 330 118 276 138"></path>
+                        <path class="wire" d="M96 226 C170 226 190 166 244 144"></path>
+                        <path class="wire" d="M426 226 C350 226 328 166 276 144"></path>`,
+                loop: `
+                        <path class="wire" d="M106 58 C210 18 328 22 426 62"></path>
+                        <path class="wire" d="M454 92 C486 148 484 192 422 224"></path>
+                        <path class="wire" d="M338 226 C260 256 168 256 100 226"></path>
+                        <path class="wire" d="M70 198 C36 142 38 92 106 58"></path>
+                        <path class="wire" d="M242 140 C184 112 142 94 106 74"></path>`,
+                split: `
+                        <path class="wire" d="M78 140 C138 140 156 140 204 140"></path>
+                        <path class="wire" d="M278 130 C332 82 364 60 424 58"></path>
+                        <path class="wire" d="M278 154 C338 198 368 224 424 224"></path>
+                        <path class="wire" d="M244 170 V226"></path>`,
+                stack: `
+                        <path class="wire" d="M74 58 C132 72 138 112 74 140"></path>
+                        <path class="wire" d="M148 78 C232 78 274 90 384 104"></path>
+                        <path class="wire" d="M386 132 C388 174 388 188 386 210"></path>
+                        <path class="wire" d="M318 226 C210 244 150 236 76 226"></path>
+                        <path class="wire" d="M148 152 C226 166 278 188 320 216"></path>`
+            };
+
+            card.innerHTML = `
+                <div class="workflow-topbar">
+                    <b>${title}</b>
+                    <span>Active</span>
+                </div>
+                <div class="workflow-canvas" data-pattern="${pattern}">
+                    <svg class="lines" viewBox="0 0 520 280" preserveAspectRatio="none" aria-hidden="true">
+                        ${paths[pattern] || paths.hub}
+                    </svg>
+                    <div class="mini-node source"><i data-lucide="webhook"></i><div><b>${labels.source}</b><span>Trigger</span></div></div>
+                    <div class="mini-node logic"><i data-lucide="workflow"></i><div><b>${labels.logic}</b><span>n8n branch</span></div></div>
+                    <div class="mini-node ai"><i data-lucide="brain-circuit"></i><div><b>${labels.ai}</b><span>Decision layer</span></div></div>
+                    <div class="mini-node data"><i data-lucide="database"></i><div><b>${labels.data}</b><span>Source of truth</span></div></div>
+                    <div class="mini-node output"><i data-lucide="send"></i><div><b>${labels.output}</b><span>Outcome</span></div></div>
+                </div>
+            `;
+        };
+
+        document.querySelectorAll(".workflow-card").forEach(makeWorkflow);
+        lucide.createIcons();
+
+        const menuToggle = document.querySelector(".menu-toggle");
+        const siteMenu = document.querySelector("#site-menu");
+
+        if (menuToggle && siteMenu) {
+            menuToggle.addEventListener("click", () => {
+                const isOpen = siteMenu.classList.toggle("is-open");
+                menuToggle.setAttribute("aria-expanded", String(isOpen));
+            });
+
+            siteMenu.querySelectorAll("a").forEach((link) => {
+                link.addEventListener("click", () => {
+                    siteMenu.classList.remove("is-open");
+                    menuToggle.setAttribute("aria-expanded", "false");
+                });
+            });
+
+            document.addEventListener("click", (event) => {
+                if (!siteMenu.contains(event.target) && !menuToggle.contains(event.target)) {
+                    siteMenu.classList.remove("is-open");
+                    menuToggle.setAttribute("aria-expanded", "false");
+                }
+            });
+        }
+
+        const readMoreButton = document.querySelector(".read-more");
+        const aboutMore = document.querySelector("#about-more");
+
+        if (readMoreButton && aboutMore) {
+            readMoreButton.addEventListener("click", () => {
+                const isExpanded = readMoreButton.getAttribute("aria-expanded") === "true";
+                readMoreButton.setAttribute("aria-expanded", String(!isExpanded));
+                aboutMore.hidden = isExpanded;
+                readMoreButton.innerHTML = isExpanded
+                    ? 'Read More <i data-lucide="chevron-down"></i>'
+                    : 'Show Less <i data-lucide="chevron-up"></i>';
+                lucide.createIcons();
+            });
+        }
+
+        const runCounter = () => {
+            document.querySelectorAll(".counter").forEach((counter) => {
+                const target = Number(counter.dataset.target);
+                let current = 0;
+                const steps = 56;
+                const tick = () => {
+                    current += target / steps;
+                    if (current < target) {
+                        counter.textContent = Math.ceil(current).toLocaleString();
+                        window.setTimeout(tick, 20);
+                    } else {
+                        counter.textContent = `${target.toLocaleString()}+`;
+                    }
+                };
+                tick();
+            });
+        };
+
+        const stats = document.querySelector("#stats");
+        if (stats) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        runCounter();
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.45 });
+            observer.observe(stats);
+        }
+    </script>
+</body>
+</html>
