@@ -2148,9 +2148,10 @@ body {
     grid-template-areas:
         "a stage stage b"
         "c stage stage d"
-        "e e f f";
-    grid-auto-rows: 210px;
-    gap: 12px;
+        "e f g h"
+        "e i j h";
+    grid-auto-rows: 200px;
+    gap: 10px;
 }
 
 .moment {
@@ -2170,6 +2171,10 @@ body {
 .m-d { grid-area: d; }
 .m-e { grid-area: e; }
 .m-f { grid-area: f; }
+.m-g { grid-area: g; }
+.m-h { grid-area: h; }
+.m-i { grid-area: i; }
+.m-j { grid-area: j; }
 
 .m-stage {
     border-color: rgba(167, 139, 250, 0.45);
@@ -2333,8 +2338,10 @@ body {
             "stage stage"
             "a b"
             "c d"
-            "e e"
-            "f f";
+            "e f"
+            "e g"
+            "h i"
+            "h j";
         grid-auto-rows: 170px;
     }
 
@@ -2351,7 +2358,7 @@ body {
     }
 
     /* Small tiles are too narrow for a description on phones */
-    .moment:is(.m-a, .m-b, .m-c, .m-d) figcaption span {
+    .moment:not(.m-stage) figcaption span {
         display: none;
     }
 
