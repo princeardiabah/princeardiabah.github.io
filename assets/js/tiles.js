@@ -17,6 +17,25 @@
 
     if (reduceMotion) return;
 
+    // Start-screen entrance: tiles swing in one after another the first time
+    // the grid scrolls into view; random turning starts once they've landed.
+    grid.classList.add("has-entrance");
+    tiles.forEach((tile, i) => tile.style.setProperty("--i", i));
+    let landed = false;
+    const enter = () => {
+        if (grid.classList.contains("is-in")) return;
+        const r = grid.getBoundingClientRect();
+        if (r.top > innerHeight * 0.9 || r.bottom < 0) return;
+        grid.classList.add("is-in");
+        removeEventListener("scroll", enter);
+        setTimeout(() => { landed = true; }, 720 + tiles.length * 55);
+    };
+    // A plain scroll check as well as the observer, so the tiles can never
+    // stay hidden if observer callbacks are delayed (e.g. background tabs).
+    addEventListener("scroll", enter, { passive: true });
+    new IntersectionObserver(([entry]) => { if (entry.isIntersecting) enter(); }).observe(grid);
+    enter();
+
     let visible = false;
     new IntersectionObserver(([entry]) => { visible = entry.isIntersecting; }, { threshold: 0.2 }).observe(grid);
 
@@ -28,7 +47,7 @@
     };
 
     const step = () => {
-        if (visible && !document.hidden) {
+        if (landed && visible && !document.hidden) {
             const turned = tiles.filter((t) => t.classList.contains("is-turned") && !t.dataset.held).length;
             const tile = turned < MAX_TURNED ? pick() : null;
             if (tile) {
