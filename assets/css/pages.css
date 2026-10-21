@@ -2584,35 +2584,3 @@ body {
     }
 }
 
-/* Two-offer row (coaching) and the industries strip under consulting */
-.offer-grid-2 {
-    grid-template-columns: repeat(2, 1fr);
-    max-width: 900px;
-}
-
-.consult-sectors {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 14px 18px;
-    margin-top: 22px;
-    padding: 18px 22px;
-    border: 1px solid var(--line);
-    border-radius: 8px;
-    background: rgba(6, 5, 16, 0.85);
-}
-
-.consult-sectors > span {
-    color: var(--orange);
-    font-size: 0.72rem;
-    font-weight: 800;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-}
-
-@media (max-width: 1040px) {
-    .offer-grid-2 {
-        grid-template-columns: 1fr;
-        max-width: 640px;
-    }
-}
