@@ -2584,3 +2584,47 @@ body {
     }
 }
 
+
+/* ---- Hero eyebrow as a link to the latest highlight ---- */
+.eyebrow-link { text-decoration: none; color: inherit; transition: border-color .2s, background .2s; }
+.eyebrow-link:hover { border-color: rgba(255,122,69,.5); background: rgba(255,122,69,.08); }
+.eyebrow-link i { width: 14px; height: 14px; }
+
+/* ---- Built live at Google ---- */
+.built-live {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    gap: clamp(28px, 5vw, 64px);
+    align-items: center;
+}
+.built-live-photo {
+    border-radius: 28px;
+    overflow: hidden;
+    aspect-ratio: 4 / 5;
+    border: 1px solid var(--line);
+    box-shadow: var(--shadow);
+}
+.built-live-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; display: block; user-select: none; -webkit-touch-callout: none; }
+.built-live-copy h2 { margin: 12px 0 16px; }
+.built-live-copy > p { color: var(--muted); line-height: 1.7; margin: 0 0 22px; }
+.built-live-builds { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 22px; }
+.built-live-builds div { padding: 16px 18px; border: 1px solid var(--line); border-radius: 18px; background: var(--panel); }
+.built-live-builds b { display: block; margin-bottom: 6px; }
+.built-live-builds span { color: var(--muted); font-size: .92rem; line-height: 1.5; }
+.built-live-quote {
+    margin: 0 0 26px;
+    padding-left: 18px;
+    border-left: 2px solid var(--orange);
+    color: var(--soft);
+    font-style: italic;
+    line-height: 1.6;
+}
+.built-live-quote cite { display: block; margin-top: 8px; font-style: normal; color: var(--muted); font-size: .88rem; }
+@media (max-width: 860px) {
+    .built-live { grid-template-columns: 1fr; }
+    .built-live-photo { aspect-ratio: 4 / 3; }
+    .built-live-photo img { object-position: center 42%; }
+}
+@media (max-width: 520px) {
+    .built-live-builds { grid-template-columns: 1fr; }
+}

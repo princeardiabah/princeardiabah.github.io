@@ -19,9 +19,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
 
-    <link rel="stylesheet" href="assets/css/site.css">
-    <link rel="stylesheet" href="assets/css/pages.css">
-    <link rel="stylesheet" href="assets/css/fx.css">
+    <link rel="stylesheet" href="assets/css/site.css?v=20261112">
+    <link rel="stylesheet" href="assets/css/pages.css?v=20261112">
+    <link rel="stylesheet" href="assets/css/fx.css?v=20261112">
 </head>
 <body>
     <div class="wrap">
@@ -47,11 +47,9 @@
                     <a href="work.html">Websites &amp; Products</a>
                     <a href="coaching.html">Consulting &amp; Coaching</a>
                     <span class="menu-label">On this page</span>
+                    <a href="#projects">Projects</a>
                     <a href="#about">About</a>
                     <a href="#journey">Roles &amp; Credentials</a>
-                    <a href="#sectors">Industries</a>
-                    <a href="#projects">Projects</a>
-                    <a href="#media">Media</a>
                     <a href="#contact">Contact</a>
                 </div>
                 <a class="availability" href="#contact">Open to Projects</a>
@@ -64,14 +62,13 @@
         <header class="hero">
             <div class="hero-grid">
                 <div>
-                    <div class="eyebrow"><span class="pulse"></span> 25+ autonomous workflows live</div>
+                    <a class="eyebrow eyebrow-link" href="coaching.html#google"><span class="pulse"></span> New · Built live at Google, Accra <i data-lucide="arrow-right"></i></a>
                     <h1>Building Automations for <span class="accent">Complex Systems.</span></h1>
                     <p class="hero-copy">I don’t just connect tools. I design the systems businesses actually run on: AI workflows, data pipelines, and operating logic built around real outcomes.</p>
                     <div class="hero-actions">
                         <a class="btn btn-primary" href="https://calendly.com/princeardiabah/lets-automate-your-workflow" target="_blank" rel="noreferrer">Book a 30-Min Call <i data-lucide="calendar"></i></a>
                         <a class="btn" href="#projects">See What I’ve Built <i data-lucide="arrow-down"></i></a>
                     </div>
-                    <p class="cta-note"><i data-lucide="check"></i> Find your biggest bottleneck <i data-lucide="check"></i> Leave with a clear next step <i data-lucide="check"></i> No obligation</p>
                 </div>
 
                 <div class="orbit-panel" aria-label="Animated n8n-style workflow">
@@ -256,10 +253,6 @@
                         <div class="workflow-card" data-pattern="loop" data-title="Link Aggregator Canvas" data-source="Source Links" data-logic="Collect + Clean" data-ai="Metadata Rules" data-data="Supabase" data-output="Queryable Table"></div>
                     </article>
                 </div>
-                <div class="cta-inline">
-                    <div><b>Want a system like these for your team?</b><span>Most builds start with one 30-minute call.</span></div>
-                    <a class="btn btn-primary" href="https://calendly.com/princeardiabah/lets-automate-your-workflow" target="_blank" rel="noreferrer">Book a call <i data-lucide="calendar"></i></a>
-                </div>
             </section>
 
             <section class="section" id="voices">
@@ -277,23 +270,6 @@
                 <a class="explore-link voices-more" href="https://www.linkedin.com/in/prince-ardiabah-14b9171a9/details/recommendations/" target="_blank" rel="noreferrer">Read all recommendations on LinkedIn <i data-lucide="arrow-up-right"></i></a>
             </section>
 
-            <section class="section" id="process">
-                <div class="section-head">
-                    <div>
-                        <span class="section-kicker">How I Work</span>
-                        <h2>From messy workflow to reliable operating system.</h2>
-                    </div>
-                    <p class="section-lede">The work starts with business reality before tools. I focus on the moments where better structure creates the biggest return.</p>
-                </div>
-
-                <div class="process-grid">
-                    <div class="process-step"><span class="step-number">01</span><h3>Map the Work</h3><p>Understand how information, decisions, people, and tools currently move through the business.</p></div>
-                    <div class="process-step"><span class="step-number">02</span><h3>Find the Bottleneck</h3><p>Identify where time is lost, context breaks, handoffs fail, or teams depend too much on manual follow-up.</p></div>
-                    <div class="process-step"><span class="step-number">03</span><h3>Design the System</h3><p>Define the triggers, logic, data sources, AI layers, human approvals, and outputs before building.</p></div>
-                    <div class="process-step"><span class="step-number">04</span><h3>Build & Test</h3><p>Implement the workflow, test edge cases, clean the output, and make the automation usable for real teams.</p></div>
-                    <div class="process-step"><span class="step-number">05</span><h3>Improve the Engine</h3><p>Monitor what happens after launch, then refine the workflow so it becomes more reliable over time.</p></div>
-                </div>
-            </section>
 
             <section class="section" id="about">
                 <div class="section-head">
@@ -407,153 +383,10 @@
                 </div>
             </section>
 
-            <section class="section" id="sectors">
-                <div class="section-head">
-                    <div>
-                        <span class="section-kicker">Industries</span>
-                        <h2>Industries I’m built to automate.</h2>
-                    </div>
-                    <p class="section-lede">These are the kinds of environments where I tend to do my best work: high movement, operational complexity, and real pressure to scale cleanly.</p>
-                </div>
 
-                <div class="sectors-grid" data-collapse="6" data-collapse-label="industries">
-                    <div class="sector-card"><i data-lucide="landmark"></i><h3>Fintech</h3><p>Loan scoring, fraud checks, onboarding, and risk workflows.</p></div>
-                    <div class="sector-card"><i data-lucide="shopping-cart"></i><h3>SME Retail</h3><p>Inventory alerts, channel sync, forecasting, and reorder logic.</p></div>
-                    <div class="sector-card"><i data-lucide="hotel"></i><h3>Hospitality</h3><p>Guest response, concierge flows, upsells, and service routing.</p></div>
-                    <div class="sector-card"><i data-lucide="truck"></i><h3>Logistics</h3><p>Route decisions, delivery tracking, driver updates, and dispatch.</p></div>
-                    <div class="sector-card"><i data-lucide="stethoscope"></i><h3>Healthcare</h3><p>Triage, queue logic, reminders, patient intake, and reporting.</p></div>
-                    <div class="sector-card"><i data-lucide="graduation-cap"></i><h3>Education</h3><p>Fee workflows, SMS reminders, student records, and admin ops.</p></div>
-                    <div class="sector-card"><i data-lucide="factory"></i><h3>Manufacturing</h3><p>Quality checks, alerts, defect logs, and supervisor escalation.</p></div>
-                    <div class="sector-card"><i data-lucide="building-2"></i><h3>Real Estate</h3><p>Listing sync, lead routing, qualification, and follow-up systems.</p></div>
-                    <div class="sector-card"><i data-lucide="briefcase-business"></i><h3>HR & Talent</h3><p>Sourcing, screening, scoring, and recruiter pipeline workflows.</p></div>
-                    <div class="sector-card"><i data-lucide="globe"></i><h3>Public Services</h3><p>Citizen portals, request tracking, status updates, and intake.</p></div>
-                </div>
-            </section>
 
-            <section class="section" id="media">
-                <div class="section-head">
-                    <div>
-                        <span class="section-kicker">Media</span>
-                        <h2>Automation snapshots and build walkthroughs.</h2>
-                    </div>
-                    <p class="section-lede">A closer look at the actual workflow structures behind the builds: real canvases, automations, and operating flows in motion.</p>
-                </div>
-
-                <div class="media-grid" data-collapse="3" data-collapse-label="snapshots">
-                    <article class="media-card">
-                        <div class="media-preview has-image">
-                            <img src="assets/conversation-analysis-pipeline.png" alt="Conversation analysis automation workflow">
-                        </div>
-                        <div class="media-body">
-                            <h3>Conversation Analysis Pipeline</h3>
-                            <p>Audio intake, language processing, task aggregation, and structured reporting in one automated flow.</p>
-                        </div>
-                    </article>
-                    <article class="media-card">
-                        <div class="media-preview has-image">
-                            <img src="assets/candidate-research-pipeline.png" alt="Candidate research automation workflow">
-                        </div>
-                        <div class="media-body">
-                            <h3>Candidate Research Pipeline</h3>
-                            <p>Structured lead and candidate discovery with batch processing, classification, and export-ready output.</p>
-                        </div>
-                    </article>
-                    <article class="media-card">
-                        <div class="media-preview has-image">
-                            <img src="assets/application-monitoring-flow.png" alt="Application monitoring workflow">
-                        </div>
-                        <div class="media-body">
-                            <h3>Application Monitoring Flow</h3>
-                            <p>Rule-based observation workflow for detecting changes and triggering updates or alerts only when needed.</p>
-                        </div>
-                    </article>
-                    <article class="media-card">
-                        <div class="media-preview has-image">
-                            <img src="assets/change-detection-observer.png" alt="Change detection observer workflow">
-                        </div>
-                        <div class="media-body">
-                            <h3>Change Detection Observer</h3>
-                            <p>A compact observer setup for polling, comparing new states, and routing follow-up actions automatically.</p>
-                        </div>
-                    </article>
-                    <article class="media-card">
-                        <div class="media-preview has-image">
-                            <img src="assets/spreadsheet-sync-engine.png" alt="Spreadsheet sync engine workflow">
-                        </div>
-                        <div class="media-body">
-                            <h3>Spreadsheet Sync Engine</h3>
-                            <p>Loop-driven enrichment and sheet updates for keeping operational rows fresh without manual handling.</p>
-                        </div>
-                    </article>
-                    <article class="media-card">
-                        <div class="media-preview has-image">
-                            <img src="assets/meeting-summary-dispatcher.png" alt="Meeting summary dispatcher workflow">
-                        </div>
-                        <div class="media-body">
-                            <h3>Meeting Summary Dispatcher</h3>
-                            <p>Prompted summarization and outbound delivery flow for turning recorded sessions into clean outputs.</p>
-                        </div>
-                    </article>
-                    <article class="media-card">
-                        <div class="media-preview has-image">
-                            <img src="assets/webhook-intake-trigger.png" alt="Webhook intake trigger workflow">
-                        </div>
-                        <div class="media-body">
-                            <h3>Webhook Intake Trigger</h3>
-                            <p>A minimal capture flow for receiving events and immediately writing structured records into a system.</p>
-                        </div>
-                    </article>
-                    <article class="media-card">
-                        <div class="media-preview has-image">
-                            <img src="assets/model-response-bridge.png" alt="Model response bridge workflow">
-                        </div>
-                        <div class="media-body">
-                            <h3>Model Response Bridge</h3>
-                            <p>Simple AI response handling flow that takes structured input, generates output, and forwards it downstream.</p>
-                        </div>
-                    </article>
-                </div>
-            </section>
-
-            <section class="section" id="more">
-                <div class="section-head">
-                    <div>
-                        <span class="section-kicker">Beyond Automation</span>
-                        <h2>The systems are one part. Here’s the rest of the work.</h2>
-                    </div>
-                    <p class="section-lede">Products, a mobile app and websites I’ve shipped, plus business strategy consulting, mentorship and the rooms I speak in.</p>
-                </div>
-
-                <div class="explore-grid">
-                    <a class="explore-card" href="work.html">
-                        <div class="explore-thumb"><img src="assets/work/uwash.jpg" alt="" loading="lazy"></div>
-                        <div class="explore-body">
-                            <span class="explore-kicker"><i data-lucide="layout-template"></i> Websites &amp; Products</span>
-                            <h3>Live products and sites I’ve designed, built and launched.</h3>
-                            <span class="explore-link">See the work <i data-lucide="arrow-right"></i></span>
-                        </div>
-                    </a>
-                    <a class="explore-card" href="work.html#app">
-                        <div class="explore-thumb"><img src="assets/work/2skill-feature.jpg" alt="" loading="lazy"></div>
-                        <div class="explore-body">
-                            <span class="explore-kicker"><i data-lucide="smartphone"></i> Mobile App</span>
-                            <h3>2skill: a skill-practice app shipped to Google Play.</h3>
-                            <span class="explore-link">See the app <i data-lucide="arrow-right"></i></span>
-                        </div>
-                    </a>
-                    <a class="explore-card" href="coaching.html">
-                        <div class="explore-thumb"><img src="assets/moments/stage-ghana-moon.jpg" alt="" loading="lazy" style="object-position:center 25%"></div>
-                        <div class="explore-body">
-                            <span class="explore-kicker"><i data-lucide="graduation-cap"></i> Consulting &amp; Coaching</span>
-                            <h3>Business strategy consulting, mentorship and talks.</h3>
-                            <span class="explore-link">Work with me <i data-lucide="arrow-right"></i></span>
-                        </div>
-                    </a>
-                </div>
-            </section>
 
             <section class="section contact" id="contact">
-                <div class="fx-3d" data-shape="sphere" data-place="cta" aria-hidden="true"></div>
                 <span class="section-kicker">Let’s Talk</span>
                 <h2>Let’s design the systems your business actually needs.</h2>
                 <p>Tell me where work gets stuck. In 30 minutes we’ll map it, find the highest-impact automation, and agree whether it’s worth building.</p>
@@ -705,9 +538,9 @@
             observer.observe(stats);
         }
     </script>
-    <script src="assets/js/ui.js"></script>
-    <script src="assets/js/fx.js"></script>
-    <script src="assets/js/portal.js"></script>
-    <script type="module" src="assets/js/hero3d.js"></script>
+    <script src="assets/js/ui.js?v=20261112"></script>
+    <script src="assets/js/fx.js?v=20261112"></script>
+    <script src="assets/js/portal.js?v=20261112"></script>
+    <script type="module" src="assets/js/hero3d.js?v=20261112"></script>
 </body>
 </html>
