@@ -1,7 +1,7 @@
 // Shared UI on every page: "Show more" for long lists and a floating
 // booking button. Works with or without the motion layer.
 (() => {
-    const BOOKING_URL = "https://calendly.com/princeardiabah/lets-automate-your-workflow";
+    const BOOKING_URL = "https://calendly.com/princeardiabah/new-meeting";
 
     // Long lists: show the first N children and put the rest behind a button.
     // <div data-collapse="3" data-collapse-label="systems">…</div>
