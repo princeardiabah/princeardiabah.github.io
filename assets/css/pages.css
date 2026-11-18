@@ -2815,3 +2815,20 @@ body {
     .rm-stop.is-right { left: calc(50% + 20px); }
     .rm-stop span { font-size: .8rem; }
 }
+
+/* ---- Roles & credentials without the portrait: full-width roles grid ---- */
+.journey-grid { grid-template-columns: minmax(0, 1fr); }
+.journey-grid .roles-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+@media (max-width: 1040px) { .journey-grid .roles-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .journey-grid .roles-grid { grid-template-columns: minmax(0, 1fr); } }
+
+/* Google session: three more photos under the story */
+.built-live-strip { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin-top: 28px; }
+.built-live-strip figure { margin: 0; border: 1px solid var(--line); border-radius: 14px; overflow: hidden; background: var(--panel); }
+.built-live-strip img { display: block; width: 100%; aspect-ratio: 3 / 2; object-fit: cover; transition: transform .6s ease; user-select: none; -webkit-touch-callout: none; }
+.built-live-strip figure:hover img { transform: scale(1.04); }
+.built-live-strip figcaption { padding: 10px 14px; color: var(--muted); font-size: .84rem; }
+@media (max-width: 760px) {
+    .built-live-strip { grid-auto-flow: column; grid-template-columns: none; grid-auto-columns: 78%; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 6px; }
+    .built-live-strip figure { scroll-snap-align: start; }
+}
