@@ -68,3 +68,37 @@ document.querySelectorAll("[data-protect]").forEach((area) => {
     area.addEventListener("contextmenu", (e) => { if (e.target.closest("img")) e.preventDefault(); });
     area.addEventListener("dragstart", (e) => e.preventDefault());
 });
+
+// Full-size viewer for workflow screenshots: <button data-lightbox="src">.
+// Closes on the button, a click outside the image or Escape. On phones the
+// image keeps a readable width and scrolls sideways.
+document.querySelectorAll("[data-lightbox]").forEach((trigger) => {
+    trigger.addEventListener("click", () => {
+        const box = document.createElement("div");
+        box.className = "lightbox";
+        box.setAttribute("role", "dialog");
+        box.setAttribute("aria-modal", "true");
+        box.setAttribute("aria-label", trigger.getAttribute("aria-label") || "Image");
+        box.innerHTML = `<button class="lightbox-close" type="button" aria-label="Close"><i data-lucide="x"></i></button><div class="lightbox-frame"><img alt="" draggable="false"></div>`;
+        const img = box.querySelector("img");
+        img.src = trigger.dataset.lightbox;
+        img.alt = trigger.querySelector("img")?.alt || "";
+        box.addEventListener("contextmenu", (e) => e.preventDefault());
+        document.body.append(box);
+        document.documentElement.style.overflow = "hidden";
+        window.lucide?.createIcons();
+        requestAnimationFrame(() => box.classList.add("is-open"));
+        const closeBtn = box.querySelector(".lightbox-close");
+        closeBtn.focus();
+        const close = () => {
+            box.remove();
+            document.documentElement.style.overflow = "";
+            removeEventListener("keydown", onKey);
+            trigger.focus();
+        };
+        const onKey = (e) => { if (e.key === "Escape") close(); };
+        addEventListener("keydown", onKey);
+        closeBtn.addEventListener("click", close);
+        box.addEventListener("click", (e) => { if (e.target === box) close(); });
+    });
+});

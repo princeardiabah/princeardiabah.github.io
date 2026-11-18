@@ -19,9 +19,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
 
-    <link rel="stylesheet" href="assets/css/site.css?v=20261119">
-    <link rel="stylesheet" href="assets/css/pages.css?v=20261119">
-    <link rel="stylesheet" href="assets/css/fx.css?v=20261119">
+    <link rel="stylesheet" href="assets/css/site.css?v=20261120">
+    <link rel="stylesheet" href="assets/css/pages.css?v=20261120">
+    <link rel="stylesheet" href="assets/css/fx.css?v=20261120">
 </head>
 <body>
     <div class="wrap">
@@ -48,6 +48,7 @@
                     <a href="coaching.html">Consulting &amp; Coaching</a>
                     <span class="menu-label">On this page</span>
                     <a href="#projects">Projects</a>
+                    <a href="#workflows">Workflows</a>
                     <a href="#about">About</a>
                     <a href="#journey">Roles &amp; Credentials</a>
                     <a href="#contact">Contact</a>
@@ -291,6 +292,91 @@
                     </article>
                 </div>
             </section>
+
+            <section class="section" id="workflows">
+                <div class="section-head">
+                    <div>
+                        <span class="section-kicker">Under the Hood</span>
+                        <h2>Real workflows from my n8n canvases.</h2>
+                    </div>
+                    <p class="section-lede">Screenshots of systems I&rsquo;ve built and run, each with what it does. Click any canvas to see it full size.</p>
+                </div>
+                <div class="flow-grid" data-collapse="4" data-collapse-label="workflows" data-protect>
+                    <article class="flow-shot">
+                        <button class="flow-shot-img" type="button" data-lightbox="assets/flows/conversation-analysis-pipeline.jpg" aria-label="Open the Conversation Analysis Pipeline workflow full size"><img src="assets/flows/conversation-analysis-pipeline.jpg" alt="n8n canvas of the Conversation Analysis Pipeline workflow" loading="lazy" draggable="false"><span class="flow-zoom"><i data-lucide="maximize-2"></i></span></button>
+                        <div class="flow-shot-body">
+                            <span class="flow-area">Meetings &amp; team ops</span>
+                            <h3>Conversation Analysis Pipeline</h3>
+                            <p>A recording arrives by webhook and is transcribed. An LLM pulls out who owes what, checks it against the team&rsquo;s and each person&rsquo;s tasks in the database, and a second AI step writes the report.</p>
+                            <ol class="case-flow" aria-label="Steps"><li>Webhook</li><li>Transcription</li><li>Groq LLM</li><li>Supabase tasks</li><li>AI report</li></ol>
+                        </div>
+                    </article>
+                    <article class="flow-shot">
+                        <button class="flow-shot-img" type="button" data-lightbox="assets/flows/candidate-research-pipeline.jpg" aria-label="Open the Lead &amp; Candidate Research workflow full size"><img src="assets/flows/candidate-research-pipeline.jpg" alt="n8n canvas of the Lead &amp; Candidate Research workflow" loading="lazy" draggable="false"><span class="flow-zoom"><i data-lucide="maximize-2"></i></span></button>
+                        <div class="flow-shot-body">
+                            <span class="flow-area">Recruitment &amp; sales</span>
+                            <h3>Lead &amp; Candidate Research</h3>
+                            <p>Profiles are pulled in from Apify and processed in batches with built-in pauses and retries. A classification agent sorts each one, a research agent searches the web for more, and the results land in Airtable and a spreadsheet export.</p>
+                            <ol class="case-flow" aria-label="Steps"><li>Apify</li><li>Batches + retry</li><li>Gemini / Claude agents</li><li>Web search</li><li>Airtable + XLSX</li></ol>
+                        </div>
+                    </article>
+                    <article class="flow-shot">
+                        <button class="flow-shot-img" type="button" data-lightbox="assets/flows/application-monitoring-flow.jpg" aria-label="Open the Talent Monitoring &amp; Alerts workflow full size"><img src="assets/flows/application-monitoring-flow.jpg" alt="n8n canvas of the Talent Monitoring &amp; Alerts workflow" loading="lazy" draggable="false"><span class="flow-zoom"><i data-lucide="maximize-2"></i></span></button>
+                        <div class="flow-shot-body">
+                            <span class="flow-area">Recruitment</span>
+                            <h3>Talent Monitoring &amp; Alerts</h3>
+                            <p>On a schedule, it reads the watch list, fetches each profile&rsquo;s latest state and compares it with what was stored. Real changes become an alert card for the team; everything else just updates the record.</p>
+                            <ol class="case-flow" aria-label="Steps"><li>Schedule</li><li>Watch list</li><li>Fetch + compare</li><li>Alert card</li><li>Upsert record</li></ol>
+                        </div>
+                    </article>
+                    <article class="flow-shot">
+                        <button class="flow-shot-img" type="button" data-lightbox="assets/flows/change-detection-observer.jpg" aria-label="Open the Change Detection Observer workflow full size"><img src="assets/flows/change-detection-observer.jpg" alt="n8n canvas of the Change Detection Observer workflow" loading="lazy" draggable="false"><span class="flow-zoom"><i data-lucide="maximize-2"></i></span></button>
+                        <div class="flow-shot-body">
+                            <span class="flow-area">Operations</span>
+                            <h3>Change Detection Observer</h3>
+                            <p>A lighter watcher: poll a source on a timer, detect whether anything actually changed, then either update the stored row or send a notification. Nothing fires unless there is something new.</p>
+                            <ol class="case-flow" aria-label="Steps"><li>Schedule</li><li>Fetch</li><li>Detect change</li><li>Update or alert</li></ol>
+                        </div>
+                    </article>
+                    <article class="flow-shot">
+                        <button class="flow-shot-img" type="button" data-lightbox="assets/flows/spreadsheet-sync-engine.jpg" aria-label="Open the Spreadsheet Enrichment Loop workflow full size"><img src="assets/flows/spreadsheet-sync-engine.jpg" alt="n8n canvas of the Spreadsheet Enrichment Loop workflow" loading="lazy" draggable="false"><span class="flow-zoom"><i data-lucide="maximize-2"></i></span></button>
+                        <div class="flow-shot-body">
+                            <span class="flow-area">Data &amp; research</span>
+                            <h3>Spreadsheet Enrichment Loop</h3>
+                            <p>Reads rows from a Google Sheet and loops through them one by one: searches Google for each, has an AI model summarise what it found, and writes the answer back into the same row.</p>
+                            <ol class="case-flow" aria-label="Steps"><li>Google Sheets</li><li>Loop rows</li><li>Google search</li><li>OpenAI</li><li>Write back</li></ol>
+                        </div>
+                    </article>
+                    <article class="flow-shot">
+                        <button class="flow-shot-img" type="button" data-lightbox="assets/flows/meeting-summary-dispatcher.jpg" aria-label="Open the Meeting Summary Dispatcher workflow full size"><img src="assets/flows/meeting-summary-dispatcher.jpg" alt="n8n canvas of the Meeting Summary Dispatcher workflow" loading="lazy" draggable="false"><span class="flow-zoom"><i data-lucide="maximize-2"></i></span></button>
+                        <div class="flow-shot-body">
+                            <span class="flow-area">Internal communication</span>
+                            <h3>Meeting Summary Dispatcher</h3>
+                            <p>Takes meeting notes, has an LLM turn them into a clean summary, formats the result in code and posts it straight to the team&rsquo;s channel.</p>
+                            <ol class="case-flow" aria-label="Steps"><li>Notes in</li><li>Groq LLM</li><li>Format</li><li>Post to team</li></ol>
+                        </div>
+                    </article>
+                    <article class="flow-shot">
+                        <button class="flow-shot-img" type="button" data-lightbox="assets/flows/webhook-intake-trigger.jpg" aria-label="Open the Webhook Intake workflow full size"><img src="assets/flows/webhook-intake-trigger.jpg" alt="n8n canvas of the Webhook Intake workflow" loading="lazy" draggable="false"><span class="flow-zoom"><i data-lucide="maximize-2"></i></span></button>
+                        <div class="flow-shot-body">
+                            <span class="flow-area">Data capture</span>
+                            <h3>Webhook Intake</h3>
+                            <p>The smallest building block in many of my systems: an endpoint that receives an event and writes it into the database the moment it arrives.</p>
+                            <ol class="case-flow" aria-label="Steps"><li>Webhook</li><li>Supabase row</li></ol>
+                        </div>
+                    </article>
+                    <article class="flow-shot">
+                        <button class="flow-shot-img" type="button" data-lightbox="assets/flows/model-response-bridge.jpg" aria-label="Open the Model Response Bridge workflow full size"><img src="assets/flows/model-response-bridge.jpg" alt="n8n canvas of the Model Response Bridge workflow" loading="lazy" draggable="false"><span class="flow-zoom"><i data-lucide="maximize-2"></i></span></button>
+                        <div class="flow-shot-body">
+                            <span class="flow-area">AI integration</span>
+                            <h3>Model Response Bridge</h3>
+                            <p>Shapes structured input, sends it to Gemini, and forwards the generated response to another system over HTTP, so AI output plugs into existing tools.</p>
+                            <ol class="case-flow" aria-label="Steps"><li>Structured input</li><li>Gemini</li><li>HTTP forward</li></ol>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
 
             <section class="section" id="voices">
                 <div class="section-head">
@@ -575,9 +661,9 @@
             observer.observe(stats);
         }
     </script>
-    <script src="assets/js/ui.js?v=20261119"></script>
-    <script src="assets/js/fx.js?v=20261119"></script>
-    <script src="assets/js/portal.js?v=20261119"></script>
-    <script type="module" src="assets/js/hero3d.js?v=20261119"></script>
+    <script src="assets/js/ui.js?v=20261120"></script>
+    <script src="assets/js/fx.js?v=20261120"></script>
+    <script src="assets/js/portal.js?v=20261120"></script>
+    <script type="module" src="assets/js/hero3d.js?v=20261120"></script>
 </body>
 </html>

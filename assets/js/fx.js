@@ -53,7 +53,7 @@
         ".quote-card", ".faq details", ".topic", ".format", ".event", ".cta-band",
         ".about-copy", ".insight-panel", ".orbit-panel", ".portrait-card",
         ".contact > *", ".site-footer", ".role-card", ".pins-wrap", ".impact", ".app-feature",
-        ".concept", ".portal", ".pins-head", ".built-live-photo", ".built-live-copy",
+        ".concept", ".portal", ".pins-head", ".built-live-photo", ".built-live-copy", ".flow-shot",
     ];
     // Reveal once a meaningful slice is on screen. Judged by visible height,
     // not a share of the element's area: very wide or very tall elements (the
