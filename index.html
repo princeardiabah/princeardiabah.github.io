@@ -19,9 +19,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
 
-    <link rel="stylesheet" href="assets/css/site.css?v=20261120">
-    <link rel="stylesheet" href="assets/css/pages.css?v=20261120">
-    <link rel="stylesheet" href="assets/css/fx.css?v=20261120">
+    <link rel="stylesheet" href="assets/css/site.css?v=20261121">
+    <link rel="stylesheet" href="assets/css/pages.css?v=20261121">
+    <link rel="stylesheet" href="assets/css/fx.css?v=20261121">
 </head>
 <body>
     <div class="wrap">
@@ -72,24 +72,23 @@
                     </div>
                 </div>
 
-                <div class="orbit-panel" aria-label="Animated n8n-style workflow">
-                    <div class="hero-workflow">
-                        <svg class="lines" viewBox="0 0 420 440" preserveAspectRatio="none" aria-hidden="true">
-                            <path class="wire" d="M80 76 C180 76 220 130 334 130"></path>
-                            <path class="wire" d="M334 150 C250 200 190 210 102 254"></path>
-                            <path class="wire" d="M116 280 C210 312 250 344 330 340"></path>
-                            <path class="wire" d="M334 364 C250 420 206 414 162 398"></path>
-                        </svg>
-                        <div class="flow-node node-a"><i data-lucide="webhook"></i><div><b>Trigger</b><small>Lead or event</small></div></div>
-                        <div class="flow-node node-b"><i data-lucide="brain-circuit"></i><div><b>AI Logic</b><small>Classify intent</small></div></div>
-                        <div class="flow-node node-c"><i data-lucide="database"></i><div><b>Data Layer</b><small>Sync records</small></div></div>
-                        <div class="flow-node node-d"><i data-lucide="workflow"></i><div><b>n8n Router</b><small>Branch actions</small></div></div>
-                        <div class="flow-node node-e"><i data-lucide="send"></i><div><b>Delivery</b><small>Notify teams</small></div></div>
+                <div class="orbit-panel live-flow" data-live-flow>
+                    <div class="lf-head">
+                        <span class="lf-status"><span class="lf-dot"></span><span class="lf-status-text">Running</span></span>
+                        <div class="lf-tabs" role="tablist" aria-label="Choose a workflow to run">
+                            <button type="button" role="tab" data-scenario="0">New lead</button>
+                            <button type="button" role="tab" data-scenario="1">Meeting</button>
+                            <button type="button" role="tab" data-scenario="2">Assignment</button>
+                        </div>
                     </div>
-                    <div class="panel-caption">
-                        <span>Live automation architecture: trigger, reason, route, execute, report.</span>
-                        <span>n8n + LLMs + APIs</span>
-                    </div>
+                    <ol class="lf-nodes">
+                        <li class="lf-node"><span class="lf-icon"><i data-lucide="webhook"></i></span><span class="lf-text"><b>Trigger</b><small></small></span><span class="lf-check"><i data-lucide="check"></i></span></li>
+                        <li class="lf-node"><span class="lf-icon"><i data-lucide="brain-circuit"></i></span><span class="lf-text"><b>AI logic</b><small></small></span><span class="lf-check"><i data-lucide="check"></i></span></li>
+                        <li class="lf-node"><span class="lf-icon"><i data-lucide="database"></i></span><span class="lf-text"><b>Data layer</b><small></small></span><span class="lf-check"><i data-lucide="check"></i></span></li>
+                        <li class="lf-node"><span class="lf-icon"><i data-lucide="workflow"></i></span><span class="lf-text"><b>Router</b><small></small></span><span class="lf-check"><i data-lucide="check"></i></span></li>
+                        <li class="lf-node"><span class="lf-icon"><i data-lucide="send"></i></span><span class="lf-text"><b>Delivery</b><small></small></span><span class="lf-check"><i data-lucide="check"></i></span></li>
+                    </ol>
+                    <div class="lf-foot"><span class="lf-hint">Tap a workflow to run it</span><span>n8n · LLMs · APIs</span></div>
                 </div>
             </div>
         </header>
@@ -661,9 +660,10 @@
             observer.observe(stats);
         }
     </script>
-    <script src="assets/js/ui.js?v=20261120"></script>
-    <script src="assets/js/fx.js?v=20261120"></script>
-    <script src="assets/js/portal.js?v=20261120"></script>
-    <script type="module" src="assets/js/hero3d.js?v=20261120"></script>
+    <script src="assets/js/ui.js?v=20261121"></script>
+    <script src="assets/js/fx.js?v=20261121"></script>
+    <script src="assets/js/portal.js?v=20261121"></script>
+    <script src="assets/js/liveflow.js?v=20261121"></script>
+    <script type="module" src="assets/js/hero3d.js?v=20261121"></script>
 </body>
 </html>
