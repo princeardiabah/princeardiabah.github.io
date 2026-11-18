@@ -19,9 +19,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
 
-    <link rel="stylesheet" href="assets/css/site.css?v=20261118">
-    <link rel="stylesheet" href="assets/css/pages.css?v=20261118">
-    <link rel="stylesheet" href="assets/css/fx.css?v=20261118">
+    <link rel="stylesheet" href="assets/css/site.css?v=20261119">
+    <link rel="stylesheet" href="assets/css/pages.css?v=20261119">
+    <link rel="stylesheet" href="assets/css/fx.css?v=20261119">
 </head>
 <body>
     <div class="wrap">
@@ -64,7 +64,7 @@
                 <div>
                     <a class="eyebrow eyebrow-link" href="coaching.html#google"><span class="pulse"></span> New · Built live at Google, Accra <i data-lucide="arrow-right"></i></a>
                     <h1>Building Automations for <span class="accent">Complex Systems.</span></h1>
-                    <p class="hero-copy">I don’t just connect tools. I design the systems businesses actually run on: AI workflows, data pipelines, and operating logic built around real outcomes.</p>
+                    <p class="hero-copy">I don’t just connect tools. I design and build the systems businesses actually run on: AI agents, n8n workflow engines, API integrations and data pipelines that remove repetitive work and connect the tools a team already uses.</p>
                     <div class="hero-actions">
                         <a class="btn btn-primary" href="https://calendly.com/princeardiabah/lets-automate-your-workflow" target="_blank" rel="noreferrer">Book a 30-Min Call <i data-lucide="calendar"></i></a>
                         <a class="btn" href="#projects">See What I’ve Built <i data-lucide="arrow-down"></i></a>
@@ -135,7 +135,27 @@
                     <p class="section-lede">A selection of systems I’ve built to reduce manual work, connect moving parts, and make execution faster, clearer, and easier to trust.</p>
                 </div>
 
-                <div class="case-list" data-collapse="3" data-collapse-label="systems">
+                <div class="case-list" data-collapse="5" data-collapse-label="systems">
+                    <article class="case-study featured case-wide">
+                        <div class="case-content">
+                            <span class="case-meta">KNUST Faculty of Law · Ghana</span>
+                            <h3>Academic Integrity Checker</h3>
+                            <div class="case-wide-grid">
+                                <div>
+                                    <p><b>The Problem:</b> Checking every emailed assignment for plagiarism by hand is slow, and students rarely know whether their submission even arrived.</p>
+                                    <p><b>The Build:</b> An end-to-end n8n system: students email their work, it is logged with a tracking number, the PDF text is extracted and compared with every earlier submission by an AI integrity check, and the result is routed automatically.</p>
+                                </div>
+                                <div>
+                                    <p><b>The Output:</b> An instant receipt for the student, a cleared or flagged outcome on every submission, and an alert to the professor only when work is flagged.</p>
+                                    <p><b>The Result:</b> Lecturers review the cases that need judgement instead of reading every paper for overlap, and every submission leaves an audit trail.</p>
+                                </div>
+                            </div>
+                            <ol class="case-flow" aria-label="How it works"><li>Email in</li><li>Tracking number + receipt</li><li>PDF text extracted</li><li>Compared with past submissions</li><li>AI integrity verdict</li><li>Cleared or flagged</li><li>Professor alerted if flagged</li></ol>
+                            <div class="case-stack"><span class="stack-tag">n8n</span><span class="stack-tag">Gmail</span><span class="stack-tag">Supabase</span><span class="stack-tag">OpenRouter LLM</span><span class="stack-tag">PDF extraction</span></div>
+                        </div>
+                        <figure class="case-shot" data-protect><img src="assets/work/integrity-checker.jpg" alt="The n8n workflow behind the Academic Integrity Checker: receive submission, tracking number, receipt email, PDF extraction, plagiarism analysis, routing to flagged or cleared, and professor alerts" loading="lazy" draggable="false"><figcaption>The production workflow in n8n</figcaption></figure>
+                    </article>
+
                     <article class="case-study featured">
                         <div class="case-content">
                             <span class="case-meta">RapidWorks UG · Germany</span>
@@ -144,6 +164,7 @@
                             <p><b>The Build:</b> A conversational AI layer embedded in Microsoft Teams, connected to internal databases and operational data.</p>
                             <p><b>The Output:</b> Real-time answers to operational questions via text or voice, delivered instantly.</p>
                             <p><b>The Result:</b> Eliminates internal communication bottlenecks and reduces dependency on human updates.</p>
+                            <ol class="case-flow" aria-label="How it works"><li>Question in Teams (text or voice)</li><li>n8n routes the context</li><li>LLM interprets intent</li><li>Internal data queried</li><li>Answer back in Teams</li></ol>
                             <div class="case-stack"><span class="stack-tag">n8n</span><span class="stack-tag">Microsoft Teams</span><span class="stack-tag">Groq / LLM</span></div>
                         </div>
                         <div class="workflow-card" data-pattern="hub" data-title="Oracle Database Canvas" data-source="Teams Query" data-logic="Context Route" data-ai="Groq / LLM" data-data="Internal DB" data-output="Voice / Text Answer"></div>
@@ -157,6 +178,7 @@
                             <p><b>The Build:</b> An AI-powered diagnostic system that scrapes websites and evaluates structure, positioning, and performance logic.</p>
                             <p><b>The Output:</b> Instant, structured audits highlighting strengths, weaknesses, and growth opportunities.</p>
                             <p><b>The Result:</b> Replaces hours of manual consulting with real-time strategic insight.</p>
+                            <ol class="case-flow" aria-label="How it works"><li>Website URL in</li><li>Site scraped + parsed</li><li>AI audits the model</li><li>Strengths, gaps, opportunities</li><li>Structured report out</li></ol>
                             <div class="case-stack"><span class="stack-tag">n8n</span><span class="stack-tag">OpenAI</span><span class="stack-tag">Web Scraping</span></div>
                         </div>
                         <div class="workflow-card" data-pattern="split" data-title="Business Audit Canvas" data-source="Website URL" data-logic="Scrape + Parse" data-ai="OpenAI Audit" data-data="Model Signals" data-output="Strategy Report"></div>
@@ -170,9 +192,24 @@
                             <p><b>The Build:</b> An automated pipeline that transcribes conversations, processes context with LLMs, and stores structured outputs.</p>
                             <p><b>The Output:</b> Clear summaries, action items, and decisions synced into a central database.</p>
                             <p><b>The Result:</b> Transforms meetings into actionable systems with zero information loss.</p>
+                            <ol class="case-flow" aria-label="How it works"><li>Meeting audio</li><li>Whisper transcription</li><li>LLM extracts context</li><li>Summary, actions, decisions</li><li>Synced to Supabase</li></ol>
                             <div class="case-stack"><span class="stack-tag">Whisper</span><span class="stack-tag">Groq / Llama 3</span><span class="stack-tag">Supabase</span><span class="stack-tag">n8n</span></div>
                         </div>
                         <div class="workflow-card" data-pattern="linear" data-title="Meeting Intelligence Canvas" data-source="Audio" data-logic="Transcribe" data-ai="Llama 3 Context" data-data="Supabase" data-output="Actions + Decisions"></div>
+                    </article>
+
+                    <article class="case-study">
+                        <div class="case-content">
+                            <span class="case-meta">RapidWorks UG · Germany</span>
+                            <h3>AI Chat Assistant</h3>
+                            <p><b>The Problem:</b> Visitors and clients ask questions at any hour, and most of them don&rsquo;t need a person to answer.</p>
+                            <p><b>The Build:</b> A conversational assistant on n8n&rsquo;s chat interface, backed by an LLM with session memory so it follows the thread of a conversation.</p>
+                            <p><b>The Output:</b> A hosted 24/7 chat page that greets people, answers questions and keeps context across the conversation.</p>
+                            <p><b>The Result:</b> First-line questions get an instant answer, and the same pattern plugs into a website or internal tool.</p>
+                            <ol class="case-flow" aria-label="How it works"><li>Chat message</li><li>Session memory loaded</li><li>LLM agent replies</li><li>Context kept for the next turn</li></ol>
+                            <div class="case-stack"><span class="stack-tag">n8n Chat</span><span class="stack-tag">AI Agent</span><span class="stack-tag">LLM</span><span class="stack-tag">Memory</span></div>
+                        </div>
+                        <div class="workflow-card" data-pattern="loop" data-title="Chat Assistant Canvas" data-source="Chat Message" data-logic="Session Memory" data-ai="LLM Agent" data-data="Conversation" data-output="Instant Reply"></div>
                     </article>
 
                     <article class="case-study">
@@ -282,7 +319,7 @@
                 <div class="about-grid">
                     <div>
                         <div class="about-copy">
-                            <p>I’m an AI automation specialist focused on designing systems that help businesses operate, scale, and deliver with far less friction. My work turns scattered processes into structured workflows that reduce manual effort and create repeatable outcomes.</p>
+                            <p>I’m an AI automation specialist focused on designing systems that help businesses operate, scale, and deliver with far less friction. I build AI agents, n8n workflow engines, data pipelines and connected business applications that turn scattered processes into reliable, repeatable systems.</p>
                             <p>My advantage is that I do not approach automation from a purely technical lens. With experience across strategy, consulting, early-stage ecosystems, and markets including Germany, the United Kingdom, the United States, Canada, Ghana, and China, I understand where teams get stuck and where growth quietly slows down behind the scenes.</p>
                             <div class="about-more" id="about-more" hidden>
                                 <p>At RapidWorks UG, I design and implement AI-driven systems that connect marketing, sales, operations, data, and internal communication. I map the workflow first, identify the leverage points, then build automations that work commercially, not just technically.</p>
@@ -361,21 +398,21 @@
                 <div class="pin-marquee" aria-label="Certifications">
                     <div class="pin-track">
                     <a class="pin" href="https://www.linkedin.com/in/prince-ardiabah-14b9171a9/details/certifications/" target="_blank" rel="noreferrer"><span class="pin-badge" style="--i:0"><img src="assets/logos/itu.png" alt="International Telecommunication Union logo"></span><span><strong>AI Governance: AI &amp; Data Governance</strong><span>International Telecommunication Union</span></span><span class="pin-year">2026 · <span class="pin-new">New</span></span><span class="pin-view">View credential <i data-lucide="arrow-up-right"></i></span></a>
+                    <a class="pin" href="https://www.linkedin.com/in/prince-ardiabah-14b9171a9/details/certifications/" target="_blank" rel="noreferrer"><span class="pin-badge pin-badge-wide" style="--i:5"><img src="assets/logos/ibm.svg" alt="IBM logo"></span><span><strong>Enterprise Design Thinking Practitioner</strong><span>IBM</span></span><span class="pin-year">2023</span><span class="pin-view">View credential <i data-lucide="arrow-up-right"></i></span></a>
+                    <a class="pin" href="https://www.linkedin.com/in/prince-ardiabah-14b9171a9/details/certifications/" target="_blank" rel="noreferrer"><span class="pin-badge pin-badge-captioned" style="--i:4"><img src="assets/logos/who-mark.png" alt="World Health Organization emblem"><small>WHO</small></span><span><strong>Ethics &amp; Governance of AI for Health</strong><span>World Health Organization</span></span><span class="pin-year">2023</span><span class="pin-view">View credential <i data-lucide="arrow-up-right"></i></span></a>
                     <a class="pin" href="https://www.linkedin.com/in/prince-ardiabah-14b9171a9/details/certifications/" target="_blank" rel="noreferrer"><span class="pin-badge" style="--i:1"><img src="assets/logos/cbs-mark.png" alt="Copenhagen Business School logo"></span><span><strong>Strategic Management</strong><span>Copenhagen Business School</span></span><span class="pin-year">2025</span><span class="pin-view">View credential <i data-lucide="arrow-up-right"></i></span></a>
                     <a class="pin" href="https://www.linkedin.com/in/prince-ardiabah-14b9171a9/details/certifications/" target="_blank" rel="noreferrer"><span class="pin-badge pin-badge-photo" style="--i:2"><img src="assets/logos/yali-mark.jpg" alt="Young African Leaders Initiative logo"></span><span><strong>Management Strategies for People &amp; Resources</strong><span>Young African Leaders Initiative</span></span><span class="pin-year">2025</span><span class="pin-view">View credential <i data-lucide="arrow-up-right"></i></span></a>
                     <a class="pin" href="https://www.linkedin.com/in/prince-ardiabah-14b9171a9/details/certifications/" target="_blank" rel="noreferrer"><span class="pin-badge pin-badge-tall" style="--i:3"><img src="assets/logos/unctad-mark.png" alt="UNCTAD logo"></span><span><strong>International Trade Policy Framework</strong><span>UN Trade and Development (UNCTAD)</span></span><span class="pin-year">2024</span><span class="pin-view">View credential <i data-lucide="arrow-up-right"></i></span></a>
-                    <a class="pin" href="https://www.linkedin.com/in/prince-ardiabah-14b9171a9/details/certifications/" target="_blank" rel="noreferrer"><span class="pin-badge pin-badge-captioned" style="--i:4"><img src="assets/logos/who-mark.png" alt="World Health Organization emblem"><small>WHO</small></span><span><strong>Ethics &amp; Governance of AI for Health</strong><span>World Health Organization</span></span><span class="pin-year">2023</span><span class="pin-view">View credential <i data-lucide="arrow-up-right"></i></span></a>
-                    <a class="pin" href="https://www.linkedin.com/in/prince-ardiabah-14b9171a9/details/certifications/" target="_blank" rel="noreferrer"><span class="pin-badge pin-badge-wide" style="--i:5"><img src="assets/logos/ibm.svg" alt="IBM logo"></span><span><strong>Enterprise Design Thinking Practitioner</strong><span>IBM</span></span><span class="pin-year">2023</span><span class="pin-view">View credential <i data-lucide="arrow-up-right"></i></span></a>
                     <a class="pin" href="https://www.linkedin.com/in/prince-ardiabah-14b9171a9/details/certifications/" target="_blank" rel="noreferrer"><span class="pin-badge pin-badge-captioned" style="--i:6"><img src="assets/logos/who-mark.png" alt="World Health Organization emblem"><small>WHO</small></span><span><strong>Healthy &amp; Safe Telework</strong><span>World Health Organization</span></span><span class="pin-year">2022</span><span class="pin-view">View credential <i data-lucide="arrow-up-right"></i></span></a>
                     <a class="pin" href="https://www.linkedin.com/in/prince-ardiabah-14b9171a9/details/certifications/" target="_blank" rel="noreferrer"><span class="pin-badge pin-badge-icon" style="--i:7"><i data-lucide="library-big"></i></span><span><strong>Experiential Learning MasterClass: Entrepreneurship Re-imagined</strong><span>Ghana Library Authority</span></span><span class="pin-year">2021</span><span class="pin-view">View credential <i data-lucide="arrow-up-right"></i></span></a>
                     </div>
                     <div class="pin-track" aria-hidden="true">
                     <a class="pin" tabindex="-1" href="https://www.linkedin.com/in/prince-ardiabah-14b9171a9/details/certifications/" target="_blank" rel="noreferrer"><span class="pin-badge" style="--i:0"><img src="assets/logos/itu.png" alt="International Telecommunication Union logo"></span><span><strong>AI Governance: AI &amp; Data Governance</strong><span>International Telecommunication Union</span></span><span class="pin-year">2026 · <span class="pin-new">New</span></span><span class="pin-view">View credential <i data-lucide="arrow-up-right"></i></span></a>
+                    <a class="pin" tabindex="-1" href="https://www.linkedin.com/in/prince-ardiabah-14b9171a9/details/certifications/" target="_blank" rel="noreferrer"><span class="pin-badge pin-badge-wide" style="--i:5"><img src="assets/logos/ibm.svg" alt="IBM logo"></span><span><strong>Enterprise Design Thinking Practitioner</strong><span>IBM</span></span><span class="pin-year">2023</span><span class="pin-view">View credential <i data-lucide="arrow-up-right"></i></span></a>
+                    <a class="pin" tabindex="-1" href="https://www.linkedin.com/in/prince-ardiabah-14b9171a9/details/certifications/" target="_blank" rel="noreferrer"><span class="pin-badge pin-badge-captioned" style="--i:4"><img src="assets/logos/who-mark.png" alt="World Health Organization emblem"><small>WHO</small></span><span><strong>Ethics &amp; Governance of AI for Health</strong><span>World Health Organization</span></span><span class="pin-year">2023</span><span class="pin-view">View credential <i data-lucide="arrow-up-right"></i></span></a>
                     <a class="pin" tabindex="-1" href="https://www.linkedin.com/in/prince-ardiabah-14b9171a9/details/certifications/" target="_blank" rel="noreferrer"><span class="pin-badge" style="--i:1"><img src="assets/logos/cbs-mark.png" alt="Copenhagen Business School logo"></span><span><strong>Strategic Management</strong><span>Copenhagen Business School</span></span><span class="pin-year">2025</span><span class="pin-view">View credential <i data-lucide="arrow-up-right"></i></span></a>
                     <a class="pin" tabindex="-1" href="https://www.linkedin.com/in/prince-ardiabah-14b9171a9/details/certifications/" target="_blank" rel="noreferrer"><span class="pin-badge pin-badge-photo" style="--i:2"><img src="assets/logos/yali-mark.jpg" alt="Young African Leaders Initiative logo"></span><span><strong>Management Strategies for People &amp; Resources</strong><span>Young African Leaders Initiative</span></span><span class="pin-year">2025</span><span class="pin-view">View credential <i data-lucide="arrow-up-right"></i></span></a>
                     <a class="pin" tabindex="-1" href="https://www.linkedin.com/in/prince-ardiabah-14b9171a9/details/certifications/" target="_blank" rel="noreferrer"><span class="pin-badge pin-badge-tall" style="--i:3"><img src="assets/logos/unctad-mark.png" alt="UNCTAD logo"></span><span><strong>International Trade Policy Framework</strong><span>UN Trade and Development (UNCTAD)</span></span><span class="pin-year">2024</span><span class="pin-view">View credential <i data-lucide="arrow-up-right"></i></span></a>
-                    <a class="pin" tabindex="-1" href="https://www.linkedin.com/in/prince-ardiabah-14b9171a9/details/certifications/" target="_blank" rel="noreferrer"><span class="pin-badge pin-badge-captioned" style="--i:4"><img src="assets/logos/who-mark.png" alt="World Health Organization emblem"><small>WHO</small></span><span><strong>Ethics &amp; Governance of AI for Health</strong><span>World Health Organization</span></span><span class="pin-year">2023</span><span class="pin-view">View credential <i data-lucide="arrow-up-right"></i></span></a>
-                    <a class="pin" tabindex="-1" href="https://www.linkedin.com/in/prince-ardiabah-14b9171a9/details/certifications/" target="_blank" rel="noreferrer"><span class="pin-badge pin-badge-wide" style="--i:5"><img src="assets/logos/ibm.svg" alt="IBM logo"></span><span><strong>Enterprise Design Thinking Practitioner</strong><span>IBM</span></span><span class="pin-year">2023</span><span class="pin-view">View credential <i data-lucide="arrow-up-right"></i></span></a>
                     <a class="pin" tabindex="-1" href="https://www.linkedin.com/in/prince-ardiabah-14b9171a9/details/certifications/" target="_blank" rel="noreferrer"><span class="pin-badge pin-badge-captioned" style="--i:6"><img src="assets/logos/who-mark.png" alt="World Health Organization emblem"><small>WHO</small></span><span><strong>Healthy &amp; Safe Telework</strong><span>World Health Organization</span></span><span class="pin-year">2022</span><span class="pin-view">View credential <i data-lucide="arrow-up-right"></i></span></a>
                     <a class="pin" tabindex="-1" href="https://www.linkedin.com/in/prince-ardiabah-14b9171a9/details/certifications/" target="_blank" rel="noreferrer"><span class="pin-badge pin-badge-icon" style="--i:7"><i data-lucide="library-big"></i></span><span><strong>Experiential Learning MasterClass: Entrepreneurship Re-imagined</strong><span>Ghana Library Authority</span></span><span class="pin-year">2021</span><span class="pin-view">View credential <i data-lucide="arrow-up-right"></i></span></a>
                     </div>
@@ -538,9 +575,9 @@
             observer.observe(stats);
         }
     </script>
-    <script src="assets/js/ui.js?v=20261118"></script>
-    <script src="assets/js/fx.js?v=20261118"></script>
-    <script src="assets/js/portal.js?v=20261118"></script>
-    <script type="module" src="assets/js/hero3d.js?v=20261118"></script>
+    <script src="assets/js/ui.js?v=20261119"></script>
+    <script src="assets/js/fx.js?v=20261119"></script>
+    <script src="assets/js/portal.js?v=20261119"></script>
+    <script type="module" src="assets/js/hero3d.js?v=20261119"></script>
 </body>
 </html>
