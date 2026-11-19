@@ -29,7 +29,7 @@ LinkedIn: https://www.linkedin.com/in/prince-ardiabah-14b9171a9
 - AI lead handling: website leads scored, enriched, saved to the CRM and routed to sales
 - MallTime GH (https://malltime-gh.onrender.com/): a walkable 3D virtual mall where sellers rent a unit and shoppers browse, chat and buy
 - AI Systems Builder (https://mentorship-platform-eta-three.vercel.app/): learning platform for his 12-week AI automation mentorship
-- U-Wash GH (https://uwash.netlify.app/) and Digital Wizard (https://mydigitalwizard.vercel.app/)
+- U-Wash GH (https://uwashgh.com/) and Digital Wizard (https://mydigitalwizard.vercel.app/)
 
 ## Credentials
 
